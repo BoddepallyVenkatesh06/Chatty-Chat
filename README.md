@@ -57,7 +57,7 @@ Before you begin, ensure you have the following installed on your system:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/data-visualization-dashboard.git
+    git clone https://github.com/BoddepallyVenkatesh06/Chatty-Chat.git
     cd data-visualization-dashboard
     ```
 
@@ -140,7 +140,7 @@ Contributions are welcome! If you'd like to contribute to the Data Visualization
 ```
 MIT License
 
-© 2024 Your Name
+© 2024 Venky Kumar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
