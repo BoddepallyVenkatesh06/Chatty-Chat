@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Translate Chatty - Chatty - Twitch Chat Client</title>
+<link rel="icon" href="icons2.ico" type="image/x-icon" />
+<style type="text/css">
+	body {
+		font-size: 1em;
+		font-family: Arial, sans-serif;
+		
+		background-color: #EEE;
+	}
+	#content {
+		margin: auto;
+		width: 1000px;
+		background-color: #FFF;
+		padding: 30px;
+		border: 1px solid #DDD;
+		clear:both;
+	}
+	li {
+		margin: 5px;
+		
+	}
+	h1 {
+		display: inline;
+	}
+	h2 {
+		font-size: 1.1em;
+	}
+	h3 {
+		font-size: 0.9em;
+	}
+
+	#menu {
+		display: inline;
+	}
+	#menu li {
+		display: inline;
+	}
+	#ago {
+		display: inline;
+		font-weight: bold;
+		color: Firebrick;
+		border: 0px solid #333;
+		float: right;
+		
+	}
+	#top {
+		width: 1000px;
+		margin: auto;
+		text-align: right;
+		margin-top: 10px;
+	}
+	#bottom {
+		width: 1000px;
+		margin: auto;
+		text-align: center;
+		margin-top: 10px;
+	}
+	#project {
+		float: right;
+		padding-bottom: 10px;
+	}
+	#twitter {
+		float:right;
+		padding-right: 25px;
+		}
+	#youtube {
+		float:right;
+		padding-right: 25px;
+	}
+	#flattr {
+		float:left;
+	}
+
+	dt {
+		margin-top: 8px;
+		margin-bottom: 2px;
+	}
+	.new {
+		font-size: 0.75em;
+		font-style: italic;
+		background-color: #FFFF77;
+	}
+	dl {
+		margin-left: 10px;
+	}
+	.cond {
+		background-color: lime;
+	}
+	.repl {
+		background-color: yellow;
+	}
+
+</style>
+</head>
+</head>
+<body>
+	<div id="content">
+		<h1><img src="img/app_main_32.png" style="margin-bottom: -5px;padding-right: 7px;" />Translate Chatty <span style="font-size:0.7em"><a href="index.html">to main page</a></span></h1>
+	
+	<p>Parts of Chatty can be translated into different languages, and you can help!</p>
+	
+	<h2>Getting started</h2>
+	<ol>
+		<li><a href="https://poeditor.com/join/project/1Lld6f5Swi">Join the localization project</a></li>
+		<li>Tell me the account name you used so I can approve it. The best way is via <a href="https://discord.gg/WTuqGeJ">#localization on Discord</a>, but you can also <a href="mailto:chattyclient@gmail.com">send a mail</a>.</li>
+	</ol>
+	<p>Note: If the language you want to work on hasn't been added yet, tell me, then proceed with step 1 once it has been added.</p>
+
+	<p>Note that not everything can be translated yet, and the help pages probably won't be at all, since it would be too much work to keep updated.</p>
+
+	<h2>Translation Guidelines</h2>
+	<p><a href=" https://youtu.be/vbt_42IpH-k">This video</a> explains some of these things as well.</p>
+	<ul>
+		<li>You don't have to translate everything. If there is no good translation for something, just keep it in English (this especially applies if the English term is commonly used in that language and better fitting).</li>
+		<li>Strings that aren't translated will automatically fallback to English, so please don't just copy the English strings to fill translations, unless the English string <em>is</em> the translation (see previous point).</li>
+		<li>If you're translating a term specific to Twitch or Streaming, try to use the "official" translation from the Twitch website.</li>
+		<li>Try to be consistent within each language, for example check other strings for already used terms.</li>
+		<li>Try to replicate things like strings ending with a colon (e.g. <code>Language:</code>) or HTML codes.</li>
+		<li>In some cases (like button labels) it can be important that the translated text is not too long, so it may be necessary to rephrase things.</li>
+		<li>Translations that are marked as <a href="https://poeditor.com/kb/fuzzy-translations">Fuzzy</a> should be reviewed again, usually because the original string has changed and the translation may have to be updated. You can filter and order by Fuzzy strings. If you are satisfied that the translation is correct, you can remove the Fuzzy flag.</li>
+	</ul>
+
+	<h3>Questions / Discussion</h3>
+	<ul>
+		<li>The <a href="https://poeditor.com/kb/using-the-comment-system">comments</a> for a specific translation item sometimes give additional hints about the string and can be used for basic discussion.</li>
+		<li>Another (probably better) place to discuss things is <a href="https://discord.gg/WTuqGeJ">#localization on Discord</a>.</li>
+	</ul>
+
+	<h2>Substitutions</h2>
+	<p>Something like <code>{0}</code> in a string means it is replaced with the number <code>0</code> parameter. It should say in a comment what it gets replaced with (although most of the time it's clear from context already).</p>
+	
+	<dl>
+		<dt>Example: <code>Join #{0}</code></dt>
+		<dd>When <code>{0}</code> is <code>joshimuz</code> turns into <code>Join #joshimuz</code></dd>
+	</dl>
+
+
+	<p>Substitutions use the <a href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html">MessageFormat</a> class. Mostly it's enough to just stick close to the template.</p>
+	
+	<p><em>Important:</em> <del>Any single quote (<code>'</code>) in a string that contains a replacement needs to be escaped with a single quote (e.g. <code>Can''t join ''{0}''</code>).</del> <ins>This does not seem to be the case anymore. Quotes are automatically escaped on export by POEditor, so they should not be escaped anymore.</ins></p>
+
+	<h3>Choice</h3>
+	<p>The more advanced <code>{0,choice,&lt;choices&gt;}</code> pattern is used to decide between two strings depending on the value in the number <code>0</code> parameter. This is commonly used to decide between a singular and plural form.</p>
+
+	<dl>
+		<dt>Example: <code>Join {0,choice,<span class="cond">1#</span><span class="repl">channel</span>|<span class="cond">1&lt;</span><span class="repl">{0} channels</span>}</code></dt>
+		<dd><ul>
+			<li><code><span class="cond">1#</span></code> means "exactly 1" (in which case it chooses <code><span class="repl">channel</span></code></li>
+			<li><code><span class="cond">1&lt;</span></code> means "more than 1" in which case it chooses <code><span class="repl">{0} channels</span></code> (where the <code>{0}</code> is replaced as well)</li>
+		</ul></dd>
+		<dd>When <code>{0}</code> is <code>1</code> turns into <code>Join channel</code></dd>
+		<dd>When <code>{0}</code> is <code>2</code> turns into <code>Join 2 channels</code></dd>
+		<dd>When <code>{0}</code> is <code>30</code> turns into <code>Join 30 channels</code></dd>
+	</dl>
+
+	<dl>
+		<dt>Example: <code>{0} {0,choice,<span class="cond">1#</span><span class="repl">Hour</span>|<span class="cond">1&lt;</span><span class="repl">Hours</span>}</code></dt>
+		<dd>When <code>{0}</code> is <code>1</code> turns into <code>1 Hour</code></dd>
+		<dd>When <code>{0}</code> is <code>2</code> turns into <code>2 Hours</code></dd>
+	</dl>
+
+	<h2>After Translation</h2>
+	<p>Translations are commited to the repository by myself, since the files have to be converted into the format I want (e.g. proper structure and order of items). The process is mostly automated.</p>
+	
+	<p><em>Note:</em> The names of contributors to each language (as registered on POEditor) are added to the top of the language file. If you want to be excluded from that or want to appear with a different name, let me know.</p>
+
+	<h2>Other</h2>
+	<p>Changes of the <a href="https://github.com/chatty/chatty/blob/master/src/chatty/lang/Strings.properties">original English strings</a> have to be done via GitHub (the normal way via Pull Requests).</p>
+	
+</div>
+</body>
+</html>
+
+
+

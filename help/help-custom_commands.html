@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html>
+	<title>Chatty - Custom Commands / Context Menus</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+<body>
+    <div id="backlink"><a href="help.html">To main help page</a></div>
+    <h1><a name="top">Custom Commands / Context Menus</a></h1>
+    
+    <p>Under <code>Settings - Commands</code> you can add Custom Commands and
+        customize some Context Menus (and the User Info Dialog) with your own entries.</p>
+    
+    <p>Check out <a href="https://www.youtube.com/user/chattyclient">YouTube</a>
+        for various video tutorials.</p>
+    
+    <ul>
+        <li>
+            <a href="#custom-commands">Custom Commands</a>
+            <ul>
+                <li><a href="#restrict-channel">Restrict to channel</a></li>
+                <li><a href="#anonymous-custom-commands">Anonymous Custom Commands</a></li>
+                <li><a href="#chain-commands">Chaining Commands</a></li>
+                <li><a href="#foreach">Foreach</a></li>
+                <li><a href="#runin">Run command in specific channel</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#replacements">Replacements</a>
+            <ul>
+                <li><a href="#simple-replacements">Simple Replacements</a></li>
+                <li><a href="#escaping">Escaping / Literal Text</a></li>
+                <li><a href="#parameters-context">Pre-defined Parameters</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#custom-replacements">Custom Replacements</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#menus">Custom Context Menus / User Dialog Buttons</a>
+            <ul>
+                <li><a href="#commands-list">Format 1: List Custom Command Names</a></li>
+                <li><a href="#inline-commands">Format 2: Inline-Commands</a></li>
+                <li><a href="#submenus">Format 3: Submenus</a></li>
+                <li><a href="#separators">Separators</a></li>
+                <li><a href="#shortcuts">Shortcuts</a></li>
+                <li><a href="#positioning">Positioning</a></li>
+                <li><a href="#label-commands">Dynamic Labels</a></li>
+                <li><a href="#menu-restrictions">Optional Menu Entries</a></li>
+                <li><a href="#special-commands">Special Commands</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2><a name="custom-commands">Custom Commands</a></h2>
+    <p>Custom commands allow you to specify aliases for anything you could also
+        enter directly into the inputbox, like chat messages or regular
+        commands (with the exception of other custom commands, which is a
+        limitation implemented to prevent infinite loops).</p>
+    
+    <p>To add a Custom Command add a new entry to the list labeled
+        "Custom Commands", in the following format:</p>
+    
+    <p><code>/&lt;commandName&gt; &lt;what the command should do&gt;</code></p>
+    
+    <p>Everything up to the first space is the <em>name</em>
+        of the command, and everything after the first space is what the command
+        will do or execute. For example:</p>
+    
+    <p><code>/hello Hello World!</code></p>
+    
+    <p>If you added that to the Custom Commands list and
+        enter <code>/hello</code> in the inputbox, then it would send
+        <code>Hello World!</code> to chat, just as if you would have written it
+        yourself and pressed Enter.</p>
+    
+    <p>Any entry in the "Custom Commands" list starting with a <code>#</code>
+        will be completely ignored. For example:</p>
+    
+    <p><code># Hello World!</code></p>
+    
+    <p>See <a href="#replacements">Replacements</a> for more advanced usage.</p>
+    
+    <h3><a name="restrict-channel">Restrict to channel</a></h3>
+    <p>Adding a <code>#</code> and a channel name you can restrict the command
+        to that channel:</p>
+    
+    <p><code>/hello#joshimuz Hello Joshimuz Chat!</code></p>
+    
+    <p>This <code>/hello</code> command would only be executed in #joshimuz,
+        however if you still have the version without a channel in the Custom
+        Commands list as well, it will fallback to that in other channels. This
+        way to can add variations of commands for specific channels.</p>
+    
+    <h3><a name="anonymous-custom-commands">Anonymous Custom Commands</a></h3>
+    <p>Custom Commands that aren't defined in the Custom Commands list do not
+        have a name and can thus only be executed from the context they are
+        defined, for example when adding <a href="#inline-commands">Inline-Commands</a>
+        to the User Dialog or Context Menus.</p>
+    
+    <p>You can also execute Anonymous Custom Commands directly from the
+        inputbox, by prepending <code>//</code>, which allows you to use
+        Replacements:</p>
+    
+    <dl class="defList">
+        <dt><code>/echo Open Channels: $(chans)</code></dt>
+        <dd>Executes as a normal command (nothing replaced)</dd>
+        <dd>Outputs <code>Open Channels: $(chans)</code></dd>
+        
+        <dt><code>//echo Open Channels: $(chans)</code></dt>
+        <dd>Executes as an Anonymous Custom Command</dd>
+        <dd>Outputs <code>Open Channels: joshimuz lotsofs cirno_tv</code></dd>
+    </dl>
+    
+    <h3><a name="chain-commands">Chaining Commands</a></h3>
+    <p>Executing several commands in a row is not a feature of Custom Commands,
+        although the <a href="help-builtin_commands.html#commands-chain">/chain command</a> can
+        be used to achieve something like that.</p>
+    
+    <h3><a name="foreach">Foreach</a></h3>
+    <p>The <a href="help-builtin_commands.html#commands-foreach">/foreach command</a> can be used
+        to run the same command for each entry of a space-separated list, for
+        example a list of channels from the <code>$1-</code> replacement.</p>
+    
+    <h3><a name="runin">Run command in specific channel</a></h3>
+    <p>The <a href="help-builtin_commands.html#commands-runin">/runin command</a> can be used
+        to run a command in a specific open channel.</p>
+    
+    <h2><a name="replacements">Replacements</a></h2>
+    <ul>
+        <li><a href="#simple-replacements">Simple Replacements</a></li>
+        <li><a href="#escaping">Escaping / Literal Text</a></li>
+        <li><a href="#parameters-context">Pre-defined Parameters</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#custom-replacements">Custom Replacements</a></li>
+    </ul>
+    
+    <p>Anything starting with <code>$</code> in the <code>&lt;what the command
+        should do&gt;</code> section is treated as some sort of replacement.
+        Each replacement must contain an <strong>identifier</strong>
+        which identifies what the replacement should be replaced with.</p>
+    
+    <p>For the <strong>short notation</strong> the identifier is written
+        directly after the dollar sign: <code>$&lt;identifier&gt;</code> .
+        In thise case it may only consist of a number and an optional dash:
+        <code>$&lt;1-9&gt;[-]</code> . Numeric identifiers refer to the parameters
+        supplied to the command.</p>
+    
+    <p>For the <strong>regular notation</strong> the identifier is written after
+        the <code>$</code> in parentheses: <code>$(&lt;identifier&gt;)</code> .
+        This type of notation makes a more clear distinction between replacement
+        and the rest of the (literal) text and may contain numbers (including higher than 9)
+        and other identifiers, depending on the context.</p>
+    
+    <p>Put <code>$$</code> (the <code>$</code> twice) for any
+        <strong>required replacement</strong> (for example <code>$$1</code> ),
+        which means the whole Custom Command will only be run if that replacement
+        turns into a non-empty value. This can be used to make sure that a
+        parameter that is necessary for the command to make sense is actually
+        being supplied.</p>
+    
+    <h3><a name="escaping">Escaping / Literal Text</a></h3>
+    <p>If you want to use a dollar sign <code>$</code> literally, without it
+        beginning a replacement, you can escape it with a backslash:
+        <code>\$</code>. A backslash will always interpret the following
+        character as a regular character without a special meaning, while
+        the backslash itself will not show up in the result.</p>
+    
+    <p>Example: <code>$replace($1-,(\\w+),(\$1\),regRef)</code></p>
+    <p>This <a href="#functions">function</a> (surrounds all
+            consecutive word characters with brackets) contains some escaping:</p>
+    <ul>
+        <li>The <code>(\\w+)</code> turns into the plain text <code>(\w+)</code>. The backslash needs to be escaped so
+            it actually shows up for the regex.</li>
+        <li>The <code>(\$1\)</code> turns into the plain text <code>($1)</code>. The dollar sign is used for the regex,
+            not an actual Custom Command replacement and the closing bracket
+            needs to be escaped here because the following function parameter is
+            optional, so the bracket would close the function.</li>
+    </ul>
+    
+    <p>Alternatively you can use <code>$"&lt;literal text&gt;"</code> which
+        interprets everything inside the quotes as literal text without any
+        special meaning. To use a quote inside the literal text, it can be
+        doubled: <code>$"This is a dollar sign: ""$"""</code> turns into the
+        plain text <code>This is a dollar sign: "$"</code>. Instead of <code>"</code>
+        you can also use <code>`</code> (backquote) or <code>'</code> (single quote):
+        <code>$`This is a dollar sign: "$"`</code> is equivalent to the above.</p>
+    
+    <p>The previous example could also be written like this: <code>$replace($1-,$"(\w+)",$"($1)",regRef)</code></p>
+    
+    <h3><a name="simple-replacements">Simple Replacements</a></h3>
+    <p>A basic use of replacements is using the <strong>short notation</strong>
+        to put in parameters supplied when executing the command. Consider this
+        Custom Command:</p>
+    
+    <p><code>/slap /me slaps <strong>$$1</strong> around a bit with a large trout</code></p>
+    
+    <p>Then, when you enter <code>/slap moobot</code> in the inputbox, it will
+        replace <code>$$1</code> with the first word after the command, which in
+        this case would be <code>moobot</code>, making the resulting command:</p>
+    
+    <p><code>/me slaps <strong>moobot</strong> around a bit with a large trout</code></p>
+    
+    <p>This is the syntax for specifying parameters (word in this context means
+    anything separated by a space):</p>
+    <dl>
+        <dt><code>$1, $2, $3</code></dt>
+        <dd>First word, second word, third word etc.</dd>
+        <dd><code>$(1), $(2), $(3)</code> is the equivalent in the regular notation</dd>
+        
+        <dt><code>$1-</code></dt>
+        <dd>First word, and all the words after it</dd>
+        <dd><code>$2-, $3-</code> is also possible</dd>
+        <dd><code>$(1-), $(2-), $(3-)</code> is the equivalent in the regular notation</dd>
+        
+        <dt><code>$$1</code></dt>
+        <dd>First word, but required, meaning the command will only be executed
+            if this parameter is actually present</dd>
+        <dd><code>$$2, $$3-</code> is also possible</dd>
+        <dd><code>$$(1), $$(2), $$(3-)</code> is the equivalent in the regular notation</dd>
+    </dl>
+    
+    <p>The short notation ( <code>$1</code> ) only works for the numbers 1 to 9,
+        which usually should be enough. For other kinds of replacements you must
+        use the regular notation including parentheses: <code>$(10)</code> .</p>
+    
+    <h3><a name="parameters-context">Pre-defined Parameters</a></h3>
+    <p>Custom Commands can be used in a number of different places. Depending on
+        the context there are different pre-defined parameters available. The
+        following table shows which identifiers can be used in which
+        context. To use an identifier put it in a replacement, for example
+        <code>$(chan)</code> or <code>$$join(1-,/)</code>.</p>
+    
+    <table class="settings" cellspacing="1">
+        <tr>
+            <th>Context</th>
+            <th>Identifier</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <th rowspan="4"><em>All</em></th>
+            <td><code>chan</code></td>
+            <td>The current channel context (without leading #)</td>
+        </tr>
+        <tr>
+            <td><code>stream</code></td>
+            <td>The stream name of the current channel context (different from
+                <code>chan</code> for Chatrooms)</td>
+        </tr>
+        <tr>
+            <td><code>chans</code></td>
+            <td>All currently open regular channels (separated by spaces,
+                without leading #)</td>
+        </tr>
+        <tr>
+            <td><code>stream...</code></td>
+            <td><a href="#stream-identifiers">Stream Info (e.g. uptime, stream title) identifiers</a></td>
+        </tr>
+        <!-- User Context Menu -->
+        <tr>
+            <th rowspan="6">User Context Menu</th>
+            <td><code>1</code></td>
+            <td>Name of the user</td>
+        </tr>
+        <tr>
+            <td>Various</td>
+            <td><a href="#user-identifiers">Various user-related identifiers</a></td>
+        </tr>
+        <tr>
+            <td><code>msg</code></td>
+            <td>Message text of the selected message (depending on the line in
+                chat you opened the User Contex Menu from, not available for
+                your own messages)</td>
+        </tr>
+        <tr>
+            <td><code>msg-time</code></td>
+            <td>Message time of the selected message (depending on the line in
+                chat you opened the User Contex Menu from, not available for
+                your own messages), as milliseconds since
+                1970-01-01 00:00:00 UTC, intended to be used with <code>$datetime()</code>,
+                e.g. <code>$datetime(datetime,,,$(msg-time))</code></td>
+        </tr>
+        <tr>
+            <td><code>msg-id</code></td>
+            <td>Message id of the selected message (depending on the line in
+                chat you opened the User Contex Menu from, not available for
+                your own messages)</td>
+        </tr>
+        <tr>
+            <td><code>automod-msg-id</code></td>
+            <td>Message id of the selected message filtered by AutoMod, for
+                approving or denying the message (when opened by clicking on
+                an appropriate message in chat)</td>
+        </tr>
+        <!-- User Dialog -->
+        <tr>
+            <th rowspan="8">User Dialog</th>
+            <td><em>All from User Context Menu</em></td>
+            <td>See above</td>
+        </tr>
+        <tr>
+            <td><code>2-</code>, <code>reason</code></td>
+            <td>Ban reason (if selected)</td>
+        </tr>
+        <tr>
+            <td><code>msg</code></td>
+            <td>Message text of the selected message (<code>&gt;</code> in front
+                of message, depending on the line in chat you opened it from,
+                not available for your own messages)</td>
+        </tr>
+        <tr>
+            <td><code>msg-time</code></td>
+            <td>Message time of the selected message (<code>&gt;</code> in front
+                of message, depending on the line in chat you opened it from,
+                not available for your own messages), as milliseconds since
+                1970-01-01 00:00:00 UTC, intended to be used with <code>$datetime()</code>,
+                e.g. <code>$datetime(datetime,,,$(msg-time))</code></td>
+        </tr>
+        <tr>
+            <td><code>msg-id</code></td>
+            <td>Message id of the selected message (<code>&gt;</code> in front
+                of message, depending on the line in chat you opened it from,
+                not available for your own messages)</td>
+        </tr>
+        <tr>
+            <td><code>automod-msg-id</code></td>
+            <td>Message id of the selected message filtered by AutoMod, for
+                approving or denying the message (when opened by clicking on
+                an appropriate message in chat)</td>
+        </tr>
+        <tr>
+            <td><code>followage</code> /
+                <code>accountage</code></td>
+            <td>How long ago (e.g. <code>3.2 years</code>) the user has followed
+                / has created the Twitch account (only if available)</td>
+        </tr>
+        <tr>
+            <td><code>followdate</code> / <code>accountdate</code></td>
+            <td>The date (e.g. <code>2012-09-15 17:19:29 +0200</code>) the user
+                has followed / has created the Twitch account (only if available)</td>
+        </tr>
+        <!-- Channel Context Menu -->
+        <tr>
+            <th>Channel Context menu</th>
+            <td><code>1</code></td>
+            <td>Name of the currently active channel (without leading #)</td>
+        </tr>
+        <!-- Streams Context Menu -->
+        <tr>
+            <th>Streams Context menu</th>
+            <td><code>1-</code></td>
+            <td>Names of selected streams</td>
+        </tr>
+        <!-- Hotkey -->
+        <tr>
+            <th>Hotkey</th>
+            <td><code>1</code></td>
+            <td>The currently <a href="help.html#userselection">selected user</a> (if present)</td>
+        </tr>
+        <!-- Text Context Menu -->
+        <tr>
+            <th>Selected Text Context menu</th>
+            <td><code>1-</code>, <code>msg</code></td>
+            <td>The selected text</td>
+        </tr>
+        <!-- Admin Context Menu -->
+        <tr>
+            <th rowspan="4">Admin Context menu</th>
+            <td><code>title</code></td>
+            <td>The stream title currently set in the Admin Dialog</td>
+        </tr>
+        <tr>
+            <td><code>game</code></td>
+            <td>The game (category) currently set in the Admin Dialog</td>
+        </tr>
+        <tr>
+            <td><code>tag-ids</code></td>
+            <td>The tags currently set in the Admin Dialog (ids, comma-separated)</td>
+        </tr>
+        <tr>
+            <td><code>tag-names</code></td>
+            <td>The tags currently set in the Admin Dialog (display names, comma-separated)</td>
+        </tr>
+    </table>
+    
+    <h3><a name="user-identifiers">User-related Identifiers</a></h3>
+    <p>These are available where a user is involved, such as the User Dialog and
+        User Context Menu. In some contexts they may also be available with the
+        <code>my-</code> prefix for your own user info (e.g. <code>my-full-nick</code>).</p>
+    <ul>
+        <li><code>nick</code> - Name of the user, maybe capitalized</li>
+        <li><code>display-nick</code> - Same as <code>nick</code>, but may not match the regular username (spaces, completely different)</li>
+        <li><code>display-nick2</code> - Same as <code>display-nick</code>, but contains the regular username in parentheses if necessary</li>
+        <li><code>custom-nick</code> - Same as <code>display-nick</code>, but may also be the <a href="help.html#customNames">Custom Name</a> you set</li>
+        <li><code>full-nick</code> - The same name that is displayed in the userlist (includes status symbols)</li>
+        <li><code>full-nick2</code> - Same as <code>full-nick</code>, but contains the regular username in parentheses if necessary</li>
+        <li><code>special-nick</code> - Returns <code>true</code> if the user has a display name not matching the regular username</li>
+        <li><code>user-id</code> - The Twitch ID of the user (if available)</li>
+        <li><code>twitch-badges</code> - A textual representation of the Twitch badges (if available)</li>
+        <li><code>twitch-badge-info</code> - Another textual representation of the Twitch badges (if available)</li>
+        <li><code>user-stream</code> - The name of the stream the user talked in</li>
+        <li><code>user-stream-id</code> - The id of the stream the user talked in</li>
+        <li><code>user-channel</code> - The name of the channel the user talked in (with leading # if applicable)</li>
+    </ul>
+    
+    <h3><a name="stream-identifiers">Stream Info Identifiers</a></h3>
+    <p>The stream info is of the current channel context, if available.</p>
+    <ul>
+        <li><code>streamstatus</code> - Stream Status ("Title (Game)" or "Offline")</li>
+    </ul>
+    <p>Only available if live:</p>
+    <ul>
+        <li><code>streamtitle</code> - Stream Title</li>
+        <li><code>streamgame</code> - Stream Game</li>
+        <li><code>streamviewers</code> - Number of viewers</li>
+        <li><code>streamuptime</code> - Stream Uptime, ignoring short breaks as shown in the Chatty titlebar</li>
+        <li><code>streamuptime2</code> - Actual Stream Uptime as reported by Twitch directly</li>
+    </ul>
+    
+    <h3>Pre-defined Parameters Example</h3>
+    <dl class="defList">
+        <dt><code>/streaminfo /echo [Stream Status] $(streamstatus) [Uptime] $(streamuptime)</code></dt>
+        <dd>Entering <code>/streaminfo</code> outputs an info message (only for
+            you) with the current stream status and uptime.</dd>
+    </dl>
+    
+    <p>In addition, there is an implicit channel context, which means channel-aware
+        commands like <code>/ban</code> are executed in the appropriate channel.</p>
+    
+    <h3><a name="functions">Functions</a></h3>
+    <p>Functions are replacements, however they have a function name before the
+        identifier (there is no short notation for functions):</p>
+        
+    <p><code>$&lt;functionName&gt;(&lt;identifier&gt;,&lt;some parameters&gt;,[optional parameters])</code></p>
+    
+    <p class="note"><em>Note:</em> The <code>&lt;identifier&gt;</code> parameter
+        means anything not starting with <code>$</code> is interpreted as the
+        identifier only. You can think of it as an extension to the regular
+        replacement:
+        <code>$(1-) -> $<u>join</u>(1-<u>,/</u>)</code></p>
+    
+    <p>Functions by topic (ones marked with * are not available in every context):</p>
+    <ul>
+        <li>Decisions:
+            <a href="#func-if">$if()</a>,
+            <a href="#func-ifeq">$ifeq()</a>,
+            <a href="#func-switch">$switch()</a>,
+            <a href="#func-is">$is()</a>*
+        </li>
+        <li>Text:
+            <a href="#func-join">$join()</a>,
+            <a href="#func-lower">$lower()</a>,
+            <a href="#func-upper">$upper()</a>,
+            <a href="#func-trim">$trim()</a>,
+            <a href="#func-quote">$quote()</a>,
+            <a href="#func-replace">$replace()</a>,
+            <a href="#func-rand">$rand()</a>,
+            <a href="#func-sort">$sort()</a>,
+            <a href="#func-input">$input()</a>
+        </li>
+        <li>Numbers:
+            <a href="#func-randnum">$randnum()</a>,
+            <a href="#func-calc">$calc()</a>,
+            <a href="#func-round">$round()</a>
+        </li>
+        <li>Requests/URLs:
+            <a href="#func-request">$request()</a>*,
+            <a href="#func-urlencode">$urlencode()</a>,
+            <a href="#func-json">$json()</a>
+        </li>
+        <li>Other:
+            <a href="#func-datetime">$datetime()</a>,
+            <a href="#func-get">$get()</a>*
+        </li>
+    </ul>
+    
+    <p>The following functions are always available:</p>
+    <dl class="defList">
+        <dt><a name="func-if"><code>$if(&lt;identifier&gt;,&lt;output if exists&gt;,[output if not])</code></a></dt>
+        <dd>If the value the identifier refers to exists (non-empty), it will
+            return the first function parameter, the second otherwise.</dd>
+        <dd><em>Example:</em> <code>$if(1,$1,nope)</code> with command parameters <code>cheese cake</code> turns into <code>cheese</code>,
+            with no parameters turns into <code>nope</code>, the optional <code>[output if not]</code> function parameter.</dd>
+        
+        <dt><a name="func-ifeq"><code>$ifeq(&lt;identifier&gt;,&lt;comparison&gt;,&lt;output if equal&gt;,[output if not])</code></a></dt>
+        <dd>Similar to <code>$if</code>, but instead of just checking for the
+            existence of a parameter it compares it to a given value
+            (<code>&lt;comparison&gt;</code>).</dd>
+        <dd><em>Example:</em> <code>$ifeq(1,cheesecake,yummy)</code> with parameters
+            <code>cheesecake</code> turns into <code>yummy</code>, with parameters
+            <code>cheese cake</code> turns into an an empty string, since the
+            optional <code>[output if not]</code> has not been specified.</dd>
+        
+        <dt><a name="func-switch"><code>$switch(&lt;identifier&gt;,&lt;case1&gt;:&lt;result1&gt;,..,[casen]:[resultn],[default])</code></a></dt>
+        <dd>Similiar to a switch statement in programming, or one or several <code>$ifeq()</code> functions.
+            Compares the value associated with the identifier with the case values and returns the following
+            result if it matches. If none of the case values match, it will return the default, or an empty value.</dd>
+        <dd><em>Example:</em> <code>/set fontSize $switch($get(fontSize),25:50,50:18,25)</code> when added
+            as a Custom Command alternates between font sizes 18, 25 and 50.</dd>
+        
+        <dt><a name="func-join"><code>$join(&lt;identifier&gt;,&lt;separator&gt;)</code></a></dt>
+        <dd>Joins together the arguments the identifier refers to, using the
+            given separator.</dd>
+        <dd><em>Example:</em> <code>$join(1-,/)</code> with <code>1-</code> referring to
+            <code>flour sugar eggs</code> turns into <code>flour/sugar/eggs</code></dd>
+        <dd>This effectively replaces spaces in the parameters with the separator.</dd>
+        
+        <dt><a name="func-lower"><code>$lower(&lt;identifier&gt;)</code></a></dt>
+        <dd>Makes the given input lowercase.</dd>
+        <dd><em>Example:</em> <code>$lower(1)</code> with <code>1</code>
+            referring to <code>Fremily</code> turns into <code>fremily</code>.</dd>
+        
+        <dt><a name="func-upper"><code>$upper(&lt;identifier&gt;)</code></a></dt>
+        <dd>Makes the given input uppercase.</dd>
+        <dd><em>Example:</em> <code>$upper(1)</code> with <code>1</code>
+            referring to <code>Fremily</code> turns into <code>FREMILY</code>.</dd>
+        
+        <dt><a name="func-trim"><code>$trim(&lt;input&gt;)</code></a></dt>
+        <dd>Removes leading and trailing space (U+0020 and lower, using the
+            <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#trim%28%29">String.trim()</a> method).</dd>
+        <dd><em>Example:</em> <code>$trim( abc )</code> turns into <code>abc</code>.</dd>
+        
+        <dt><a name="func-quote"><code>$quote(&lt;input&gt;,[quote character])</code></a></dt>
+        <dd>Add quotes around the input. Any quotes in input will be doubled.
+            A custom quote character can be specified, by default a double-quote
+            (<code>"</code>) is used.</dd>
+        <dd><em>Example:</em> <code>$quote(51° 28' 38" N)</code> turns into
+            <code>"51° 28' 38"" N"</code> and <code>$quote(51° 28' 38" N,')</code>
+            turns into <code>'51° 28'' 38" N'</code>.</dd>
+        
+        <dt><a name="func-replace"><code>$replace(&lt;input&gt;,&lt;search&gt;,&lt;replace&gt;,[method])</code></a></dt>
+        <dd>Search and replace in text.</dd>
+        <dd>Especially when using Regex, remember
+            escaping <code>\</code> (<code>\\</code>) and <code>$</code> (<code>\$</code>)
+            when they should e.g. be used in regex rather than interpreted as special Custom Command characters.
+            Instead of escaping each special character individually, you can also
+            use <a href="#escaping">Literal Text</a>.</dd>
+        <dd>Methods are:
+            <ul style="margin-top:0">
+                <li><em>Not specified</em> - Literal case-insensitive search</li>
+                <li><code>cs</code> - Literal case-sensitive search</li>
+                <li><code>reg</code> - Regular Expression search</li>
+                <li><code>regRef</code> - Regular Expression search, with references to groups via <code>\$1</code><br />
+                    Note: The "replace" text basicially gets fed to the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-">String.replaceAll()</a> method as "replacement". The <code>$1</code> in this case does not refer to a Custom Command replacement, but something that the replaceAll() method uses, so it needs to be escaped in the Custom Command function, either by using <code>\$1</code> or using <a href="#escaping">Literal Text</a>. In addition, if <code>$</code> or <code>\</code> should show up literally instead of being interpreted by the replaceAll() method then they need to be escaped again (e.g. <code>$replace(..,..,Dollar: \\\$1 Ref: \$1,regRef)</code>, whereas <code>Dollar: \$1 Ref: $1</code> would be given to the replaceAll() method).</li>
+                <li><code>regFirst</code>, <code>refFirstRef</code> - Same as above, but only replace first occurence</li>
+                <li><code>regCustom</code> - Regular Expression search, the replace parameter has access to match values and is
+                    executed for each match (<code>$1-</code> full match, <code>$(g1)</code> first group in the search regex
+                    if available, <code>$(g2)</code> second group, ..).</li>
+                <li><code>regFunc</code> - Regular Expression search, the replace must be the name
+                    of a Custom Replacement which is called with the same values as <code>regCustom</code>
+                    (doesn't always work in Custom Commands, can use <code>regCustom</code>
+                    with e.g. <code>$(_&lt;name&gt;,$1-)</code> instead).</li>
+            </ul>
+        </dd>
+        <dd><em>Example:</em> <code>$replace(A b and another B,b,bee)</code> turns into <code>A bee and another bee</code></dd>
+        <dd><em>Example:</em> <code>$replace(Was timed out for 30 seconds,.*?(\\d+) seconds,Number of seconds: \$1,regRef)</code> turns into <code>Number of seconds: 30</code></dd>
+        <dd><em>Example:</em> <code>$replace($1-,$"~([a-z]+)~",<span style="text-decoration: underline">$replace($(g1),$"(\w)",$"$1+",regRef)</span>,regCustom)</code> adds <code>+</code> behind every character surrounded by <code>~</code> (the inner <code>$replace()</code> is in the <code>replace</code> parameter and executed for each match)</dd>
+        
+        <dt><a name="func-rand"><code>$rand([output1],[output2],[output3],..)</code></a></dt>
+        <dd>Randomly chooses one of the outputs.</dd>
+        <dd><em>Example:</em> <code>$rand(cheesecake,strawberry cake,$1-)</code>
+            with <code>1-</code> referring to <code>apple pie</code> turns into
+            either <code>cheesecake</code>, <code>strawberry cake</code> or
+            <code>apple pie</code>.</dd>
+        
+        <dt><a name="func-randnum"><code>$randnum(&lt;from&gt;,&lt;to&gt;)</code> or <code>$randnum(&lt;to&gt;)</code></a></dt>
+        <dd>Randomly chooses a number in the given range (inclusive). If only
+            one number is given, it the range is 0 to the given number. If the
+            "from" is not a number, it defaults to 0, if the "to" is not a
+            number it defaults to a really big number.</dd>
+        <dd><em>Example:</em> <code>$randnum(600,800)</code> chooses a random
+            number between 600 and 800.</dd>
+        <dd><em>Example:</em> <code>$randum($$1)</code> chooses a random number
+            between 0 and what is the first parameter.</dd>
+        
+        <dt><a name="func-calc"><code>$calc(&lt;simple math expression&gt;)</code></a></dt>
+        <dd>Limited support for performing calculations, with binary operators
+            (<code>* / % + -</code>) and functions (<code>sqrt() sin() cos() tan()</code>).</dd>
+        <dd><em>Example:</em> <code>//echo $calc(2^3) $calc( (3+4\) / 2)</code>
+            when entered into the inputbox returns <code>8 3.5</code> (note the
+            parentheses in the second, as well as how the closing parenthesis
+            needs to be escaped).</dd>
+        <dd><em>Example:</em> <code>//echo $calc($"sqrt(81) * (1 + 4/2)")</code> outputs <code>27</code>
+            (this uses <code>$" "</code> to specify <a href="#escaping">literal text</a>
+            instead of escaping the parenthesis with a backslash).</dd>
+        
+        <dt><a name="func-round"><code>$round(&lt;number&gt;,[numDecimalPlaces],[roundingMode],[minNumDecimalPlaces])</code></a></dt>
+        <dd>Round a number to the given amount of decimal places,
+            with a <a href="https://docs.oracle.com/javase/7/docs/api/java/math/RoundingMode.html">rounding mode</a>
+            of empty (half-up), <code>ceil</code>, <code>floor</code>,
+            <code>up</code>, <code>down</code> or <code>half-down</code>, with
+            the given number of minimum decimal places (fills with 0).</dd>
+        <dd><em>Example:</em> <code>//echo $round(1.335)</code> outputs <code>1</code></dd>
+        <dd><em>Example:</em> <code>//echo $round(1.335,2)</code> outputs <code>1.34</code></dd>
+        <dd><em>Example:</em> <code>//echo $round(345.5,3,floor,3)</code> outputs <code>345.500</code> (fills up to 3 decimal places)</dd>
+        <dd><em>Example:</em> <code>//echo $round(2.565,2,,2)</code> outputs <code>2.57</code> (uses default rounding mode)</dd>
+        
+        <dt><a name="func-urlencode"><code>$urlencode(&lt;input&gt;)</code></a></dt>
+        <dd>Uses <a href="https://docs.oracle.com/javase/8/docs/api/java/net/URLEncoder.html#encode-java.lang.String-java.lang.String-">UrlEncoder.encode()</a>
+            to prepare the input to be used in a URL query parameter.</dd>
+        <dd><em>Example:</em> <code>$urlencode($(msg))</code> in User Dialog
+            encodes the currently selected message.</dd>
+        
+        <dt><a name="func-sort"><code>$sort(&lt;input&gt;,[type],[separator])</code></a></dt>
+        <dd>Sorts the given input alphabetically. The sort type can be "abc"
+            (default) for case-insensitive sorting or "Abc" for case-sensitive
+            sorting. The separator is what separates the parts that are sorted,
+            by default a space.</dd>
+        <dd><em>Example:</em> <code>$sort(B c a)</code> turns into <code>a B c</code></dd>
+        <dd><em>Example:</em> <code>$sort(B c a,Abc)</code> turns into <code>B a c</code></dd>
+        
+        <dt><a name="func-input"><code>$input([message],[intial],[type])</code></a></dt>
+        <dd>Requests text input from the user by showing an input dialog.
+            Execution is paused while the dialog is open. The user may enter an
+            empty value (the result is just empty) or cancel the dialog (the
+            command will not be executed).</dd>
+        <dd>The <code>message</code> is shown in the input dialog, the <code>initial</code>
+            text will already be in the input field when the dialog opens. The
+            <code>type</code> can be set to <code>simple</code> to use the
+            previously default simple input dialog.</dd>
+        <dd><em>Example:</em> <code>$input()</code></dd>
+        <dd><em>Example:</em> <code>$input(Enter a number please)</code></dd>
+        
+        <dt><a name="func-datetime"><code>$datetime([format],[timezone],[locale],[unix time])</code></a></dt>
+        <dd>Outputs the current date/time. You can optionally give a format
+            pattern (based on <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#patterns">DateTimeFormatter</a>),
+            a timezone (based on <a href="https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html">ZoneId</a>,
+            although something like "New York" should also work) and a locale
+            (a language tag such as "en"). The optional unix time parameter must
+            be in milliseconds.</dd>
+        <dd>Predefined formats:
+            <ul style="margin-top:0">
+                <li>Short: <code>date</code>, <code>time</code>, <code>datetime</code></li>
+                <li>With timezone: <code>date2</code>, <code>time2</code>, <code>datetime2</code></li>
+                <li>Locale-specific: Append <code>_short</code>, <code>_medium</code>,
+            <code>_long</code> or <code>_full</code>, e.g. <code>datetime_full</code></li>
+            </ul>
+        </dd>
+        <dd>
+            <em>Examples:</em>
+            <dl style="margin-top:0">
+                <dt><code>$datetime()</code></dt>
+                <dd><code>Wednesday, March 13, 2019 3:11:48 PM CET</code></dd>
+                <dd>(Default format depends on the locale, in this case using the system default.)</dd>
+                
+                <dt><code>$datetime(,,de)</code></dt>
+                <dd><code>Mittwoch, 13. März 2019 15:12 Uhr MEZ</code></dd>
+                <dd>(Default format depends on the locale, in this case explicitly specified.)</dd>
+                
+                <dt><code>$datetime(time)</code></dt>
+                <dd><code>23:31:27</code></dd>
+                <dd>(Using one of the pre-defined formats "<code>time</code>".)</dd>
+                
+                <dt><code>$datetime(datetime2,Vancouver)</code></dt>
+                <dd><code>2019-03-12 15:31:45 PDT GMT-0700</code></dd>
+                <dd>(Using the more verbose "<code>datetime2</code>" pre-defined format, with a timezone specified.)</dd>
+                
+                <dt><code>$datetime(datetime_full,Rome,it)</code></dt>
+                <dd><code>mercoledì 13 marzo 2019 15.32.03 CET</code></dd>
+                <dd>(Using one of the locale-specific pre-defined formats, with timezone and locale specified.)</dd>
+                
+                <dt><code>$datetime(,london)</code></dt>
+                <dd><code>Wednesday, March 13, 2019 2:16:36 PM GMT</code></dd>
+                <dd>(Empty format to be able to specify timezone.)</dd>
+                
+                <dt><code>$datetime(HH:mm:ss zzzz,Tokyo,en)</code></dt>
+                <dd><code>07:50:20 Japan Standard Time</code></dd>
+                <dd>(Output is usually based on your system language, but you
+                    can also explicitely specify it.)</dd>
+                
+                <dt><code>$datetime(eeee\, dd. MMMM yyyy,,de)</code></dt>
+                <dd><code>Dienstag, 12. März 2019</code></dd>
+                <dd>(Custom format, <code>,</code> escaped since it normally
+                    separates function parameters, empty timezone in order to be
+                    able to specify locale.)</dd>
+                
+                <dt><code>$datetime(datetime2,Berlin,,1646937275000)</code></dt>
+                <dd><code>2022-03-10 19:34:35 MEZ GMT+0100</code></dd>
+                <dd>(Preset format, with timezone, no locale, with a time
+                    specified in milliseconds since 1970-01-01 00:00:00 UTC.)</dd>
+            </dl>
+        </dd>
+        
+        <dt><a name="func-json"><code>$json(&lt;input&gt;,&lt;output&gt;)</code></a></dt>
+        <dd>Parse the JSON in <code>&lt;input&gt;</code> and use in <code>&lt;output&gt;</code>,
+            where <code>$j(&lt;path&gt;,[default],[sub],...)</code> can be used to access specific values.
+            The JSON input could e.g. come from the <code>$request()</code>
+            function.</dd>
+        <dd>If the path isn't formatted correctly or the JSON is invalid the
+            command may not work. Check out the Debug Log (e.g. Extra - Debug
+            window) to find out what went wrong.</dd>
+        <dd>The <code>&lt;path&gt;</code> specifies what value to return from
+            the <code>$j(&lt;path&gt;,[default])</code> function, whereas the optional <code>[default]</code>
+            value will be returned if the path is not valid or points to an empty value.</dd>
+        <dd>In the <code>&lt;path&gt;</code> you specify keys of JSON objects
+            separated by <code>-></code> (e.g. <code>key1->key2->key3</code>) or
+            indices of JSON arrays in brackets <code>[ ]</code> (e.g. <code>key1[0]</code>
+            for the first element of the array key1). Additionally the brackets <code>[ ]</code>
+            can contain:
+            <ul>
+                <li><code>last</code> for the last entry of an array</li>
+                <li><code>size</code> to return the number of elements</li>
+                <li><code>sort</code> to sort an array (mainly works for strings)</li>
+                <li><code>filter:&lt;path&gt;[=regex]</code> to select only
+                    certain array items/object values based on whether a path exists or if a
+                    regex is provided the value of the path</li>
+                <li><code>collect:&lt;path&gt;[=regex]</code> iterates over an
+                    array/object values and for each element resolves the path and combines
+                    the resulting values into an array</li>
+                <li><code>combine:&lt;path&gt;[=regex]</code> iterates over an
+                    array/object values and for each element resolves the path and for each
+                    resulting value that is an array adds all of the array
+                    values into a single result array</li>
+                <li><code>unique</code> removes duplicate elements from an array</li>
+                <li><code>join[:delimiter]</code> turns an array into a string
+                    by joining all elements together using the given delimiter
+                    (or "<code>, </code>" if none is provided)</li>
+                <li><em>Note:</em> The regex and delimiter can be quoted using
+                    <code>'</code> (for example <code>[collect:abc='[a-z]+']</code>
+                    so that the <code>]</code> in the regex doesn't get mistaken
+                    as the end of the regex). To use a <code>'</code> in a quoted
+                    section you have to double it <code>''</code>.</li>
+            </ul></dd>
+            <dd>The optional <code>[sub]</code> values can contain additional <code>$j()</code>
+                replacements, which are applied to the result of the path or previous <code>[sub]</code>
+                parameter. If prefixed with <code>each:</code> it will be applied
+                to each element on an array/object and the result collected into
+                an array (for objects the <code>$(key)</code> replacement and
+                for arrays the <code>$(index)</code> replacement is available).</dd>
+        <dd><br /><em>Examples</em> with the following JSON as input:
+            <pre>
+    {
+        "books":[
+            {"title":"book1", "author":"author1", "tags":["tag1","tag2"]},
+            {"title":"book2", "author":"author2", "tags":["tag1"]},
+            {"title":"book3", "author":"author2", "tags":["tag1", "tag3"]},
+            {"title":"book4", "author":"author2"}
+        ],
+        "authors":{
+            "author1":{"name":"name1", "age":24},
+            "author2":{"name":"name2", "age":62}
+        },
+        "numBooks": 4,
+        "numAuthors": 2
+    }</pre>
+            <dl>
+                <dt><code>$json($get(var,j),There are $j(numBooks) books of $j(numAuthors) authors.)</code></dt>
+                <dt><code>$json($get(var,j),There are $j(books[size]) books of $j(books->[collect:author][unique][size]) authors.)</code></dt>
+                <dd><code>There are 4 books of 2 authors.</code></dd>
+                <dd>Reading the "num" values provided in the JSON or determining
+                    the same information from the "books" array.</dd>
+                
+                <dt><code>$json($get(var,j),The last book is called $j(books[last]->title) by $j(books[last]->author).)</code></dt>
+                <dd><code>The last book is called book4 by author2.</code></dd>
+                
+                <dt><code>$json($get(var,j),The first book is $j(books[0]))</code></dt>
+                <dd><code>The first book is {"author":"author1","title":"book1","tags":["tag1","tag2"]}</code></dd>
+                <dd>If the end of the specified path is a JSONArray or JSONObject
+                    it will be returned as a JSON encoded String.</dd>
+                
+                <dt><code>$json($get(var,j),$j(books[10]->title,Book not found))</code></dt>
+                <dd><code>Book not found</code></dd>
+                <dd>Since the index <code>10</code> does not exist, the default
+                    value <code>Book not found</code> is returned. If no default
+                    value is provided an empty string would be returned.</dd>
+                
+                <dt><code>$json($get(var,j),Books of author2: $j(books[filter:author=author2][collect:title]))</code></dt>
+                <dd><code>Books of author2: ["book2","book3","book4"]</code></dd>
+                
+                <dt><code>$json($get(var,j),Tags of author2: $j(books[filter:author=author2][combine:tags][unique]))</code></dt>
+                <dd><code>Tags of author2: ["tag1","tag3"]</code></dd>
+                
+                <dt><code>$json($get(var,j),Tags of author2: $j(books[filter:author=author2][combine:tags][unique][join]))</code></dt>
+                <dd><code>Tags of author2: tag1, tag3</code></dd>
+                
+                <dt><code>$json($get(var,j),$j(authors[collect:name][sort][join]))</code></dt>
+                <dd><code>name1, name2</code></dd>
+                
+                <dt><code>$json($get(var,j),$j(authors,,each:$(key): $j(name) \(age $j(age)\),$j([sort][join])))</code></dt>
+                <dd><code>author1: name1 (age 24), author2: name2 (age 62)</code></dd>
+                <dd>The <code>[sub]</code> parameters of <code>$j()</code> are used here:
+                    <pre>
+$j(
+    // Path to "authors" JSON object
+    authors,
+    // Skip the optional "[default]" parameter
+    ,
+    // Apply to each entry of "authors" and collect result in an array
+    each:$(key): $j(name) \(age $j(age)\),
+    // Sort and join array created from previous parameter
+    $j([sort][join])
+)</pre>
+                </dd>
+            </dl>
+            You can test these examples yourself if you store the JSON in the
+            variable "j" using the command <code>/set var j copyJSONfromabove</code>
+            and then use the <code>//echo $json($get(var,j),...)</code> command
+            in the chat inputbox
+            to output an info message with the result in chat. Pasting the JSON
+            directly into the <code>$json()</code> function would require
+            escaping the <code>,</code> characters to work.
+        </dd>
+    </dl>
+    
+    <p>The following functions are only available in some contexts:</p>
+    
+    <dl class="defList">
+        <dt><a name="func-is"><code>$is(&lt;match input&gt;)</code></a></dt>
+        <dd>Outputs <code>true</code> if the match succeeds, nothing otherwise.
+            The <code>match input</code> is in the <a href="help-settings.html#Highlight_Matching">Highlight</a>
+            format, although what can actually be matched against depends on
+            where the command is ran from, for example the user or message text
+            is only available from the User Dialog or User Context Menu.</dd>
+        <dd><em>Example:</em> <code>$if($is(mystatus:bm),I'm a mod,Not a mod)</code>
+            will output <code>I'm a mod</code> in channels where you are the
+            broadcaster or a moderator, <code>Not a mod</code> otherwise.</dd>
+        
+        <dt><a name="func-get"><code>$get(&lt;settingName&gt;,[key])</code></a></dt>
+        <dd>Returns the value of a setting. Different setting types return
+            differently formatted values. There is no comprehensive list of
+            settings, unless you count the <a href="https://github.com/chatty/chatty/blob/master/src/chatty/SettingsManager.java">Chatty source</a>.</dd>
+        <dd>One intended use for this is the special setting <code>var</code>,
+            where you can set a string value using setting commands
+            (<code>/set var foo bar</code>) and then retrieve the value with
+            this function (<code>$get(var,foo)</code> returns <code>bar</code>).</dd>
+        <dd><em>Example:</em> <code>//echo $get(username)</code> returns the
+            name you are logged into Chatty with.</dd>
+        <dd><em>Example:</em> <code>$if($get(ontop),ONTOP)</code> will return
+            <code>ONTOP</code> only if "View - Always on top" is enabled.</dd>
+        
+        <dt><a name="func-request"><code>$request(&lt;url&gt;,[options])</code></a></dt>
+        <dd>Performs a GET request on the given http/https URL and returns the
+            body of the reponse interpreted as UTF-8 encoded text. If an error
+            occurs the response will be empty.</dd>
+        <dd>Options:
+            <ul>
+                <li><code>error</code> - A request error will return an error
+                    message instead of an empty response.</li>
+                <li><code>trim</code> - Remove leading and trailing space from
+                    the request result. This may be useful if a request returns
+                    any spaces or linebreak characters that cause issues with
+                    what you're using it with. Same as the <a href="#func-trim"><code>$trim()</code></a>
+                    function.</li>
+            </ul></dd>
+        <dd><em>Note:</em> Normally Custom Commands are performed instantaneously, however the
+            replacements for any Custom Command that contains the <code>$request()</code>
+            function will be performed asynchronously so that it can complete
+            the request without freezing the GUI. This means the result of the
+            Custom Command may be run seconds or more later.</dd>
+        <dd><em>Tip:</em> Open "Extra - Debug window" to view debug output of
+            the requests being performed.</dd>
+    </dl>
+    
+    <p class="note"><em>Tip:</em> Enter e.g. <code>//echo $datetime()</code>
+        into the chat inputbox to test a function directly, use arrow up/down
+        keys to cycle through previous inputs. Of course you won't be able to
+        use some context dependant parameters this way.</p>
+
+    <p>Examples of Custom Commands with these functions:</p>
+    <dl class="defList">
+        <dt><code>/slap /me slaps $$1 around a bit with a large $if(2,$2,trout)</code></dt>
+        <dd>Entering <code>/slap Nightbot</code> turns into <code>/me slaps Nightbot around a bit with a large trout</code></dd>
+        <dd>Entering <code>/slap Nightbot cheesecake</code> turns into <code>/me slaps Nightbot around a bit with a large cheesecake</code></dd>
+        
+        <dt><code>/mt /openUrlPrompt http://multitwitch.tv/$$join(1-,/)</code></dt>
+        <dd>Entering <code>/mt</code> outputs an "insufficient parameters" message
+            because the <code>$$join</code> is required to return something,
+            which it can't from the identifier <code>1-</code> if there are no
+            parameters</dd>
+        <dd>Entering <code>/mt joshimuz lotsofs</code> opens the URL <code>http://multitwitch.tv/joshimuz/lotsofs</code></dd>
+    </dl>
+    
+    <p class="note"><em>Note:</em> A backslash can be used to escape parenthesis
+        in function parameters. Example: <code>$if(streamuptime,$(streamuptime),(n/a\))</code>.
+        In this example only the closing one after <code>n/a</code> has to be
+        escaped, because the opening one doesn't have a special meaning in this
+        context and the ones around <code>streamuptime</code> have a special
+        meaning that takes precedence (opening/closing the replacement).</p>
+    
+    <h3><a name="custom-replacements">Custom Replacements</a></h3>
+    <p>You can create your own identifiers for replacements by adding an entry
+        to the Custom Commands list starting with an underscore:</p>
+    
+    <p><code>_m $ifeq(1,$(chan),,$$1: )</code></p>
+    
+    <p>Instead of a command, this creates an identifier that can be used in a
+        replacement:</p>
+    
+    <p><code>/faq $(_m)FAQ: https://pastebin.com/KySx3KDu</code></p>
+    
+    <p>When the <code>/faq</code> command is run, the <code>$(_m)</code> gets
+        replaced with whatever is defined in <code>_m</code>, in this case it
+        creates a mention if the first parameter isn't equal to the current
+        channel.</p>
+    
+    <p>The data that can be accessed via replacements is the same as in the
+        command it is used in, so in this example the text provided after the
+        <code>/faq</code> is available via the <code>$1-</code> replacement.</p>
+    
+    <p>Optionally you can also provide a second parameter in a Custom Replacement
+        that overwrites the default value of the <code>$1-</code> replacement:</p>
+    
+    <p><code>/faq $(_m,$(custom-nick))FAQ: https://pastebin.com/KySx3KDu</code></p>
+    
+    <p>This will make whatever value is contained in <code>$(custom-nick)</code>
+        available in <code>$1-</code> instead of the default.</p>
+    
+    <p class="note"><em>Note:</em> Custom Replacement identifiers always start
+        with an underscore.</p>
+    <p class="note"><em>Note:</em> Custom Replacements don't work when placed
+        inside eachother. So for example in <code>_abc Abc: $(_m)</code> the <code>$(_m)</code> will
+        always be empty (whether it's defined in the Custom Commands list or not).</p>
+    
+    
+    <h2><a name="menus">Custom Context Menus / User Dialog Buttons</a></h2>
+    <ul>
+        <li><a href="#commands-list">Format 1: List Custom Command Names</a></li>
+        <li><a href="#inline-commands">Format 2: Inline-Commands</a></li>
+        <li><a href="#submenus">Format 3: Submenus</a></li>
+        <li><a href="#separators">Separators</a></li>
+        <li><a href="#shortcuts">Shortcuts</a></li>
+        <li><a href="#positioning">Positioning</a></li>
+        <li><a href="#label-commands">Dynamic Labels</a></li>
+        <li><a href="#menu-restrictions">Optional Menu Entries</a></li>
+        <li><a href="#special-commands">Special Commands</a></li>
+    </ul>
+    
+    <p>Under <code>Settings - Commands</code> there are several settings that
+        allow you to add additional entries/buttons in a few different places:</p>
+    
+    <dl class="dl-settings">
+        <dt>User Context Menu</dt>
+        <dd>Entries get appended to the menu that opens when you right-click on
+            a user in chat or the userlist.</dd>
+        
+        <dt>Channel Context Menu</dt>
+        <dd>Entries get appended to the menu that opens when you right-click on
+            the chat.</dd>
+        
+        <dt>Streams Context Menu</dt>
+        <dd>Entries get appended to any menu that contains a "Twitch Stream"
+            submenu (for example the User Context Menu, Live Streams Dialog
+            Context Menu).</dd>
+        
+        <dt>User Dialog Buttons</dt>
+        <dd>Defines which buttons are visible in the dialog that opens when you
+            click on a user in chat (or double-click in the userlist). Note
+            the <a href="#special-commands">Special Commands</a> you can use for
+            this setting.</dd>
+    </dl>
+    
+    <p>All those settings share the same format (with some slight differences
+        noted separately). A setting can contain several lines, and each line can contain one of the
+        available formats:</p>
+    
+    <div class="codeblock"><pre>
+/Ban[B] /Unban[U] 5s[1] 2m[2] 10m[3] 30m[4]
+Spoiler[S]=/timeout $$1 600 No spoilers
+
+@b1
+./Message /Report
+.Warn User=$$1: Plz no spammerino</pre></div>
+    
+    <p class="note"><em>Note:</em> Command Names/Labels may not contain the
+        characters <code>[ ] { }</code> except for their special meaning of
+        <a href="#shortcuts">Shortcuts</a> and <a href="#positioning">Positioning</a>.</p>
+    
+    
+    <h3><a name="commands-list">Format 1: List Custom Command Names</a></h3>
+    <p>You can list the name of several Custom Commands in one line, for example:</p>
+    
+    <p><code>/Slap /Permit</code></p>
+    
+    <p>Which means the command with the name "slap" will be added first, then
+        "permit" after that. These must be existing commands, either pre-defined
+        Chatty commands or Custom Commands you added yourself.</p>
+    
+    <p>Note that you may only specify the command names, no parameters. The
+        parameters will be supplied automatically depending on the <a href="#parameters-context">context</a>. For
+        example when you have <code>/Slap</code> added to the User Dialog and
+        then open the dialog on the user <code>tailsgaming</code> and click the
+        "Slap" button, it's as if you entered <code>/slap tailsgaming</code>.</p>
+    
+    <dl class="defList">
+        <dt><code>/Slap /Permit</code></dt>
+        <dd>Command names should be prepended with a forward slash <code>/</code>
+            (although it may also work without).</dd>
+        
+        <dt><code>//Slap</code></dt>
+        <dd>Prepending two forward slashes <code>//</code> will put the command
+            in the special submenu <code>More..</code> (for Context Menus) or in
+            a second line of buttons (for the User Dialog).</dd>
+        
+        <dt><code>/Set_color</code> is displayed as <code>Set color</code></dt>
+        <dd>Underscores in commands are replaced with a space for display in a
+            Context menu or on a button.</dd>
+    </dl>
+
+    <p>In the same line, you can also specify <strong>Timeout Buttons</strong>:</p>
+    <dl class="defList">
+        <dt><code>5 2m 10m</code></dt>
+        <dd>Times are added just like Custom Commands, except that they must not
+            start with a slash <code>/</code> and must be a number followed by
+            an optional suffix. They are interpreted as seconds by default,
+            unless you add a suffix:
+            <code>s</code> - seconds, <code>m</code> - minutes,
+            <code>h</code> - hours, <code>d</code> - days.</dd>
+        <dt><code>120s 120</code> is displayed as two buttons with the label <code>120s</code> and <code>2m</code></dt>
+        <dd>Both definitions create a button with a 120 seconds timeout, however
+            if you use a suffix, then the definition is used as button label
+            directly, otherwise the label is automatically created based on the
+            time.</dd>
+    </dl>
+    
+    <h3><a name="inline-commands">Format 2: Inline-Commands</a></h3>
+    <p>You can define commands directly in the setting, without having to add
+        them as a named Custom Command first. The syntax for this is:</p>
+    
+    <p><code>&lt;label with spaces&gt;=&lt;what the command should do&gt;</code></p>
+    
+    <p>Note that as opposed to Custom Command names the label may contain spaces,
+        and for that purpose the separating character is an equals sign <code>=</code>.
+        The label may not contain an equals sign itself. Example:</p>
+    
+    <p><code>Warn User=$$1: Plz no spammerino</code></p>
+    
+    <p>As with Custom Commands, the <code>&lt;what the command should do&gt;</code>
+        part can contain <a href="#replacements">replacements</a> using
+        identifiers for the current <a href="#parameters-context">context</a>.</p>
+    
+    <h3><a name="submenus">Format 3: Submenus</a></h3>
+    <p>Any line starting with <code>@</code> defines a custom submenu. Any
+        following lines that start with a dot <code>.</code> will then be put in
+        that menu (both command name lists and inline commands). For example:</p>
+    
+    <div class="codeblock"><pre>
+@Rules
+./No_Spam /No_Spoilers
+.Spoiler=/timeout $$1 600 no spoilers
+</pre></div>
+    
+    <p>For <strong>Context Menus</strong> you can add submenus with custom names
+        (only 1 level though), or even add entries to existing submenus by
+        specifying the name (for example <code>@Twitch Stream</code>).</p>
+    
+    <p>For <strong>User Dialog Buttons</strong> there are no named submenus,
+        however this notation can be used to put the buttons in separate rows.
+        Any submenu name starting with <code>a</code> will create a row on the
+        top, all other ones on the bottom. The menu name <code>a1</code> is the
+        default for buttons that don't have a menu defined, and <code>b1</code>
+        is the default for the <code>//Command</code> notation. Example:</p>
+    
+    <div class="codeblock"><pre>
+/Ban /Unban
+@a1
+.Spoiler=/timeout $$1 600 no spoilers
+@a2
+.5s[1] 2m[2] 10m[3] 30m[4]
+@b1
+./Slap
+</pre></div>
+    
+    <p>In this case the <code>Ban</code> and <code>Unban</code> commands are in
+        the default <code>a1</code> row, which means they are in the same row as
+        the <code>Spoiler</code> button (these are just different ways of
+        writing it). This also adds a second top row <code>a2</code> for the
+        timeout buttons as well as a single bottom row for the <code>Slap</code>
+        command.</p>
+    
+    
+    <h3><a name="separators">Separators</a></h3>
+    <p>In <strong>Context menus</strong> you can add separators between entries.
+        When you use a <a href="#commands-list">commands list</a>, you can add
+        a vertical bar (<code>|</code>) between entries.</p>
+    
+    <p>You can also add a separator by adding a single dash (<code>-</code>) on
+        it's own line.</p>
+    
+    <p>Example (separator before <code>Timeout</code> menu, before <code>Message</code>
+        and before <code>Vods</code>):</p>
+    <div class="codeblock"><pre>
+/Ban /Purge
+-
+@Timeout
+.5s 10m
+-
+/Message /Report | /Vods
+</pre></div>
+    
+    <h3><a name="shortcuts">Shortcuts</a></h3>
+    <p>You can add a shortcut to the end of a label or command name by enclosing
+        it with <code>[ ]</code> (square brackets):</p>
+    
+    <p><code>/Ban[B]</code> or <code>Spoiler[S]=/timeout $$1 ..</code>
+        (depending on the line format)</p>
+    
+    <p>For <strong>User Dialog Buttons</strong> those can be used while the
+        dialog is open and focused. They are interpreted by
+        <a href="https://docs.oracle.com/javase/7/docs/api/javax/swing/KeyStroke.html#getKeyStroke%28java.lang.String%29">getKeyStroke()</a>
+        which means anything that function understands can be used. However
+        spaces are not allowed, so a plus sign <code>+</code> can be used instead.
+        Examples: <code>alt+Q</code>, <code>shift+1</code>, <code>INSERT</code></p>
+    
+    <p><em>Note:</em> The lowercase/uppercase matters for it to be parsed
+        correctly.</p>
+    
+    <p>Adding a vertical bar <code>|</code> after the shortcut will use the text
+        after it as label for the shortcut on the button (no spaces allowed). If
+        you include the <code>|</code> but don't specify any text, then no label
+        will be displayed for that shortcut:</p>
+    
+    <p><code>/Slap[NUMPAD1|Np1] /Permit[NUMPAD2|]</code></p>
+    
+    <p>For the User Dialog Buttons you can also include the string
+        <code>nokeylabels</code> anywhere in the setting, which removes any
+        labels for the shortcuts, unless they are explicitly defined.</p>
+    
+    <p>For <strong>Context Menus</strong> a single character can be used as a
+        Mnemonic, for quick access to menu entries. For this purpose, submenus
+        may also contain the same syntax: <code>@Rules[R]</code> (which would
+        allow you to open that submenu by pressing R on your keyboard when the
+        context menu is open).</p>
+    
+    
+    <h3><a name="positioning">Positioning</a></h3>
+    <p>You can define an absolute position in the menu the entry should appear
+        at by enclosing it with <code>{ }</code> (curly brackets) at the end of
+        the label or command name (but before a shortcut if there is any):</p>
+    
+    <p><code>Mention{1}=/insertword $$1: \</code></p>
+    
+    <p>This will put the <code>Mention</code> menu entry at the <em>second</em>
+        position in the menu (counting starts from 0).</p>
+    
+    <p>Another example:</p>
+    
+    <div class="codeblock"><pre>
+@Twitch Stream[s]
+.Videos{2}[v]=/openUrlPrompt https://www.twitch.tv/$$1/videos/past-broadcasts
+@Important{0}
+.Slap=/me slaps $$1 around a bit with a large trout
+@Really Important{0}
+.FAQ=FAQ: https://pastebin.com/KySx3KDu
+</pre></div>
+
+    <p>This puts the <code>Videos</code> entry into the pre-defined
+        <code>Twitch Stream</code> submenu at the third position in the submenu
+        (also adding the accelerator key <code>s</code> to the menu and
+        <code>v</code> to the entry).</p>
+    
+    <p>It also adds the <code>Important</code> submenu at the first position
+        (since it hasn't been added yet) and after that adds the
+        <code>Really Important</code> submenu at the first position as well,
+        moving down <code>Important</code>. This demonstrates that the
+        positioning is based on the current state of the menu, so it can matter
+        <em>when</em> you add entries with absolute positioning.</p>
+    
+    <h3><a name="label-commands">Dynamic Labels using Custom Commands</a></h3>
+    
+    <p class="note"><em>Note:</em> This feature must be enabled in the Settings
+        under "Commands" (otherwise replacements in labels have no effect).</p>
+    
+    <p>You can use Custom Command replacements in the label of <a href="#inline-commands">inline commands</a>
+        or submenus. The label is updated:</p>
+    
+    <ul>
+        <li>For context menus, when opening the menu</li>
+        <li>For the User Dialog, when performing an action that opens/updates
+            the dialog, like clicking a user in chat</li>
+    </ul>
+    
+    <p>For example if you have a counter command that increases a number, it
+        could show the current number in the menu entry label by reading it from
+        the settings via <a href="#func-get"><code>$get()</code></a>:</p>
+    
+        <div class="codeblock"><pre>
+Increase counter ($get(var,c))=/set2 var c $calc($get(var,c) + 1)
+</pre></div>
+    
+    <p>You can also use this to hide an entry, by adding a required replacement,
+        like <code>$$is(mystatus:M)</code>, which will cause the entire label to
+        be empty if you are not a mod in the channel and thus will not be added
+        to the menu. Just adding <code>$$is(mystatus:M)</code> will add <code>true</code>
+        if you are a mod, so you can wrap it in an <code>$if()</code> (in this
+        example it's a submenu called "Mod Menu"):</p>
+    
+        <div class="codeblock"><pre>
+@$if($$is(mystatus:M),Mod Menu)
+</pre></div>
+    
+    <p><em>Note:</em> Compared to <a href="#parameters-context">identifiers</a>
+        for regular commands, some information may be missing in the context of
+        labels and <a href="#menu-restrictions">restrictions</a>.</p>
+    
+    <h3><a name="menu-restrictions">Optional Menu Entries (Restrictions)</a></h3>
+    
+    <p class="note"><em>Note:</em> This feature must be enabled in the Settings
+        under "Commands" (otherwise added restrictions have no effect).</p>
+    
+    <p>You can add restrictions to individual menu entries or a group of
+        entries. The restriction is applied (entries added or removed):</p>
+    
+    <ul>
+        <li>For context menus, when opening the menu</li>
+        <li>For the User Dialog, when performing an action that opens/updates
+            the dialog, like clicking a user in chat</li>
+    </ul>
+    
+    <p>The restriction must always be on it's own line and start and
+        end with a square bracket, which contain a Custom Command that is
+        surrounded by spaces. If the Custom Command returns a non-empty value
+        the menu entries will show up, otherwise they are hidden.</p>
+    
+    <dl class="defList">
+        <dt><code>[ &lt;restriction using custom command&gt; ]</code></dt>
+        <dd>Only affects the following menu entry. A similar effect can be
+            achieved by using <a href="#label-commands">Label Commands</a>.</dd>
+        
+        <dt><code>[&lt;name&gt; &lt;restriction using custom command&gt; ]</code></dt>
+        <dd>Opens up a section, like an HTML tag. The <code>&lt;name&gt;</code>
+            is used to identify where the section ends. Different restrictions
+            can be nested inside eachother, causing them all to be applied to
+            the affected menu entries.</dd>
+        
+        <dt><code>[/&lt;name&gt;]</code></dt>
+        <dd>Ends a section that has the given name.</dd>
+    </dl>
+    
+    <p>Example:</p>
+    
+        <div class="codeblock"><pre>
+[mod $is(mystatus:M) ]
+@Modes
+.Emoteonly[E]=/emoteonly
+.Emoteonly Off[O]=/emoteonlyoff
+.Subsonly[S]=/subscribers
+.Subsonly Off[D]=/subscribersoff
+Clear[C]=/clear
+
+[ $ifeq($datetime(M),9,true) ]
+/Subtember
+[/mod]
+
+[ $is(chan:joshimuz\,botimuz) ]
+/JoshFAQ /JoshSub
+</pre></div>
+    
+    <p>The "Modes" submenu, the "Clear" command and the "Subtember" command only
+        show when you are a mod in the channel. The <a href="#func-is"><code>$is()</code></a>
+        function uses <a href="help-settings.html#Highlight_Matching">Highlight syntax</a>
+        and returns an empty value if it doesn't match. It's that Custom Command
+        part that defines the actual restriction, the "mod" in <code>[mod&nbsp;...&nbsp;]</code>
+        is arbitrarily named, it just has to match the closing <code>[/mod]</code>.</p>
+    
+    <p>The "Subtember" command has an additional requirement though, defined
+        directly above it, which uses the functions <a href="#func-ifeq"><code>$ifeq()</code></a> and <a href="#func-datetime"><code>$datetime()</code></a> to
+        only show the menu entry when the month is September.</p>
+    
+    <p>The "/JoshFAQ" and "/JoshSub" commands only show in the channel #joshimuz
+        or #botimuz. Note that the <code>\,</code> between the channel names
+        requires the backslash to <a href="#escaping">escape</a> the comma,
+        meaning it tells the Custom Command parser that the comma isn't meant as
+        a function parameter separator, but rather to separate the channels in
+        the Highlighting syntax.</p>
+    
+    <p><em>Note:</em> Compared to <a href="#parameters-context">identifiers</a>
+        for regular commands, some information may be missing in the context of
+        <a href="#label-commands">labels</a> and restrictions.</p>
+    
+    <h3><a name="special-commands">Special Commands</a></h3>
+    
+    <p>In the User Dialog Buttons setting you can use some special commands:</p>
+    <ul>
+        <li>Add the command <code>/modunmod</code> to ada a <strong>Mod/Unmod-Button</strong>
+            which automatically changes depending on the selected user and
+            whether you are the broadcaster on the channel (so the button
+            doesn't always show up).</li>
+        <li>The commands <code>/Automod_approve</code> and <code>/Automod_deny</code>
+            only appear as buttons when you opened the User Dialog by clicking
+            on the username of a message rejected by AutoMod.</li>
+    </ul>
+    
+    <p>To make use of these you only need to enter the command, you don't need
+        any parameters (Chatty will take care of that). For example simply add
+        <code>/Modunmod</code> or <code>Approve=/Automod_approve</code> to add
+        it to the layout (using the syntax shown on this help page). Chatty will
+        then recognize the command names and the buttons will only show up when
+        they are needed.</p>
+</body>
+</html>
+

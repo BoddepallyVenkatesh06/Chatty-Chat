@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chatty Help</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <h1><a name="top">Chatty (Version: 0.25)</a></h1>
+    <table>
+        <tr>
+            <td valign="top">
+                <strong>General usage</strong>
+                <ul class="menu">
+                    <li><a href="#title">Title and Tabs</a></li>
+                    <li><a href="#layouts">Layouts and Tabs</a></li>
+                    <li><a href="#shortcuts">Hotkeys</a></li>
+                    <li><a href="help-builtin_commands.html">Commands</a></li>
+                    <li><a href="#login">Twitch Login</a></li>
+                </ul>
+
+                <strong>Chat basics</strong>
+                <ul class="menu">
+                    <li><a href="#join">Joining Channels</a>
+                    <li><a href="#symbols">User Status Symbols</a></li>
+                    <li><a href="#userlist">Userlist</a></li>
+                    <li><a href="#favorites">Favorites / History</a></li>
+                    <li><a href="help-whisper.html">Whisper Feature</a></li>
+                </ul>
+                
+                <strong>Chat moderation / utility</strong>
+                <ul class="menu">
+                    <li><a href="#TAB_Completion">TAB Completion</a></li>
+                    <li><a href="#inputHistory">Input History</a></li>
+                    <li><a href="#userselection">User Selection Mode</a></li>
+                    <li><a href="#emoticons">Emoticons / Emote Dialog</a></li>
+                    <li><a href="#pausechat">Pause Chat / One-click moderation</a></li>
+                    <li><a href="#automod">AutoMod</a></li>
+                </ul>
+                
+                <strong>Chat customization</strong>
+                <ul class="menu">
+                    <li><a href="#highlight">Highlight</a></li>
+                    <li><a href="#ignore">Ignore</a></li>
+                    <li><a href="#userColors">User Colors</a></li>
+                    <li><a href="#customemotes">Custom Emotes</a></li>
+                    <li><a href="#customNames">Custom Usernames</a></li>
+                </ul>
+                
+                <strong>Stream features</strong>
+                <ul class="menu">
+                    <li><a href="#channelinfo">Channel Info / History</a></li>
+                    <li><a href="#notifications">Live Streams / Notifications</a></li>
+                    <li><a href="help-admin.html">Admin Dialog</a></li>
+                    <li><a href="help-livestreamer.html">Streamlink</a>
+                    <li><a href="help-srl.html">SpeedrunsLive (SRL)</a></li>
+                    <li><a href="#followers">Followers/Subscribers List</a></li>
+                    <li><a href="#streamhighlights">Stream Highlights / Markers</a></li>
+                    <li><a href="#streamchat">Stream Chat</a></li>
+                </ul>
+            </td>
+            <td valign="top">
+                <strong>Settings / Files</strong>
+                <ul class="menu">
+                    <li><a href="help-settings.html">Settings Help</a></li>
+                    <li><a href="help-setting_commands.html">Setting Commands</a></li>
+                    <li><a href="help-guide_folders.html">Files / Folders (Settings etc.)</a></li>
+                    <li><a href="#launch">Launch options</a></li>
+                    <li><a href="help-addressbook.html">Addressbook</a></li>
+                    <li><a href="help-custom_commands.html">Custom Commands</a></li>
+                </ul>
+                
+                <strong>About</strong>
+                <ul class="menu">
+                    <li><a href="help-releases.html">Release Information</a></li>
+                    <li><a href="help-about.html">About / License</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="help-standalone.html">Standalone Version Info</a></li>
+                    <li><a href="help-memory_usage.html">Concerning Memory Usage</a></li>
+                </ul>
+                
+                <strong>Issues</strong>
+                <ul class="menu">
+                    <li><a href="help-troubleshooting.html">Troubleshooting</a></li>
+                    <li><a href="help-report_issue.html">Report Issue</a></li>
+                </ul>
+
+                <strong>Guides</strong>
+                <ul>
+                    <li><a href="help-getting-started.html">Getting Started Guide</a></li>
+                    <li><a href="help-guide1.html">Run more than one instance of Chatty</a></li>
+                    <li><a href="help-guide2.html">What to do when getting login fails</a></li>
+                    <li><a href="help-guide_create_shortcut.html">Create shortcut (launch options/icon)</a></li>
+                    <li><a href="help-bouncer.html">Using a Bouncer</a></li>
+                    <li><a href="#custom-processes">Run Custom Processes</a></li>
+                    <li><a href="help-short_guides.html">More Guides..</a></li>
+                    <li><a href="help-local_subonly.html">Local Subonly</a></li>
+                </ul>
+                <p style="padding: 10px;">Also check out the official
+                    <a href="http://www.youtube.com/user/chattyclient">YouTube Channel</a>
+                    with guides and stuff.</p>
+            </td>
+        </tr>
+    </table>
+    <div id="patreon"></div>
+    
+    <h2>
+        <a name="title">Title and Tabs</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <img src="0_4_overview_top.png" alt="Top of the main Chatty window, explaining the data in the title and the meaning of TAB colors" />
+    <p>When in a channel, Chatty shows some information about that channel
+    in the titlebar, e.g.:<br /><cite>[40|59] - GTA:SA Speedruns (Grand Theft Auto: San Andreas)</cite></p>
+    <p>The first number is the number of people in the chat, the second is the
+    viewercount, followed by the current stream title and game. Anything other
+    than the number of people in the chat is requested from the Twitch API about
+    every two minutes.</p>
+    
+    <p>In addition, the titlebar will also show additional information, if enabled:</p>
+    <ul>
+        <li><code>Sub</code> for Subscriber-Only Mode</li>
+        <li><code>Slow: &lt;time&gt;</code> for Slowmode</li>
+        <li><code>R9k</code> for R9Kbeta Mode</li>
+        <li><code>EmoteOnly</code> for Emote-Only Mode</li>
+        <li><code>Shield</code> if Shield Mode is enabled (moderators only)</li>
+        <li>A language code if Broadcaster Language Mode is enabled</li>
+        <li><code>[FM]</code> indicates a websocket connection (<code>F</code>
+            for FrankerFaceZ, <code>M</code> for PubSub/Modlogs)</li>
+    </ul>
+    <p>You can toggle showing some information under <code>View - Options - Titlebar</code>.</p>
+    
+    <p>Note that the stream status (title/game, offline) can take a few minutes
+        to update, since it has to be requested from the Twitch API (which is
+        also heavily cached).</p>
+    
+    <h2>
+        <a name="layouts">Layouts and Tabs</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>A layout is the arrangement of tabs in the Chatty window and popouts,
+        which can be saved and restored later. Other GUI elements that aren't a
+        tab (e.g. the Settings Dialog or Emotes Dialog) are not considered a
+        part of a layout in this sense, so their location and size is determined
+        in other ways.</p>
+    
+    <p>You can open several tabs, which can be of basicially two different types:</p>
+    <ul>
+        <li>Channels and Whisper Tabs, which open as tabs by default.</li>
+        <li>Docked Dialogs, which open as a separate dialog by default, but can
+            be docked as a tab through their context menu (usually right-click).
+            This includes for example the Channel Info, Admin Panel and more.
+            <br /><br />
+            Note that these will only be considered as being part of the layout
+            when in their docked state. When not docked, these dialogs will use
+            the old system, which is affected by the settings under "Main - Settings - Window - Dialogs Location/Size".</li>
+    </ul>
+    <p>You can use drag&amp;drop on tabs in various ways:</p>
+    <ul>
+        <li>Move a tab within the same tab pane to change their order.</li>
+        <li>Move a tab to another tab pane.</li>
+        <li>Drop a tab in the middle of another tab pane to move it to that tab
+            pane.</li>
+        <li>Drop a tab on the side of another tab pane to create a split pane,
+            containing two tab panes side-by-side.</li>
+        <li>Drop a tab outside of any Chatty window to open it in a popout
+            (depending on the settings under "Main - Settings - Tabs").</li>
+    </ul>
+    <p>You can also open the tab context menu (right-click) to perform various
+        actions such as opening a popout or closing the tab.</p>
+    
+    <h3><a name="layouts-save-load">Save and Load Layouts</a></h3>
+    <p>You can save the current tabs, splits and popouts in a layout under
+        "View - Layouts". Saving a layout is a snapshot of the current state, so
+        if you make any changes that you wish to be saved, you'll have to save
+        it again (add a new layout or overwrite an existing one).</p>
+    
+    <p>If enabled ("Main - Settings - Main") the layout will automatically be
+        restored when restarting Chatty, which is separate from saving layouts
+        manually.</p>
+    
+    <p>Aside from loading layouts through the menu, you can also use commands:</p>
+    
+    <dl class="dl-settings">
+        <dt><code>/layouts add &lt;name&gt;</code></dt>
+        <dd>Add a new layout with the current state. If the layout already
+            exists, you will be asked whether you want to overwrite it. Example:
+            <code>/layouts add abc</code></dd>
+        
+        <dt><code>/layouts save &lt;name&gt;</code></dt>
+        <dd>Adds a new layout with the current state or overwrites it if the
+            layout already exists (without asking).</dd>
+        
+        <dt><code>/layouts remove &lt;name&gt;</code></dt>
+        <dd>Removes the given layout.</dd>
+        
+        <dt><code>/layouts load [-clm] &lt;name&gt;</code></dt>
+        <dd>Loads the given layout.</dd>
+        <dd>If no options are given (e.g. <code>/layouts load abc</code>) it
+            will open the load layout dialog.</dd>
+        <dd>Options can be given to define how to load the layout, which also
+            loads the layout immediately without showing the dialog. The options
+            are equivalent to what you can select in the dialog:
+            <ul>
+                <li><code>c</code> to keep the current channels open</li>
+                <li><code>l</code> to open the channels from the layout</li>
+                <li><code>m</code> to load the main window location/size</li>
+            </ul>
+            For example <code>/layouts load -c abc</code> keeps the current channels
+            open, but does not join the channels in the layout. The options can
+            also be empty, for example <code>/layouts load - abc</code> will not
+            open any channels or keep any channels open (but the rest of the
+            layout such as docked dialogs is still loaded).
+        </dd>
+        <dd>You can use <code>/layouts load -- -abc</code> if your layout name
+            begins with a <code>-</code> (in this case "-abc"), which opens the
+            dialog just as if you hadn't provided any options at all.</dd>
+    </dl>
+    
+    <h2>
+        <a name="shortcuts">Hotkeys</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>Default hotkeys which can't be changed:</p>
+    <ul>
+        <li><kbd>PageUp/PageDown</kbd> - Scroll up or down in chat</li>
+        <li><kbd>Arrow Up/Down</kbd> (with <kbd>Ctrl</kbd> for multline) - Go through <a href="#inputHistory">Input History</a></li>
+        <li><kbd>TAB</kbd> - For <a href="#TAB_Completion">TAB Completion</a></li>
+    </ul>
+    
+    <p>The following default hotkeys can be changed in the Settings:</p>
+    <ul>
+        <li><kbd>F1</kbd> - Open help</li>
+        <li><kbd>Ctrl-F</kbd> - Find text in chat</li>
+        <li><kbd>Ctrl-L</kbd> - Open Live Channels window</li>
+        <li><kbd>Ctrl-J</kbd> - Open dialog to join channel</li>
+        <li><kbd>Ctrl-E</kbd> - Open/close the Emoticon dialog</li>
+        <li><kbd>Ctrl-Tab/Ctrl-Shift-Tab</kbd> - Switch to next/previous tab</li>
+        <li><kbd>Ctrl-W</kbd> - Leave/close the active channel/close the popout</li>
+        <li><kbd>Ctrl-Space</kbd> - Toggle <a href="#userselection">User Selection Mode</a></li>
+        <li><kbd>F10</kbd> - Toggle Menubar</li>
+        <li><kbd>Ctrl-F10</kbd> - Toggle Inputbar</li>
+        <li><kbd>Shift-F10</kbd> - Toggle Userlist</li>
+        <li><kbd>F11</kbd> - Toggle "Fullscreen"-Mode (actually only removes the menubar and maximizes the window)</li>
+    </ul>
+    
+    <p>In the Settings you can configure hotkeys for many more functions than
+        are listed here.</p>
+    
+    <h2>
+        <a name="commands">Commands</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p><em>This has been moved to it's <a href="help-builtin_commands.html">own page</a></em></p>
+    
+    <h2>
+        <a name="login">Twitch Login</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>The login data consists of a <em>username</em> (your account name) and most
+        importantly an <em>access token</em>, which is sort of a revokable
+        password that can also have different types of access (scopes) associated with
+        it. You can see the full list of associated scopes under "Main - Account"
+        (hover over each entry for more information if available).</p>
+    
+    <p>If getting login data fails, read <a href="help-guide2.html">this guide</a>.
+        If your login was determined invalid, read <a href="#login-invalid">down below</a>.</p>
+    
+    <h3><a name="access">Add or remove access</a></h3>
+    <p>To change what Chatty is allowed to do, you need to request a new
+        access token. Go to <code>&lt;Main - Account&gt;</code>,
+        delete the login and request it again with the access scopes that you
+        want.</p>
+    
+    <h3><a name="login-security">Security</a></h3>
+    <p>The access token is saved in the <code>login</code> file in the settings
+        <a href="help-guide_folders.html">directory</a> and can thus be accessed
+        by anyone having access to your computer.
+    It allows anyone who obtains it to chat in your name and do the other things
+    that you have allowed Chatty to do. If you think the token may have been
+    compromised, please immediately go to your Twitch Settings subsection
+    <a href="http://www.twitch.tv/settings/connections">Connections</a>
+    and <em>revoke the accesss</em> there. This will make all tokens previously
+    requested for Chatty associated with that account invalid. You can then
+    request a new one for which Twitch will ask you to authorize Chatty again.</p>
+    
+    <h3><a name="login-invalid">Invalid Login</a></h3>
+    <p>If your login is determined invalid (either by checking it manually or
+    when Chatty performed an automatic check), this can mean one of two things:</p>
+    <ol>
+        <li>Your login is actually still valid, Twitch is just derping:
+            <ul>
+                <li>Sometimes the Twitch API won't recognize any login as valid,
+                    for a while. This is likely the reason if other users have
+                    the same issue at the same time.</li>
+                <li>How to proceed:
+                <ul>
+                    <li>In this case, requesting new login data from Twitch probably
+                        won't help at all. Go to <code>&lt;Main - Account&gt;</code>
+                        to open the <code>Login configuration</code> and click on <code>[Verify login]</code> a few times
+                        (with a few minutes in between attempts).</li>
+                    <li>If you are already connected to chat, you can just stay
+                        connected. Just try <code>[Verify login]</code> a bit later to
+                        be able to use the features that require Twitch
+                        authorization again.</li>
+                    <li>If <code>[Verify login]</code> keeps returning invalid,
+                        even after a while (especially without other users
+                        having the same issue), your login may actually be
+                        invalid.</li>
+                </ul></li>
+            </ul>
+        </li>
+        <li>Your login is actually invalid:
+            <ul>
+                <li>You have just requested login data and something went wrong, or it
+                    wasn't loaded properly from the settings.</li>
+                <li>The token was invalidated for some other reason.</li>
+                <li>How to proceed:
+                    <ul>
+                        <li>Go to <code>&lt;Main - Account&gt;</code> to open
+                            the login configuration (if you don't already have
+                            it open), click <code>[Remove login]</code>
+                            and create a new login.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    
+    <p>What happens when your login is no longer valid:</p>
+    <ul>
+        <li>You can't connect to chat anymore. If you are already connected, you
+            probably stay connected though.</li>
+        <li>Various features that require authentication may not work anymore,
+            such as showing live streams you follow or changing your stream
+            title.</li>
+    </ul>
+    
+    <h2>
+        <a name="join">Joining Channels</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>There are various ways of joining channels:</p>
+    <ul>
+        <li>The "Settings - Main - On start" setting for when Chatty is started</li>
+        <li>The "Main - Connect" dialog when connecting</li>
+        <li>The "Channels - Join Channel" dialog</li>
+        <li>The "Channels - Favorites / History" dialog</li>
+        <li>The <code>/join</code> <a href="help-builtin_commands.html#commands-chat">command</a></li>
+        <li>The "Channels - Live Channels" dialog context menu or (if configured
+            that way) via double-click or space while a stream is selected</li>
+        <li>Right-clicking a Stream Status Notification</li>
+        <li>The user context menu</li>
+        <li>Loading a <a href="#layouts">Layout</a></li>
+    </ul>
+    
+    <h3>Channel list format</h3>
+    <p>In places where you can enter a channel name you can specify several
+        channels by separating them with a comma. Channels can be entered with
+        or without leading <code>#</code>. A lot of Twitch links should also
+        work.</p>
+    
+    <p>Various special elements can be added that are turned into channels:</p>
+    <ul>
+        <li>Can include <a href="help-addressbook.html">Addressbook</a> categories,
+            e.g. <code>[vip]</code> to join all entries associated with the
+            "vip" category. Can restrict to just channel entries <code>[vip #]</code>
+            (would only get Addressbook entries such as "#joshimuz") or
+            non-channel entries <code>[vip !#]</code> (entries such as "joshimuz").
+            Note that both channel entries and non-channel entries are otherwise
+            handled the same, both would join "#joshimuz" in this example.</li>
+        <li>Instead of Addressbook categories <code>[*]</code> can be used for all
+            favorited channels (favorited under "Channels - Favorites / History").</li>
+        <li>Can also restrict to just live channels e.g. <code>[vip live]</code>,
+            <code>[vip # live]</code> or <code>[* live]</code> (only works for
+            live channels Chatty already knows the status for, such as followed
+            channels).</li>
+    </ul>
+    
+    <p>Example: <code>/join #joshimuz, esl_csgo, [mod], https://twitch.tv/esamarathon, [* live]</code></p>
+        (joins <code>#joshimuz</code>, <code>#esl_csgo</code>, any entries
+        associated with the <code>mod</code> Addressbook category, <code>#esamarathon</code>
+        and any favorited channels that are live and followed)
+    
+    <h2>
+        <a name="symbols">User Status Symbols</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>There are a few special symbols that are used for users in chat. These
+    are displayed in the userlist and - if usericons are disabled - also in chat:</p>
+    
+    <table class="compact" style="border-collapse: collapse;">
+        <tr>
+            <td class="symbol">~</td>
+            <td>The Broadcaster</td>
+        </tr>
+        <tr>
+            <td class="symbol">@</td>
+            <td>Moderator</td>
+        </tr>
+        <tr>
+            <td class="symbol">+</td>
+            <td>Turbo/Prime</td>
+        </tr>
+        <tr>
+            <td class="symbol">%</td>
+            <td>Subscriber</td>
+        </tr>
+        <tr>
+            <td class="symbol">$</td>
+            <td>Donated Bits</td>
+        </tr>
+        <tr>
+            <td class="symbol">^</td>
+            <td>Bot (as recognized by <a href="help-setting_commands.html#bots">local setting</a>, FFZ API and BTTV API)</td>
+        </tr>
+        <tr>
+            <td class="symbol">*</td>
+            <td>Global Moderator</td>
+        </tr>
+        <tr>
+            <td class="symbol">!</td>
+            <td>VIP</td>
+        </tr>
+        <tr>
+            <td class="symbol">&amp;</td>
+            <td>Staff, Admin</td>
+        </tr>
+    </table>
+    
+    <p>When you copy&amp;paste a message from chat that contains Badges, you may
+        also encounter the following symbols:</p>
+    
+    <table class="compact" style="border-collapse: collapse;">
+        <tr>
+            <td class="symbol">'</td>
+            <td>Addon Usericon</td>
+        </tr>
+        <tr>
+            <td class="symbol">?</td>
+            <td>Unknown Badge (for example special Twitch Badges that may only
+                be available for some time or in some channels)</td>
+        </tr>
+    </table>
+    
+    <p><a href="https://frankerfacez.com">FrankerFaceZ</a> provides a custom
+    mod icon for some channels. You can disable this in the settings if you
+    want to keep the default one for all channels.</p>
+    
+    <h2>
+        <a name="userlist">Userlist</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>The userlist on the side of the channel shows all users currently
+        considered to be in the channel.</p>
+    
+    <ul>
+        <li>A user gets added to the userlist..
+            <ul>
+                <li>..when the user says something in chat.</li>
+                <li>..when Chatty receives a JOIN from Twitch Chat for that user (or
+                    that user is on the received NAMES list).</li>
+            </ul>
+        </li>
+        <li>A user gets removed from the userlist..
+            <ul>
+                <li>..when Chatty receives a PART from Twitch Chat for that user.</li>
+            </ul>
+        </li>
+        <li>The userlist gets cleared entirely..
+            <ul>
+                <li>..when you close the channel (close the Tab).</li>
+                <li>..when you rejoin the channel (e.g. when reconnecting).</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>In order to receive JOIN/PART messages, the setting <code>Correct Userlist</code>
+        under <code>Settings - Advanced - Connection</code> has to be enabled.</p>
+    
+    <p><em>Note:</em> The userlist is not very reliable and should only be taken
+        as a rough estimate of who is currently in the channel. This is because:
+    </p>
+    
+    <ul>
+        <li>JOIN/PART messages are sent in batches and can be pretty delayed, so
+        so it may happen that a user who only just started showing up in the
+        userlist joined half a minute ago (or even already left again).</li>
+        <li>It can take some time for Twitch to send the userlist when you join
+        a channel. In big channels it may not be sent at all.</li>
+        <li>MOD/UNMOD messages are unreliable as well, so mod status in the
+        userlist may not always be correct. Twitch Chat has also been known to
+        sometimes spam MOD/UNMOD messages.</li>
+    </ul>
+    
+    <p>Also note that the userlist doesn't necessarily have to do with who
+        watches your stream. A user can be logged into chat without watching the
+        stream and vice versa. Overall, just don't take the userlist too
+        seriously.</p>
+    
+    <h2>
+        <a name="TAB_Completion">TAB Completion</a><a name="nickCompletion"></a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>When typing in the inputbox, you can use the following keys by default
+        (this can be changed in the <a href="help-settings.html#Completion">Completion settings</a>):</p>
+    <ul>
+        <li><kbd>TAB</kbd> to complete usernames</li>
+        <li><kbd>Shift-TAB</kbd> to complete Emoticons</li>
+    </ul>
+    <p>Once a completion is initiated, <kbd>TAB</kbd> and <kbd>Shift-TAB</kbd>
+        cycle forwards and backward through the results, or use the mouse.</p>
+
+    <p>Some prefixes always force a certain completion type (whether you use
+        <kbd>TAB</kbd> or <kbd>Shift-TAB</kbd>):</p>
+    
+    <ul>
+        <li>Prefixing <code>@</code> completes usernames (e.g. <code>@jo</code>)</li>
+        <li>Prefixing <code>/</code> completes command names</li>
+        <li>Prefixing <code>:</code> completes Emoji codes, and by default also Twitch Emotes (can be changed in the settings)</li>
+        <li>Prefixing <code>.</code> performs <a href="help-settings.html#TAB_Completion-custom">Custom completion</a></li>
+        <li>Certain commands such as <code>/ban</code> complete usernames for
+            their first parameter</li>
+        <li>Setting commands such as <code>/set</code> complete setting names
+            for their first parameter</li>
+    </ul>
+    
+    <p>Additionally, some prefixes will automatically initiate completion (this
+        too can be changed in the settings).</p>
+    
+    <h3>Further usage</h3>
+    <ul>
+        <li>Use <kbd>TAB</kbd> to cycle <em>forward</em> through results and
+            <kbd>Shift-TAB</kbd> to cycle <em>backwards</em> through results</li>
+        <li>Continue typing, send the message or move the cursor to end completion</li>
+        <li>Click on a result to choose it, or <kbd>Shift</kbd>-Click to insert
+            several results</li>
+        <li>Press ESC to go back to before completion</li>
+    </ul>
+    
+    <p>The found matches are all ordered alphabetically, except for nickcompletion
+    for which you can choose different types of sorting. By default nicknames use
+    predictive sorting, which means users who recently wrote a message or highlighted
+    you have a higher priority, increasing the chance that the users you want to
+    address appear as the first few matches.</p>
+    
+    <h3>Example: Nick Completion</h3>
+    <ul>
+        <li>Enter <code>z</code> in the editbox</li>
+        <li>Press <kbd>TAB</kbd> to complete as a nickname (assuming the <a href="help-settings.html#Completion">setting</a> is that)
+            <ul>
+                <li>On default settings, this may complete to <code>ze_tt</code>
+                with two other results</li>
+            </ul>
+        </li>
+        <li>Cycle through to <code>zMASKm</code> by:
+            <ul>
+                <li>Pressing <kbd>TAB</kbd>, which cycles fowards to <code>zMASKm</code></li>
+                <li>Or press <kbd>Shift-TAB</kbd> to cycle backwards to <code>zeblover</code>
+                    and <kbd>Shift-TAB</kbd> again to cycle to <code>zMASKm</code></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>Example: Emote Completion</h3>
+    <ul>
+        <li>Enter <code>dat</code> in the editbox</li>
+        <li>Press <kbd>Shift-TAB</kbd> to complete as an emote (assuming the <a href="help-settings.html#Completion">setting</a> is that)
+            <ul>
+                <li>On default settings, this may complete to <code>DatHass</code> with two other results</li>
+            </ul>
+        </li>
+        <li>Cycle through to <code>DatSheffy</code> by:
+            <ul>
+                <li>Pressing <kbd>TAB</kbd>, which cycles fowards to <code>DatSaunce</code>
+                    and <kbd>TAB</kbd> again to cycle to <code>DatSheffy</code></li>
+                <li>Or press <kbd>Shift-TAB</kbd> to cycle backwards
+                    to <code>DatSheffy</code></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>
+        <a name="inputHistory">Input History</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>Chatty provdes an input history for the chat input box that allows you to
+    call up lines you entered previously, to make it easier to e.g. repeat
+    commands with similiar parameters, repeat messages you send to chat or just
+    look up what you wrote before. You can even save messages to the history
+    that you haven't send yet to be able to send them later.</p>
+    
+    <p><em>Note:</em> On a multiline inputbox you have to hold <kbd>Ctrl</kbd>
+        to navigate through the Input History (changeable in Chat Settings).</p>
+    
+    <ul>
+        <li>How lines are saved in the history:
+            <ul>
+                <li>Send a message or enter a command</li>
+                <li>Press <kbd>Down-Arrow</kbd> after entering/editing a message
+                (which saves it to the history, but also clears the input box)</li>
+                <li>Identical lines already in the history are removed (or you
+                can think of it being moved to the latest position)</li>
+            </ul>
+        </li>
+        <li>Using the history:
+            <ul>
+                <li>You can navigate backwards and forwards through the history by
+                    pressing <kbd>Up-Arrow</kbd> and <kbd>Down-Arrow</kbd>.</li>
+                <li>Pressing <kbd>Up-Arrow</kbd> when you already entered some
+                text replaces that with the latest history item.</li>
+                <li>Pressing <kbd>Down-Arrow</kbd> when you already entered some
+                text clears the input box and but also saves what you entered to
+                the history (as mentioned above).</li>
+                <li>When you navigated to a history item and edited it:
+                    <ul>
+                        <li>Pressing <kbd>Up-Arrow</kbd> will move to the previous
+                            history item, allowing you to then press <kbd>Down-Arrow</kbd>
+                        again to go back to the unedited history item</li>
+                        <li>Pressing <kbd>Down-Arrow</kbd> will act as if you
+                        entered a completely new line and add the edited item
+                        to the history and clear the input box</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>
+        <a name="channels">Joining more than one channel</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p><em>This does not apply anymore since Twitch changed their system to use
+        IRCv3 capabilities. Joining several channels does not have any drawbacks.</em></p>
+    
+    <h2>
+        <a name="favorites">Favorites / History</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>If enabled, the history automatically saves channels you join and when
+    you last joined them. By default channels expire from the history after
+    30 days of not joining them (can be changed).</p>
+    <p>You can also add channels from the history or any
+    you enter manually to the favorites, which will always be kept until you
+    remove them yourself.</p>
+
+    <h2>
+        <a name="highlight">Highlight</a>
+        <a href="#top" class="top">[back to menu]</a>
+     </h2>
+    <p>The highlight system allows you to add words or phrases that make chat
+    messages appear in another color and appear in a separate window, which you can
+    open under <code>View - Highlights</code> (you can clear the highlights window
+    in it's context menu).</p>
+    <div class="moreInfo">More information: <a href="help-settings.html#Highlight">Highlight Settings</a></div>
+    
+    <h2>
+        <a name="ignore">Ignore</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>The ignore system works very similiar to the highlight system, just that
+        it hides messages instead of highlighting them. They however also get
+        added to a separated window, which you can open under <code>View - Ignored</code>
+        (you can clear the messagess in the window in it's context menu).</p>
+    
+    <p>Right-click on a user in chat to open the User Context Menu, where you
+        can ignore or unignore that user from the <code>Miscellaneous</code>
+        submenu. You can view and edit the list of ignored users in the settings.</p>
+    
+    <div class="moreInfo">More information: <a href="help-settings.html#Ignore">Ignore Settings</a></div>
+
+    <h2>
+        <a name="userColors">User Colors</a>
+        <a href="#top" class="top">[back to menu]</a>
+     </h2>
+    <p>The color of a user is displayed in the User Info Dialog. Color Names
+    are used where possible, HTML Color Codes are displayed in the Tooltip.
+    Colors with asterisk (*) are default colors (the user hasn't set one
+    or hasn't said anything during this session yet). A color in parentheses
+    means it's the original color, while the other color is the corrected one
+    that is actually displayed.</p>
+    <h3>Corrected Colors</h3>
+    <p>Chatty attempts to make colors more readable automatically by changing
+    them to increase contrast. This doesn't work very well though, although it
+    should work for extreme cases like white on white or black on black.</p>
+    
+    <h3>Custom Colors</h3>
+    <p>You can also specify custom colors for certain users or types of users
+    in the settings. Custom colors are indicated by two asterisks (**) in the
+    User Info Dialog.</p>
+    
+    <div class="moreInfo">More information: <a href="help-settings.html#Usercolors">Usercolor Settings</a></div>
+    
+    <h2>
+        <a name="emoticons">Emoticons / Emote Dialog</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>Chatty supports the following types of emoticons:</p>
+    <ul>
+        <li>Twitch Emoticons (Global, Turbo, Subscriber)</li>
+        <li><a href="https://frankerfacez.com/">FrankerFaceZ</a> Emoticons
+            <ul>
+                <li>Global and Channel-specific Emotes</li>
+                <li>Feature Friday Emotes</li>
+                <li>Featured Emotes (usually available in Speedrunning Marathons)
+                    <br /><em>Note:</em> These emotes require being connected to
+                    the FFZ Socket Server to be updated. There is an issue where
+                    reconnecting to the server sometimes doesn't work. If you
+                    enter the command <code>/ffzws</code> and it is stuck at
+                    <code>Connecting..</code> for a longer period of time, you
+                    may have to restart Chatty for it to work again.</li>
+            </ul>
+        </li>
+        <li><a href="https://www.nightdev.com/betterttv/">BetterTTV</a> Emoticons
+            <ul>
+                <li>Global and Channel-specific Emotes
+                    <br /><em>Note:</em> BTTV can also contain GIF emotes, some
+                    of which don't work very well in Chatty. (You also have to
+                    opt-in to show them in the settings in the first place.)</li>
+                <li><strong>Not supported</strong> are Personal Emotes</li>
+            </ul>
+        </li>
+        <li>Emoji, turns the Unicode Emoji character into an image (you can
+            enter Emoji either by pasting the character directly, or by entering
+            a shortcode (e.g. <code>:thinking:</code>) into the inputbox, which
+            will be turned into the character when you press Enter to send it.</li>
+    </ul>
+    
+    <p><em>Tip:</em> You can use <a href="#TAB_Completion">TAB Completion</a>
+        for Emoticon codes (Shift-TAB by default) and Emoji shortcodes.</p>
+    
+    <p>You can enable/disable Emoticons in general (displaying the images instead
+        of the text) in the settings under <code>Emoticons</code>. You can also
+        ignore specific emotes in the same place in the settings.</p>
+    
+    <p>In chat you can right-click on an emoticon to show some info about it.
+        Click on the emote code (e.g. <code>FrankerZ</code>) in the context menu
+        to insert the emote in the inputbox. If it is a subscriber emote, you
+        also have some more options.</p>
+    
+    <h3>Emote Dialog</h3>
+    <p>Use <code>Extra - Emoticons</code> or press <kbd>Ctrl-E</kbd> to open
+        the Emote Dialog, which has various pages:</p>
+    <ul>
+        <li>The <code>Favorites</code> page lists emotes you have added to the favorites
+        via the Emote Context Menu (right-click on an emote in the dialog or chat and
+        choose <code>Favorite</code>, emotes that already are favorited can be
+        removed from favorites the same way).</li>
+        <li>The <code>My Emotes</code> page lists the emotes you paid for (Subemotes/Turbo).</li>
+        <li>The <code>Channel</code> page lists the emotes that are specific to the current channel
+        (FFZ and BTTV, if there are any). It also includes
+    the subscriber emotes of the current channel (if it has any), whether you
+    can use them or not (but it displays a message if you are not subscribed).</li>
+        <li>The <code>Twitch</code> page shows all free global Twitch emotes</li>
+        <li>The <code>Other</code> page shows all global FZZ/BTTV emotes</li>
+    </ul>
+
+    <p>Click on an emote to insert it into the current channel inputbox. Double-click
+        on an emote to also close the Emote Dialog in the process, or press <kbd>ESC</kbd> or
+    <kbd>Ctrl-E</kbd> to close it. Right-click on an emote to show a context menu
+    with some more information/options.</p>
+    
+    <p>Right-click on an emote and choose <code>Show Details</code> to open the
+    Detail View in the Emote Dialog, which shows the emote in different sizes
+    and some information about it. Clicking on an emote in chat also opens the
+    Detail View.</p>
+    
+    <p><em>Note that you need to have joined at least one channel for your subemotes/turbo emotes
+        to show up, because only then does Twitch Chat send that information to the client.</em></p>
+    
+        <h2>
+            <a name="customemotes">Custom Emotes (local)</a>
+            <a href="#top" class="top">[back to menu]</a>
+        </h2>
+        <p>You can add your own local emotes by creating a file called <code>emotes.txt</code>
+            in the settings directory (enter <code>/dir</code> in Chatty to find the
+            settings directory, <code>/openDir</code> to directly open it). The
+        file can have one emote on each line, for example:</p>
+        
+        <pre>
+D:      aww.png     size:18x18
+re:Gr[e|a]yface Kappa.png
+# Switching Kappa and MiniK
+Kappa   http://static-cdn.jtvnw.net/emoticons/v1/3287/1.0
+MiniK   http://static-cdn.jtvnw.net/emoticons/v1/25/1.0     set:793 id:3287</pre>
+        
+        <p>This can be used to replace existing emotes, since custom emotes are
+        checked first and thus take precedence. This is not intended to replace
+        FFZ or BTTV emotes, just to help configure emotes to your personal
+        preference. For example you could also add an image for you own name to
+        have it highlighted in chat in a different way.</p>
+        
+        <p><em>Note:</em> The <code>emotes.txt</code> should be saved in the
+            UTF-8 encoding (or ASCII I guess).</p>
+        
+        <h3>Syntax</h3>
+        
+        <p>The syntax per line is (you can use as many spaces or TABs as seperators as you want):</p>
+        
+        <p><code>[settings] &lt;code&gt; [settings] &lt;image&gt; [settings]</code></p>
+        
+        <p>Settings can be in any of the shown places, but are always optional. Available settings are:
+        </p>
+        
+        <ul>
+            <li><code>set:&lt;setid&gt;</code> to specify a
+        Twitch emote set. This will only affect messages you write yourself.</li>
+            <li><code>id:&lt;emoteid&gt;</code> to specify a Twitch emote id to
+            replace. This will only affect incoming messages.</li>
+            <li><code>chan:&lt;channel&gt;</code> to restrict the emote to the
+            given channel.</li>
+            <li><code>size:&lt;width&gt;x&lt;height&gt;</code> to specify the
+            size of the emote (you can omit this if you want to use the image
+            size).</li>
+        </ul>
+        
+        <p>Required:</p>
+        <ul>
+            <li>The <strong>code</strong> can be prefixed with <code>re:</code>
+            to specify a regular expression. Otherwise it is interpreted as plain text
+            (the same as regular Twitch emotes, case-sensitive and usually separated
+            by space from other characters).</li>
+            <li>The <strong>image file</strong> is relative to the settings directory (where you created
+            the <code>emotes.txt</code> in), so just put them in the same directory.
+        You should also be able to use URLs to load the image from the internet.</li>
+        </ul>
+        
+        <p>Lines starting with <code>#</code> are ignored and can be used for comments.</p>
+        
+        <p>The <code>emotes.txt</code> file is loaded when you start Chatty, so if you edit the file
+            while Chatty is running, you have to use the <code>/reloadCustomEmotes</code>
+            command for it to take effect.
+        Emote images may be cached, so if you change the image, you MAY have to
+        clear the cache (<code>/clearemotecache CUSTOM</code>).</p>
+        
+    <h2>
+        <a name="addressbook">Addressbook</a>
+        <a href="#top" class="top">[back to menu]</a>
+     </h2>
+    <p><em>This has been moved to it's <a href="help-addressbook.html">own page</a></em></p>
+    
+    <h2>
+        <a name="userselection">User/Line Selection Mode</a>
+        <a href="#top" class="top">[back to menu]</a>
+     </h2>
+    <p>With this feature, you can select a user in chat with keyboard shortcuts
+    (if the window is active). So you can e.g. timeout a user with your keyboard
+    alone.</p>
+    
+    <p>Press <kbd>Ctrl-Space</kbd> (can be changed in the settings) to enter
+        this mode. If there are any user
+    messages in chat, then the newest message will get another background color
+    which shows that it is selected. In that mode, the focus is on the textpane,
+    which enables more shortcuts:</p>
+    <ul>
+        <li><kbd>W</kbd> to move up a user</li>
+        <li><kbd>S</kbd> to move down a user</li>
+        <li><kbd>A</kbd> to move up twice</li>
+        <li><kbd>D</kbd> to move down twice</li>
+        <li><kbd>Q</kbd> to quit out of the mode</li>
+        <li><kbd>E</kbd> to open the User Dialog for the currently selected user</li>
+    </ul>
+    
+    <p>When you move up and down, it actually switches to the next user instead
+    of to the next line. So if the same user send 10 messages in a row, it will
+    jump to the first message of the next user above it.</p>
+    
+    <p>In addition to the currently selected message, it will also highlight all
+        other messages by the same user. You can also hold <kbd>AltGr</kbd> and
+    click on a username in chat to highlight all that users messages (and enter
+    User Selection Mode).</p>
+    
+    <p>You can also click and hold in an empty area of the textpane, which puts
+    and holds the focus there, so you can just use the shortcuts in the list
+    above to enter the User Selection Mode and switch between messages. However
+    if you let go of the mouse key, it will immediately leave the mode again.</p>
+    
+    <h3>Using Global Hotkeys</h3>
+    <p>You can also configure global hotkeys with some User Selection actions.
+    However, if the focus is not on the chat, then the usual shortcuts won't
+    work, so you'll have to define additional global hotkeys to e.g. timeout the
+    currently selected user. See the hotkey settings for what actions are
+    available.</p>
+    
+    <h2>
+        <a name="streamchat">Stream Chat</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+        <p>Stream Chat is a separate dialog, opened via the <code>/openStreamChat</code>
+            command or the <code>Extra</code> menu, which is different from normal chats:</p>
+        
+        <ul>
+            <li>Can contain messages from one or several channels at once (only regular chat messages, no info messages)</li>
+            <li>Messages can be automatically removed after a certain time</li>
+        </ul>
+        
+        <h3>Getting started</h3>
+        <p>For chat messages to appear in the Stream Chat, you have to both
+            enable the channel and join the channel in Chatty normally.</p>
+        
+        <p>You can enable channels in the Stream Chat context menu (which will
+            offer to enable currently joined channels) or use the
+            following setting commands (channel all-lowercase):</p>
+        
+        <ul>
+            <li><code>/set streamChatChannels #&lt;channel&gt;</code> - To set
+            the channel to only this one</li>
+            <li><code>/add streamChatChannels #&lt;channel&gt;</code> - To add
+            a channel</li>
+            <li><code>/remove streamChatChannels #&lt;channel&gt;</code> - To remove
+            a channel</li>
+        </ul>
+        
+        <h3>Other settings</h3>
+        
+        <dl class="defList">
+            <dt><code>/set streamChatLogos &lt;size&gt;</code></dt>
+            <dd>Set the channel logo size (pixels). Set to <code>0</code> to disable.</dd>
+            <dd>Logos are only shown for channels that have been live during the
+                current session. Changes only affect new messages.</dd>
+            
+            <dt><code>/set streamChatMessageTimeout &lt;seconds&gt;</code></dt>
+            <dd>How long messages are displayed before they disappear. Set to
+                <code>-1</code> to disable.</dd>
+            
+            <dt><code>/set streamChatBottom &lt;0/1&gt;</code></dt>
+            <dd>Disable so messages start being inserted at the top.</dd>
+            <dd>Restart required to apply changes.</dd>
+            
+            <dt><code>/set streamChatResizable &lt;0/1&gt;</code></dt>
+            <dd>Whether Stream Chat dialog should be resizable.</dd>
+        </dl>
+        
+        <p>In addition, make sure you have <code>Settings - Window - Restore dialogs</code>
+            set to at least <code>Restore dialogs from last session</code> in order
+            to keep the position/size of the Stream Chat dialog between sessions.</p>
+        
+        <h3>Commands</h3>
+        <ul>
+            <li><code>/openStreamChat</code> - Opens the Stream Chat dialog</li>
+            <li><code>/setStreamChatSize &lt;width&gt;x&lt;height&gt;</code> - Set the exact size of the Stream Chat dialog in pixels</li>
+            <li><code>/getStreamChatSize</code> - Shows the size of the Stream Chat dialog in pixels</li>
+            <li><code>/clearStreamChat</code> - Removes all messages</li>
+            <li><code>/streamChatTest [message]</code> - Adds a test message to the Stream Chat dialog, if you don't specify a message
+            a default one is used</li>
+        </ul>
+    
+    <h2>
+        <a name="customNames">Custom Names</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>You can give people in chat custom names that will appear in chat and
+    in the userlist instead of the regular Twitch username and in the User Info
+    Dialog in addition to the regular Twitch username. In other places (like
+    the User Context Menu) the regular Twitch username is used.</p>
+    
+    <p>TAB Completion also allows you to complete Custom Names and by default
+        also includes the original name in the results.</p>
+    
+    <p>The following commands are used to set custom names:</p>
+    <ul>
+        <li><code>/setname &lt;username&gt; &lt;custom name&gt;</code> - to set a custom name</li>
+        <li><code>/resetname &lt;username&gt;</code> - to remove a custom name</li>
+    </ul>
+    
+    <p>In addition to these commands, you can also view and change Custom Names
+        via the Settings GUI under <code>Names</code>. You can also right-click
+        on a user in chat to open the User Context Menu and choose
+        <code>Miscellaneous - Set name</code> to open the Settings with the name
+        preset.</p>
+    
+    <h2>
+        <a name="pausechat">Pause Chat / One-click moderation</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>If enabled in the settings under <code>Main - Settings - Chat</code> you
+        can stop the chat from scrolling down while you move the mouse over chat.
+        This can prevent misclicks when the chat is moving. The chat will resume
+        scrolling down as soon as you stop moving the mouse or move it out of
+        the chat area. When the chat is already paused, you can also hold
+        <kbd>Ctrl</kbd> to keep the chat paused even without moving the mouse.</p>
+
+    <p>Optionally, you can set it to require <kbd>Ctrl</kbd> being pressed in
+        conjunction with moving the mouse to initiate pausing. You can let go of
+        <kbd>Ctrl</kbd> as soon as pausing is started and it will stay paused as
+        long as you move the mouse inside the chat area.</p>
+    
+    <p>A little popup in the top-right will indicate that the chat is paused.</p>
+    
+    <p><em>Please note:</em> This only works when the chat area is already filled, so the scrollbar is
+        actually used. In addition, there may be instances where something you
+        want to click will move anyway, for example if a message is deleted due
+        to a timeout/ban, causing other messages to move.</p>
+    
+    <h3>Scroll up to stop scrolling</h3>
+    <p>Another way of preventing scrolling down is scrolling up. Once you are
+        manually scrolled up, chat will stop scrolling down automatically.
+        However messages may still be removed from the buffer causing the chat
+        to move despite it not actively scrolling down. It will stop removing
+        messages to get moving to a minimum as long as you keep holding
+        <kbd>Ctrl</kbd>.</p>
+    
+    <p>A certain time after not moving the scroll position, it will scroll down
+        automatically (unless <kbd>Ctrl</kbd> is still being pressed).</p>
+    
+    <h3>One-click moderation</h3>
+    <p>Holding <kbd>Ctrl</kbd> and clicking on a user in chat can execute a ban
+        or timeout on that user. Enable this feature and define what it does in
+        the settings (<code>Main - Settings - Chat</code>).</p>
+    
+    <p>It is recommended to enable the pause chat feature if you are using this,
+        or else misclicks could be very common.</p>
+    
+    <h2>
+        <a name="automod">AutoMod</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p><a href="https://help.twitch.tv/customer/portal/articles/2662186-how-to-use-automod">AutoMod</a>
+        is a Twitch feature that filters messages before they are send to the
+        chat clients. As mod in the channel you can review and either approve
+        or deny those filtered messages in different ways:</p>
+    
+    <ul>
+        <li>The AutoMod Dialog under <code>Extra - AutoMod</code></li>
+        <li>Enable <code>Settings - Moderation - Show messages rejected by AutoMod</code>
+            to show rejected messages directly in chat and..
+            <ul>
+                <li>Right-click on the username of a filtered message and
+                    approve/reject from the context menu</li>
+                <li>Click on the username of a filtered message to open the User
+                    Info Dialog and click the approve/reject button
+                    (<a href="help-custom_commands.html#special-commands">settings</a>)</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>AutoMod Dialog</h3>
+    <p>In the dialog you will see filtered messages of the current channel (if
+        you are mod). Open the context menu on a message (usually right-click)
+        to approve or deny that message. Double-click on a message to open the
+        User Info Dialog for that user to be able to see his previous messages
+        or ban/timeout the user.</p>
+    
+    <p>Shortcuts available when you have a message selected:</p>
+    <ul>
+        <li><kbd>A</kbd> to approve, <kbd>D</kbd> to deny message</li>
+        <li><kbd>W</kbd> to move up in the list, <kbd>Alt+W</kbd> to jump over
+            already handled messages</li>
+        <li><kbd>S</kbd> to move down in the list, <kbd>Alt+S</kbd> to jump over
+            already handled messages</li>
+    </ul>
+    
+    <p>Messages can have different prefixes depending on their status:</p>
+    <ul>
+        <li>No prefix - The message has not been approved/denied yet</li>
+        <li><code>Approved</code> - You have approved the message</li>
+        <li><code>Denied</code> - You have denied the message</li>
+        <li><code>Handled</code> - The message has been handled already,
+            probably by another mod (the API does not return whether it's been
+            approved or denied)</li>
+        <li><code>Pending</code> - Your action is being sent to the Twitch API</li>
+        <li><code>N/A</code> - The message is no longer available to be
+            approved or denied (this seems to be the case after a few minutes)</li>
+        <li><code>Error</code> - An error occured sending your action to the
+            Twitch API</li>
+    </ul>
+    
+    <p>Messages that have already been handled or that are older than 5 minutes
+        (and can thus <em>probably</em> not be approved/denied anymore) are
+        shown greyed out.</p>
+    
+    <h2>
+        <a name="channelinfo">Channel Info / History</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>The Channel Info Dialog shows the current stream status of the active
+    stream. The data is requested from the Twitch API in a semi-regular interval,
+    so it can take some time to update.</p>
+    
+    <h3>Stream Uptime</h3>
+    <p>If the stream is online, the <code>Live: 1h 30m</code>
+    shows how long ago the stream was started. That time comes directly from the
+    Twitch API, so it is able to show the correct online time, even if you started
+    Chatty after the stream started.</p>
+    
+    <p>If there is a time in parentheses
+    (like <code>1h 30m (2h)</code>), then that time denotes how long the stream
+    was online, but including small offline periods (PICNICs) of at most 10 minutes,
+    which means that this time is more of a guess of what might be expected as
+    stream online time and also depends on when Chatty got the data (if you join
+    the channel after a PICNIC, then it won't include the time before, because it
+    never received the data for it).</p>
+    
+    <h3>History Graph</h3>
+    <p>The History is a graph that shows the development of the viewers
+                    of the currently active channel and also indicates stream status changes
+                    (online/offline/title/game) by different colors.</p>
+                <p>Hover over points to display the stream status and viewercount
+                at that time. Right-click for a context-menu.</p>
+    <table>
+        <tr>
+            <td>
+                
+                <p>There are two ways to change which time range is being displayed:</p>
+                <ul>
+                    <li><strong>Time Range</strong> means only the last <em>x hours</em>
+                        are being displayed. For example if the whole data spans 10 hours
+                        you can choose to only display the last 2 hours. This will display
+                        the <em>maximum range</em> after the <em>actual range</em>
+                        (even if the <em>actual range</em> isn't as long as the
+                        <em>maximum range</em>):<br />
+                        <code>15:32 - 19:14 (2h)</code><br />
+                        You can change this via the context menu.
+                    </li>
+                    <li style="padding-top: 5px"><strong>Fixed Start/End</strong> means that either
+                    the beginning of the displayed data is fixed or both the
+                    beginning and end of the data are fixed, meaning that the
+                    displayed graph will never change. The times that show the
+                    <em>actual range</em> indicate whether they are fixed:<br />
+                    <code>|15:58| - 19:14</code> or <code>|15:58| - |18:20|</code><br />
+                    Double-click on a point to set it as a fixed start, then
+                    double-click on another point to set it as a fixed end.
+                    Double-click anywhere else to clear fixed start/end.
+                    This setting is channel-specific and isn't saved when you
+                    close Chatty.</li>
+                </ul>
+                
+                
+            </td>
+            <td>
+                <img src="viewerhistory_small.gif" alt="History Demonstration" />
+                
+            </td>
+        </tr>
+    </table>
+                <p>The History is recorded while you have the channel open in Chatty
+                as well as for all followed channels, if you have that feature
+                enabled.</p>
+                <p>The shown data usually fits to the available vertical space
+                (so if the min/max viewercounts were 341/403 then only this
+                range is shown). If you choose <code>Toggle Vertical</code> in
+                the context-menu, you can switch between the shown range
+                (min/max) and the full range (0-max).</p>
+
+    <h2>
+        <a name="notifications">Live Streams / Notifications</a>
+        <a href="#top" class="top">[back to menu]</a>
+     </h2>
+    <p>Chatty can show Notifications when the status of a stream changes.
+        There is also a Live Streams window (<code>Channels - Live Channels</code>)
+        that shows the currently live streams. Both these features always include channels you have
+        joined and - if enabled - channels you have followed. Streams that are
+        no longer online, or whose channels you have left and you don't follow,
+        are added to a list that you can open in the Live Streams window context
+        menu (<code>Removed streams..</code>).</p>
+    
+    <h3>Notifications</h3>
+    <p>Chatty Notifications are little info boxes that can be shown for stream
+    status changes and highlighted messages. When you left-click on a notification
+    it is closed immediately, right-clicking closes it as well and in addition
+    also joins the associated channel.</p>
+    
+    <div class="moreInfo">More information: <a href="help-settings.html#Notifications">Notification Settings</a></div>
+    
+    <h3><a name="followed">Followed Streams</a></h3>
+    <p>Chatty can request a list of streams you follow on a regular basis, so
+    you have both an overview of currently live streams as well as be
+    informed about status changes (offline -> online, title change, game change).
+    This is always available for streams whose channels you have joined in chat,
+    but with this feature enabled, this works for all streams you follow even
+    without joining their channel.</p>
+    <p>This feature requires <code>Show followed streams</code> access, so Chatty can
+        request your followed streams. Read the <a href="#login">section about login</a>
+    to learn more about login data and access.</p>
+    <p>You can enable/disable this feature in the Settings under <code>Notifications</code>.</p>
+    
+    <h2>
+        <a name="admin">Admin Dialog</a>
+        <a href="#top" class="top">[back to menu]</a>
+     </h2>
+    <p><em>This has been moved to it's <a href="help-admin.html">own page</a></em></p>
+    
+    <h2>
+        <a name="followers">Followers/Subscribers List</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>You can open a list of the <em>Followers</em> of a channel by joining that channel
+        and then opening the Followers Dialog via <code>Extra - Followers</code>.
+    It always opens on the currently active channel, or if you are in no channel
+    at all, your own channel.</p>
+    
+    <p>You can open a list of your <em>Subscribers</em> by opening the Subscribers Dialog
+        via <code>Extra - Subscribers</code>. It always opens on your own channel,
+    because you can only display the Subscribers of your own channel. If you don't
+    have any Subscribers, it will simply show an empty list (and an error). You
+    also need to have selected the necessary <a href="#login">access</a> when
+    requesting login data.</p>
+    
+    <p>You can save the current list to a file by right-clicking on the dialog
+    (not the list) and selecting the format.</p>
+    
+    <h3>Usage</h3>
+    <p>Both the Followers and Subscribers Dialog otherwise work in pretty much
+        the same way. Data is only requested as long as you have the dialog open. It
+        is requested in a semi-regular interval and then displays that data in the
+        list (and some stats).</p>
+    <p>If followers/following is mentioned below, then the same applies for
+    subscribers/subscribing in the appropriate dialog.</p>
+    <table>
+        <tr>
+            <td valign="top">
+                <p>At the top it shows some stats:</p>
+                <ul>
+                    <li><strong>Total:</strong> The total number of followers (not to be confused
+                    with the followers shown in the list, which are the most recent 100).
+                    After the total number, it shows the change compared
+                    to the last update, e.g. <code>Total: 3.190 (+2)</code>,
+                    which will stay there until the next update.</li>
+                    <li><strong>Week/Day/Hour:</strong> These are some stats based
+                    on the current list shown below. It shows how many followers
+                    there are in the list that followed in the last 7 days (Week), 24 hours (Day) and
+                    60 minutes (Hour). (So <em>Day</em> does NOT mean <em>Today</em>
+                    as in since 0:00.)<br /><br />
+                    If it says <code>99+</code> it means that there are more than
+                    99 followers in that timespan, but Chatty can't determine whether
+                    it's 100 or more than 100, because the list only contains the
+                    100 most recent followers.</li>
+                </ul>
+
+                <p>There are different background colors for some entries:</p>
+                <ul>
+                    <li><span style="background-color:#FFF5D2">New entries</span> (meaning entries
+                    that appeared first in the last update)</li>
+                    <li><span style="background-color:#FFFAF0">Entries of the last 15 minutes</span></li>
+                    <li><span style="background-color:#F5F5F5">Entries of the last hour</span></li>
+                </ul>
+                
+                <p>The time has different colors for older entries:</p>
+                <ul>
+                    <li><span style="color:#787878">Entries older than a day</span></li>
+                    <li><span style="color:#B4B4B4">Entries older than a week</span></li>
+                </ul>
+                <p>At the bottom, it shows approximately how long ago data was last received,
+                or a short error message if an error occured.</p>
+            </td>
+            <td valign="top"><img src="followers.jpg" alt="Followers Dialog" /></td>
+        </tr>
+    </table>
+    
+    <h3>About New Followers/Refollows</h3>
+    <p>Everything that determines whether a follower is new or a refollow is
+    saved per session. So if you restart Chatty, it assumes that all followers
+    except from the first request are new. So if you start Chatty, open the
+    Followers Dialog on your channel, it will load the followers for the first
+    time and show none of them as new. Now if it updates a minute later, and there
+    are users it hasn't seen as having followed before, then it assumes these
+    users as new followers.</p>
+    
+    <p>Now a user of course might have been a follower for a year, then unfollow
+        and follow again. Chances are that Chatty won't notice that and assume a new
+        follower. What it however does is that it only shows each user as new follower
+        <em>once per session</em>. So if someone follows and Chatty shows that user as a new follower,
+        then that user unfollows and follows again, Chatty will notice that the first
+        and the second follow time are different, and will show this user as a refollow
+        (the name slightly grey).</p>
+    
+    <p>So this basicially just prevents the same user from e.g. making a sound
+        go off (if you have that enabled) several times just by refollowing several
+        times. At most that will happen once per session. Other than that
+        the data is mostly shown just as it comes in from Twitch. It will still
+        show refollows on the top of the list.</p>
+
+    <h2>
+        <a name="streamhighlights">Stream Highlights / Markers</a>
+        <a href="#top" class="top">[back to menu]</a>
+     </h2>
+    <p>Chatty can help you with creating Highlights of your stream by recording
+    the stream time (how long the stream has been online) using a command or
+    hotkey. When you add a Stream Highlight in Chatty, it is written to a file
+    which you can then view later.</p>
+    
+    <p>The following commands are available:</p>
+    <ul>
+        <li><code>/addStreamHighlight [comment]</code> - Adds a highlight at
+        the current time, with a comment if you want to.</li>
+        <li><code>/openStreamHighlights</code> - Opens the file where the stream
+        highlights are stored in your default text editor.</li>
+    </ul>
+    
+    <p>You can also add a hotkey to add stream highlights, so you can also do it
+    yourself while streaming out of a game (given that global hotkeys work in
+    the game).</p>
+    
+    <p>The highlights are written to the file <code>stream_highlights.txt</code>
+        in the <code>exported</code> subfolder of the settings directory (which
+        you can open with the <code>/openDir</code> and show with the
+        <code>/dir</code> command).</p>
+    
+    <h3>Chat Command</h3>
+    <p>You can also let users in chat (e.g. Mods/VIPs) add Stream Highlights
+        (<code>!highlight [comment]</code>), which you can configure under
+        <code>Main - Settings - Stream Highlights</code>.</p>
+    
+    <h3>Stream Markers</h3>
+    <p>Twitch offers a way to add
+        <a href="https://help.twitch.tv/customer/portal/articles/2955281-creating-highlights-and-stream-markers">Stream Markers</a>
+        which show up when creating Highlights on the website. You can use the
+        <code>/marker</code> command or add a Stream Marker automatically when
+        adding a Stream Highlight (changeable in the Stream Highlights settings).</p>
+    
+    <p>For creating Stream Markers you need the <code>Edit broadcast</code>
+        <a href="#login">scope</a>, so if you don't have that yet, you have to
+        request a new login token.</p>
+
+    <h2>
+        <a name="ignoreJoinsParts">Ignore joins/parts</a>
+        <a href="#top" class="top">[back to menu]</a>
+     </h2>
+    <p><em>Both the ignore joins/parts and Twitch Client Version 3 option have
+            been removed. You can now disable the <a href="help-settings.html#Advanced-Userlist">Correct Userlist</a>
+        setting to not get any joins/parts if you think it could improve performance.</em></p>
+    
+    <h2>
+        <a name="custom-processes">Run custom processes</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>Using the <code>/proc</code> command you can start processes directly out
+        of Chatty. An example of where this is already integrated into Chatty is
+        starting Streamlink, however this is a more basic implementation.</p>
+    <p><em>You should only use this if you know what you are doing, running
+        system processes can be dangerous if done wrong. Take special care when
+        unsafe/unpredictable text is being used, for example from chat messages,
+        which may need to be properly quoted/escaped depending on context.</em></p>
+    
+    <ul>
+        <li><code>/proc exec &lt;command and parameters&gt;</code> - Try to
+            start a process on your computer. The command and parameters are
+            split by spaces, unless enclosed by quotes.<br /><br />
+            A quote can be escaped by adding a backslash in front <code>\"</code>
+            (note that if there is no closing quote, the last quote, even if
+            escaped, is used as closing quote). Adding another backslash, e.g.
+            <code>\\"</code> will still escape the quote. The debug log shows
+            both the original command text and how it was split up.</li>
+        <li><code>/proc execEcho &lt;command and parameters&gt;</code> - Same as
+            above, but prints the output of the process to the current tab.</li>
+        <li><code>/proc list</code> - List of processes currently running out of
+            Chatty.</li>
+        <li><code>/proc kill &lt;id&gt;</code> - Forcefully end the process with
+            the given id (get the id from the list of processes).</li>
+    </ul>
+    
+    <p>Example: <code>/proc exec notepad H:\hl.txt</code> will start Notepad
+        and open the given file.</p>
+    
+    <p><em>Note:</em> Commands and output of the process is logged in the Debug Log which
+        is written to file and output to <code>Extra&nbsp;-&nbsp;Debug window</code>.</p>
+        
+    <h2>
+        <a name="launch">Launch options</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>There are a few options you can launch Chatty with, that will override
+    settings loaded from the settings file or change how Chatty is started. You
+    need to run Chatty from the commandline or
+    <a href="help-guide_create_shortcut.html">Create a shortcut</a> to use
+    these. If you're using the Standalone version you can also specify launch
+    options in the <a href="help-standalone.html#cfg-launch">Chatty.cfg</a>.</p>
+    
+    <dl class="dl-settings">
+        <dt><code>-server &lt;host/ip&gt;</code></dt>
+        <dd>Specify a different server to connect to</dd>
+        
+        <dt><code>-port &lt;port&gt;</code></dt>
+        <dd>Specify a different port to use for connecting</dd>
+        
+        <dt><code>-user &lt;username&gt;</code></dt>
+        <dd>Your username</dd>
+        
+        <dt><code>-password [password]</code></dt>
+        <dd>Login with password instead of access token, optionally
+                    also the actual password to use. <em>Twitch doesn't allow
+                    password login anymore.</em></dd>
+                    
+        <dt><code>-token [token]</code></dt>
+        <dd>Login with the given token.</dd>
+        <dd>The username currently saved in Chatty must match the account
+            associated with the given token. If no login data is currently
+            saved in Chatty or the username is different, you have to use
+            <code>-user</code> to set the correct username.</dd>
+        
+        <dt><code>-connect</code></dt>
+        <dd>Connect immediately when starting Chatty</dd>
+        
+        <dt><code>-channel &lt;channel&gt;</code></dt>
+        <dd>The channel to join (you can specify more than one channel by
+            separating them with a comma)</dd>
+        
+        <dt><code>-ds</code></dt>
+        <dd>Don't save settings automatically (they can still be saved manually
+            via "Main - Save..")</dd>
+        
+        <dt><code>-cd</code></dt>
+        <dd>Use current working directory as settings directory.
+                This can be useful to make Chatty more portable or use several
+                different setting files on the same computer.
+                <a href="help-guide_folders.html">More information..</a></dd>
+        
+        <dt><code>-d &lt;dir&gt;</code></dt>
+        <dd>Same as <code>-cd</code>, except that you directly specify the
+            settings directory to use. The specified directory has to already
+            exist (even if you just created an empty directory for it).</dd>
+        
+        <dt><code>-portable</code></dt>
+        <dd>Creates a directory called "portable_settings" next to where the
+            "Chatty.jar" is located and uses that as settings directory.</dd>
+        
+        <dt><code>-debugdir &lt;dir&gt;</code></dt>
+        <dd>Specify the debug log directory. The specified directory has to
+            already exist, same as with <code>-d</code>.</dd>
+        
+        <dt><code>-set:&lt;settingName&gt; &lt;setting value&gt;</code></dt>
+        <dd>Change any setting that can be edited via the <code>/set</code>
+        command (see <a href="help-setting_commands.html">Setting Commands</a>).</dd>
+        
+        <dt><code>-single [port]</code></dt>
+        <dd>Run in single instance mode, which means if you start Chatty while 
+            it's already running the parameters are forwarded to the already
+            running instance instead of starting another one. You have to
+            specify the <code>-single</code> parameter with the same port (or
+            no port to use the default one) for all instances that you want to
+            have run in the same single instance mode.</dd>
+        <dd>The port is listened to locally to check if any instance is already
+            running and to forward the commandline parameters. If you don't
+            supply a port a default one is used. If the used port is already
+            taken by another program you have to specify one that works or else
+            no instance of Chatty will be able to start.</dd>
+        <dd>Currently only the <code>-channel</code> and <code>-cc</code>
+            parameters are forwarded to an already running instance.</dd>
+        
+        <dt><code>-cc &lt;name&gt; [parameters]</code></dt>
+        <dd>Execute the Custom Command with the given name on start. The
+            parameters are optional. When used in combination with
+            <code>-single</code>, the command will be executed on the already
+            running instance.</dd>
+    </dl>
+
+    <h2>
+        <a name="settings">Setting commands</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <div class="moreInfo">Go to: <a href="help-setting_commands.html">Setting Commands</a></div>
+    
+    <h2>
+        <a name="settingFiles">Setting files</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <div class="moreInfo">Go to: <a href="help-guide_folders.html">Chatty directories and files</a></div>
+    
+    <h2>
+        <a name="contact">Contact</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <ul>
+        <li>Website: <a href="https://chatty.github.io">https://chatty.github.io</a></li>
+        <li>E-Mail: chattyclient@gmail.com</li>
+        <li>Twitter: <a href="https://twitter.com/ChattyClient">@ChattyClient</a></li>
+        <li>Mastodon: <a href="https://mstdn.social/@chattyclient">mstdn.social/@chattyclient</a></li>
+        <li>Discord: <a href="https://discord.gg/WTuqGeJ">Chatty Discord Invite</a></li>
+    </ul>
+    <p>If you are reporting an issue, please read the page on <a href="help-report_issue.html">Reporting Issues</a>.</p>
+    
+    <p>If you are referring to a specific version of Chatty, please provide the
+    actual version number, which you can find on the top of the main help page in Chatty
+    (this one if you are reading this in Chatty, otherwise go to Chatty and open
+    <code>Help - About/Help</code> or press <kbd>F1</kbd>). You can also use the
+    <code>/appinfo</code> command.</p>
+
+    <h2>
+        <a name="about">About/License</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <div class="moreInfo">Go to: <a href="help-about.html">About page</a></div>
+</body>
+</html>
+

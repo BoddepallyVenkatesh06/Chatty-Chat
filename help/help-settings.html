@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html>
+	<title>Chatty Help - Settings</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+<body>
+    <div id="backlink"><a href="help.html">Back to main help page</a></div>
+    <h1><a name="top">Settings</a></h1>
+    <p><a href="#Main">Main</a>
+        | <a href="#Look">Look</a>
+        | <a href="#Chat_Colors">Chat Colors</a>
+        | <a href="#Message_Colors">Message Colors</a>
+        | <a href="#Usercolors">Usercolors</a>
+        | <a href="#Usericons">Badges</a>
+        | <a href="#Emoticons">Emoticons</a>
+        | <a href="#Fonts">Fonts</a>
+        | <a href="#Chat">Chat</a>
+        | <a href="#Messages">Messages</a>
+        | <a href="#Moderation">Moderation</a>
+        | <a href="#Names">Names</a>
+        | <a href="#Highlight">Highlight</a>
+        | <a href="#Ignore">Ignore</a>
+        | <a href="#Log_to_file">Log to file</a>
+        | <a href="#Window">Window</a>
+        | <a href="#Tabs">Tabs</a>
+        | <a href="#Notifications">Notifications</a>
+        | <a href="#Sounds">Sounds</a>
+        | <a href="#Other">Other</a>
+        | <a href="#Commands">Commands</a>
+        | <a href="#Advanced">Advanced</a>
+        | <a href="#TAB_Completion">TAB Completion</a>
+        | <a href="#History">History</a>
+        | <a href="#Stream">Stream Highlights</a>
+        | <a href="#Hotkeys">Hotkeys</a></p>
+    
+    <p>This page details some of the settings in the Settings Dialog
+        (<code>Main Menu - Settings</code>). Also try hovering over settings
+    in the settings dialog itself, sometimes you can get a tooltip with some
+    additional information. You can open this help in the settings dialog by
+    clicking on the "Help" link on the bottom left.</p>
+    
+    <h2>
+        <a name="Main">Main</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <h3>Startup</h3>
+    <p>You can select what will happen when you start Chatty:</p>
+    <dl class="dl-settings">
+        <dt>Do nothing</dt>
+        <dd>Just do nothing special, can join channel manually afterwards.</dd>
+        
+        <dt>Open connect dialog</dt>
+        <dd>Open dialog to connect.</dd>
+        
+        <dt>Connect and join specified channels</dt>
+        <dd>Connect immediately and join the channels specified in the field
+            below. You can define several channels by seperating them with a
+            comma.</dd>
+        <dd>For more information on how channels can be specified, such as joining
+            channels by Addressbook category, see <a href="help.html#join">Joining Channels</a>.</dd>
+        
+        <dt>Connect and join previously open channels</dt>
+        <dd>Connect immediately and join the channels you had open when you
+            closed Chatty.</dd>
+        <dd>This works especially way together with the restore layout option
+            enabled.</dd>
+        
+        <dt>Connect and join favorited channels</dt>
+        <dd>Connect immediately and join the channels that are favorited in the
+            Channel Favorites/History dialog.</dd>
+    </dl>
+    
+    <div class="moreInfo">More information: <a href="help.html#layouts">Layouts and Tabs</a></div>
+    
+    <h3>Directory</h3>
+    <div class="moreInfo">More information: <a href="help-guide_folders.html">Settings and other files</a></div>
+    
+    <h2>
+        <a name="Look">Look</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    
+    <h3>Look&amp;Feel</h3>
+    <p>The Look&amp;Feel changes the overall look of the program. The "System"
+        Look&amp;Feel depends on the system you are on, the others are
+        cross-platform. Some Look&amp;Feels also allow you to additionally
+        select a different font size, which affects most of Chatty.</p>
+    
+    <h2>
+        <a name="Chat_Colors">Chat Colors</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    
+    <p>Customize colors of certain types of chat messages. For the general look
+        of the program you can choose another Look&amp;Feel from the "Look"
+        settings page.</p>
+    
+    
+    <h2>
+        <a name="Message_Colors">Message Colors</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>You can customize the foreground and background color of messages based
+        on the same message matching rules and patterns that are used for the
+        <a href="#Highlight_Matching">Highlight system</a> (not all prefixes
+        apply). Add a new item, enter what messages you want to match and select
+        the color you want them to have.</p>
+    
+    <p>The order of entries can matter, the first color from the top that
+        matches is used.</p>
+    
+    <p><em>Note:</em> The default colors are set on the "Colors" settings page.</p>
+    
+    <p><em>Note:</em> This feature only changes the message <em>color</em>. Use
+        the Highlight system instead if you want
+        to highlight important messages, have them added to a separate
+        Highlighted Messages window and maybe show a notification or play a
+        sound for it at the same time.</p>
+
+    <h3>Examples</h3>
+    <p>Examples of how to match certain messages, so you can assign it a custom
+        color.</p>
+    <dl>
+        <dt><code>status:r</code></dt>
+        <dd>Matches all messages from a known bot (FFZ, BTTV or the
+            <code>botNames</code> setting).</dd>
+        
+        <dt><code>cat:vip</code></dt>
+        <dd>Matches all messages from users in the <code>vip</code> Addressbook
+            category.</dd>
+        
+        <dt><code>chan:#tailsgaming start:!points</code></dt>
+        <dd>Matches all messages in channel <code>#tailsgaming</code>, starting
+            with <code>!points</code>.</dd>
+        
+        <dt><code>re*:(?i)(?&lt;!practice |debug )\bROM\b(?! hack)</code></dt>
+        <dd>Matches all messages containing the word <code>ROM</code>, not
+            preceded by <code>practice&nbsp;</code> or <code>debug&nbsp;</code>, nor
+            followed by <code>&nbsp;hack</code> (case-insensitive).</dd>
+    </dl>
+    
+    <div class="moreInfo">More examples: <a href="#Highlight_Examples">Highlight settings help</a></div>
+    
+    
+    <h2>
+        <a name="Usercolors">Usercolors</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>This allows you to specify your own usercolors for either certain types
+        of users (mod, subscriber etc.) or specific usernames. There are special
+    items that you can use to specify that (to specify a username, just enter
+    it without anything else):</p>
+    <ul>
+        <li><code>$mod</code> - Moderators</li>
+        <li><code>$sub</code> - Subscribers</li>
+        <li><code>$turbo</code> - Turbo Users</li>
+        <li><code>$admin</code> - Admins</li>
+        <li><code>$staff</code> - Staff members</li>
+        <li><code>$globalmod</code> - Global Moderators</li>
+        <li><code>$anymod</code> - All Admins, Broadcasters, Global Moderators, Moderators and Staff members</li>
+        <li><code>$all</code> - All users, this can be used to specify a default
+        color (should be put at the very end of the list)</li>
+        <li><code>$broadcaster</code> - Broadcasters</li>
+        <li><code>$cat:&lt;category&gt;</code> - A category from the <a href="help-addressbook.html">Addressbook</a></li>
+        <li><code>#&lt;color code&gt;</code> - A Html color code, e.g. <code>#0000FF</code> for blue, which can
+            be used to replace colors</li>
+        <li><code>$color:&lt;color code or name&gt;</code> - A Html color code or name (names
+            as hardcoded into Chatty, may be different from other programs), e.g. <code>$color:Blue</code> for blue,
+            which can be used to replace colors</li>
+        <li><code>$defaultColor</code> - Users that don't have a color set and have the default assigned color (somewhat random)</li>
+        <li><code>$m:&lt;item&gt;</code> - Specify user-related <a href="#Highlight_Meta_Matching">Highlight Matching</a> prefixes, such as
+            <code>$m:config:b|partner</code> to match users with a partner badge</li>
+    </ul>
+    
+    <p>The order of the
+    entries in the table matters, because it is checked from the top. If you
+    were to put the <code>$all</code> item at the very top, any items below
+    wouldn't do anything, because the first item would already match all users.
+    This e.g. allows you to specify what color a user should have when he is
+    both a subscriber and a moderator (by either putting <code>$mod</code>
+    or <code>$sub</code> first).</p>
+    
+    <p>If an item is red and has "(error)" appended (e.g. "<span style="color:red">$color.Blue (error)</span>"),
+    this means the item is invalid. In the example this is because a point has
+    been used instead of a colon, so "$color:Blue" would be correct. This can
+    also happen if it doesn't recognize the given color or the item is just in
+    an invalid format.</p>
+    
+    
+    <h2>
+        <a name="Usericons">Badges</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <h3>Badge Settings</h3>
+    <ul>
+        <li><strong>Show Badges</strong>: Shows badges as images instead of
+        just text</li>
+        <li><strong>Enable Custom Badges</strong>: Use the custom icons
+        defined in the table below</li>
+        <li><strong>Show Bot Badge</strong>: Enables showing of the bot badge
+        for known bots. Chatty shows a single bot badge for all known bots. The
+        list of bot names comes from different sources: The <code>botNames</code>
+        setting, the BTTV API and the FFZ API. (See also: <a href="help-setting_commands.html#bots">Setting Commands</a>)</li>
+    </ul>
+    
+    <h3><a name="CustomUsericons">Custom Badges</a></h3>
+    <p>Add entries to the table to show additional icons (<code>Addon</code>-Type)
+        or replace the default icons (all other Types).</p>
+    <p>The order of the entries can matter, they are looked at from the top:</p>
+    <ul>
+        <li>All <code>Addon</code> icons that match are shown, unless you use
+            the <code>$stop</code> restriction (see section <em>Restriction</em>
+            below).</li>
+        <li>When replacing default icons (all other Types), the first entry that
+            matches is used. For example if you have several entries for
+            replacing the Turbo badge, then the first one from the top that
+            matches is used.</li>
+    </ul>
+    
+    <h3>Custom Badges Properties</h3>
+    <dl class="dl-settings">
+        <dt>Type</dt>
+        <dd>A type of <code>Addon</code> will add an additional badge. All
+            Addon-badges that matche the Restrictions are shown at once.</dd>
+        <dd>Other types replace an already shown default badge. For example
+            adding an entry of Type <code>Turbo</code> allows you to define a
+            custom icon for all Turbo badges shown in chat. Accordingly, if you
+            selected <code>Bits</code> it would target all variations of the
+            Bits badge.</dd>
+        <dd>The Type <code>Other (Twitch)</code> allows you to directly target a
+            Twitch Badge by it's Badge ID/Version, which allows you to replace
+            badges that are not an originally supported Type.</dd>
+        
+        <dt>ID/Version</dt>
+        <dd>You can only use this when you have one of the <code>Other</code>
+            types selected. This specifies the Badge ID/Version that Twitch uses
+            to identify Badges, which allows you to target any Twitch Badge you
+            want, including a specific variation.</dd>
+        <dd>For example if you wanted to replace the 100-Bits Badge, you'd want
+            to use <code>bits/100</code>. If you don't specify a Version, so
+            just <code>bits</code>, then it matches all versions, in this case
+            it would match all Bits Badges.</dd>
+        <dd>If you are already connected to a channel, it should automatically
+            populate the list with known ID/Version combinations. Note that some
+            of these may only be used in some channels.</dd>
+        
+        <dt>Restriction</dt>
+        <dd>This is similiar to the <a href="#Usercolors">Usercolors</a> settings,
+        where you can enter special restrictions the user has to match in order
+        for the icon to be displayed. If you keep this empty, then no restriction
+        is applied.</dd>
+        <dd>The most common restrictions would be:
+            <ul>
+                <li>Just the username (e.g. <code>serenity</code>)</li>
+                <li>An addressbook category (e.g. <code>$cat:vip</code>, which would refer to
+                    the category <code>vip</code>)</li>
+                <li>User-related <a href="#Highlight_Meta_Matching">Highlight Matching</a>
+                    prefixes (e.g. <code>$m:status:r</code>, where <code>status:r</code>
+                    is the Highlight Matching prefix, or <code>$m:config:t|first-msg=1</code>
+                    to match message tags, some of which are also user-related)</li>
+                <li>Most other <a href="#Usercolors">Usercolors</a> restrictions</li>
+            </ul>
+        </dd>
+        <dd>Specifying a <em>Type</em> other than <code>Addon</code> carries an
+        implicit restriction, since e.g. the default moderator icons are only
+        displayed if the user is a moderator.</dd>
+        <dd>Normally you can only specify <em>one</em> restriction, but you can
+            also add <strong>special restrictions</strong>:
+            <ul>
+                <li><code>$stop</code> means if this icon matches (and is thus used),
+                    it stops searching for further <code>Addon</code> icons. So
+                    it's not really a restriction for <em>this</em> icon, but
+                    rather a restriction that affects the following icons and
+                    can be used to limit the number of <code>Addon</code> icons.</li>
+                <li><code>$first</code> puts this <code>Addon</code> icon before
+                    the regular icons. The <code>$stop</code> restriction only
+                    applies to one group of <code>Addon</code> icons separately
+                    (before or after the regular icons).</li>
+                <li><code>$badge:&lt;ID/Version&gt;</code> matches a Twitch
+                    Badge a user has. For example <code>$badge:bits/100</code>
+                    will only target users that currently have the 100-Bits
+                    Badge. This it not to be confused with replacing the Bits
+                    Badge, this merely checks if the user has it.</li>
+            </ul>
+        </dd>
+        <dd><em>Example:</em> <code>$cat:streamer $first</code> - Matches users
+            in the Addressbook category <code>streamer</code> and puts the badge
+            in front of the default ones.</dd>
+        <dd><em>Example:</em> <code>lotsofs</code> - Matches a user by the name
+            <code>lotsofs</code>.</dd>
+        <dd><em>Example:</em> <code>$cat:vip $badge:bits</code> - Matches users
+            in the Addresbook category <code>vip</code>, but only if they also
+            have a Bits-Badge displayed.</dd>
+        
+        <dt>Channel</dt>
+        <dd>You can enter a channel name here, so that the icon will only be
+            displayed in that channel. You can add an exclamation mark in front
+            of the channel name (like <code>!#channel</code>) to have it
+            displayed in all channels <em>except</em> the one you specified.</dd>
+        <dd>If you keep this empty, then it will be displayed in all channels.</dd>
+        
+        <dt>Position</dt>
+        <dd>This allows you to position the icon relative to the default badges.
+            It will go through the already present badges, from the left, searching
+            for an insertion position until it encounters a badge <em>not</em> in this
+            list. It will then add the badge after that position.</dd>
+        <dd>You can use one or several of the following badge identifiers,
+            separated by comma.</dd>
+        <dd>Presets containing several badge types or a special position:
+            <ul>
+                <li><code>$start</code> - Add before all other badges</li>
+                <li><code>$mod</code> - Add after mod badge (including broadcaster etc.)</li>
+                <li><code>$sub</code> - Add after sub badge</li>
+                <li><code>$bot</code> - Add after bot badge</li>
+                <li><code>$end</code> - Add after all other badges (same as leaving this field empty)</li>
+            </ul>
+            Specific badges (you may have to add presets or several of these to position it correctly):
+            <ul>
+                <li><code>$other</code> - Add after 'Other' badges (e.g. FFZ Supporter badge)</li>
+                <li><code>$other:&lt;id&gt;</code> - Add after 'Other' badge with the specified badge id/version</li>
+                <li><code>&lt;id&gt;</code> - Add after Twitch badge with the specified badge id/version</li>
+            </ul>
+        </dd>
+        <dd><em>Note:</em> These presets may not work anymore if Twitch adds
+            badges in those locations that aren't known to Chatty, in which case
+            you can specify the new badge id/version yourself.</dd>
+        
+        <dd><em>Note:</em> The order of Addon-badges relative to eachother is
+            determined by the order they are added to the Custom Badges table.</dd>
+        
+        <dt>Image File</dt>
+        <dd>The image to use. Must be a <code>.png</code> and is recommended to
+            be about 18x18 pixels (because that is the default size). If you
+            specify no image, then the matching default icon is removed.</dd>
+        <dd>Chatty lookes for images in <code>&lt;working_directory&gt;/img/</code>
+            (<a href="help-guide_folders.html#wdir">Chatty directories help</a>).
+            You can click on <code>Image Folder</code> to show information about
+            it and rescan to update the list.</dd>
+        <dd>The <em>special image file name</em> <code>$default</code> will use
+            the default image file, that would be shown without defining
+            Custom Badges. This can be useful if you e.g. want to replace all
+            Badge Types, except for one, so you can define that one to use the
+            default.</dd>
+        <dd><em>Tip:</em> You should also be able to manually enter the full
+            path to an image, in case you don't want to use the dedicated image
+            folder. A filename starting with <code>http</code> is interpreted as
+            URL.</dd>
+    </dl>
+    
+    <p><em>Tip:</em> Jump to entries in the table by clicking into a column and
+        start to type. Backspace or wait to get out of the search mode.</p>
+    
+    
+    <h2>
+        <a name="Emoticons">Emoticons</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <h3>General Emoticon Settings</h3>
+    
+    <dl class="dl-settings">
+        <dt>Show emoticons</dt>
+        <dd>Turns emoticon codes into images. This needs to be enabled for any
+            emotes to show up.</dd>
+
+        <dt>Scale (Chat)</dt>
+        <dd>The relative size of how emotes are displayed in chat (100% is regular size).</dd>
+        
+        <dt>Maximum Height</dt>
+        <dd>The maximum height of emotes in chat (in pixels). Use 0 to allow any height.</dd>
+        
+        <dt>Emotes Dialog</dt>
+        <dd>The relative size of how emotes are displayed in the Emotes Dialog (100% is regular size).</dd>
+        
+        <dt>Double-click on emote closes Emote Dialog</dt>
+        <dd>If enabled, double-clicking on an emote in the Emote Dialog closes
+            the Emote Dialog.</dd>
+
+        <dt>Cheers (Bits)</dt>
+        <dd>You can choose whether to show <a href="https://help.twitch.tv/customer/portal/articles/2449458">Cheering</a>
+            emotes in chat animated, as static images (like other emotes) or
+            not at all (so they'll just show up as text).</dd>
+        <dd>Sending Cheers is not supported at this point.</dd>
+    </dl>
+    
+    <h3>Third-Party Emoticons</h3>
+    <dl class="dl-settings">
+        <dt>Enable BetterTTV Emotes</dt>
+        <dd>Shows BetterTTV emotes (Personal Emotes not supported at this time).</dd>
+        
+        <dt>Allow animated emotes</dt>
+        <dd>Show animated emotes (BTTV GIF emotes).</dd>
+        
+        <dt>Enable FrankerFaceZ (FFZ)</dt>
+        <dd>Downloads <a href="help.html#emoticons">FrankerFaceZ</a> emotes and
+            Mod Icons (where available).</dd>
+        <dd><em>Requires a restart to take full effect when you change it.</em></dd>
+        
+        <dt>Enable FFZ Mod Icon</dt>
+        <dd>Show the FFZ Mod Icon in place of the default Mod Icon (where available).</dd>
+        
+        <dt>Enable FFZ Featured Emotes</dt>
+        <dd>Show special FFZ emotes available in some channels (mainly
+            Speedrunning Events). To receive these emotes Chatty maintains a
+            connection to the FFZ Socket Server.</dd>
+    </dl>
+    
+    <h3>Emoji</h3>
+    <dl class="dl-settings">
+        <dt>Set</dt>
+        <dd>Turns Emoji characters into images. You can choose between different
+            sets of Emoji images, or choose <code>None</code> to turn off Emoji
+            images altogether.</dd>
+        
+        <dt>Replace Emoji codes in entered text</dt>
+        <dd>Emoji codes like <code>:joy:</code> or <code>:mouse:</code> get
+            replaced with their respective Emoji character (and thus image, if
+            a Set is chosen) when entering them into the inputbox.</dd>
+        <dd><em>Tip:</em> Use <a href="help.html#TAB_Completion">TAB Completion</a>
+            to complete partially entered Emoji codes.</dd>
+    </dl>
+    
+    <h3>Ignored Emotes</h3>
+    <p>Emotes added to this list will not be turned into an image, but instead
+        are just shown as their emote code. They are also hidden from the Emote
+        Dialog and TAB Completion, unless you choose not to for specific emotes.</p>
+    
+    <p>The code added to the list has to be the exact code used internally to
+        find the emote in the messages. Usually this is simply the emote code as
+        you would type it in chat, but some emotes have a special syntax that
+        you might not even know (e.g. <code>:)</code> has <code>\:-?\)</code> as
+        actual code). There are more options available, see the Ignored Emotes
+        dialog in the Settings.</p>
+    
+    <p>It is recommended to use the emote context menu (right-click on an emote
+        in chat) to ignore emotes. That way the correct data will automatically
+        be added to the list and you can easily select additional options as to
+        where to hide the emote from.</p>
+    
+    <h3>
+        <a name="EmoticonsLocal">Local Emotes</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h3>
+    <p>This feature allows you to configure Twitch Emotes that will always show
+        up as usable in messages you send, the Emotes Dialog and TAB Completion,
+        disregarding if you actually have access to them or not. This only
+        affects your local client, others will only see emote images in your
+        messages when you actually have access to the emotes.</p>
+    
+    <p>The use of Local Emotes is intended for Twitch Emotes that are not
+        available through the Twitch API and thus do not show up in messages you
+        send since Chatty doesn't know about them. This issue does not apply
+        when other people receive your messages or when you receive their
+        messages, since Twitch handles emotes parsing serverside for those.</p>
+    
+    <p>With the removal of the old Twitch v5 API in February 2022 this problem
+        can affect even more Emotes than before.</p>
+    
+    <p>Recommendations:</p>
+    <ul>
+        <li>Only add Twitch Emotes that you have permanent access to.</li>
+        <li>Only add Emotes that would otherwise not show up in Chatty in your
+            sent messages or Emote Dialog.</li>
+        <li><strong>Do not add</strong> Global, Subscriber and Follower Emotes
+            as Local Emotes, since they should be available throught the API.</li>
+        <li>If you added a Local Emote by accident or lost access to one then
+            you should remove it again (e.g. through the Emote Context Menu or
+            Settings Dialog).</li>
+    </ul>
+    
+    <p>Add Local Emotes through the <strong>Emote Context Menu</strong> (e.g.
+        right-click on an emote in chat) using the <strong>"Add local emote"</strong>
+        option. For example if you have a favorite emote that you have permanent
+        access to but that isn't available through the API (meaning it
+        doesn't show up in the Emote Dialog or when you send a message), you
+        can send a message with it through Webchat to the same channel you
+        have joined in Chatty and then use the Context Menu option on it.
+    </p>
+    <p>In the <strong>Settings Dialog</strong> in the Emoticon settings you can
+        view and edit the list of Local Emotes.</p>
+    
+    <p>The help on the Emote Dialog's "Highlight endangered emotes" function has
+        been removed since the old API that it relied on has been turned off.</p>
+
+    <h2>
+        <a name="Fonts">Fonts</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    
+    <h3>Chat Font</h3>
+    <p>Change font and font size by clicking on <code>Select font</code>.</p>
+    
+    <dl class="dl-settings">
+        <dt>Line Spacing</dt>
+        <dd>Space between lines in the chat window. One message can consist of
+            several lines. Lines that contain emotes may have a larger height.</dd>
+        
+        <dt>Message Spacing</dt>
+        <dd>Space between messages. One message can consist of several lines,
+            but this setting is only applied per message and doesn't affect the
+            indiviual line height.</dd>
+    </dl>
+    
+    <h3>Input/Userlist Font</h3>
+    <p>Input font is restricted to two fonts by default, because other fonts
+        cause issues due to a bug in Java. The number behind the font is the
+        font size. You can manually change this setting via
+        <a href="help-setting_commands.html">Setting Commands</a> (as with most
+        settings) if you really need another font, but pay attention to the
+        <a href="help-setting_commands.html#font">note</a> about the adverse
+        effects it may have.</p>
+    
+    
+    <h2>
+        <a name="Chat">Chat</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <h3>Chat Settings</h3>
+    <ul>
+        <li><strong>Scroll down after <code>&lt;x&gt;</code> seconds of inactivity</strong>: If you scrolled
+            up in chat but haven't moved scrollposition in the given number of seconds, it will scroll down
+            if new messages come in. This prevents new messages from being hidden
+            indefinitely if you accidently stayed scrolled up.</li>
+        <li><strong>Chat buffer size</strong>: How many lines of text are kept
+            for each channel in chat to scroll back to.</li>
+    </ul>
+    
+    <h3>Pause Chat</h3>
+    <p>The Pause Chat feature stops Chatty from scrolling down when you move the
+        mouse over chat. This can be useful if you want to click specific stuff
+        in a fast moving chat, for example if you are moderating or just want to
+        click on an emote to see what it is.</p>
+    
+    <p><em>Please note:</em> This will not work properly until the chat window is filled with
+        text, because only then will Chatty actively scroll down. Also, this
+        only stops Chatty from actively scrolling down, so if e.g. a big message
+        is being timed out and thus shortened, stuff may still move around accordingly
+        (which in that case couldn't really be prevented anyway).</p>
+    
+    <p>Chat is paused as long as you move the mouse over chat or if you hold
+        <kbd>Ctrl</kbd> (and initiated pausing by moving the mouse). A little
+        popup in the top-right will indicate that the chat is paused.</p>
+    
+    <p>Holding <kbd>Ctrl</kbd> basicially acts as if you moved the mouse
+        continuously.</p>
+    
+    <ul>
+        <li><strong>Pause chat when moving the mouse over it:</strong> Enables
+        this feature.</li>
+        <li><strong>Require Ctrl being pressed to start pausing chat:</strong>
+            If this is enabled, you need to have <kbd>Ctrl</kbd> pressed to
+            start pausing chat when moving the mouse over it. Once it's paused,
+            you can let go of <kbd>Ctrl</kbd> and it will stay paused as long as
+            you move the mouse (or hold <kbd>Ctrl</kbd> again to keep it paused
+            even when not moving the mouse, as usual).</li>
+        <li><strong>Run command when clicking on user (holding Ctrl):</strong>
+            When you select a command here, then clicking on a user in chat
+            while holding <kbd>Ctrl</kbd> will run the command on that user. You
+            can <a href="help-setting_commands.html#chat">manually edit</a> this
+            setting to use another command.</li>
+    </ul>
+    
+    
+    <h2>
+        <a name="Messages">Messages</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <h3>Deleted Messages (Timeouts/Bans)</h3>
+    <p><em>Tip:</em> Click on a username in chat to open the User Info Dialog,
+        which also shows the timeouts/bans and the original messages.</p>
+    <ul>
+        <li>How to handle deleted messages (timeouts/bans) in chat window:
+            <dl class="dl-settings">
+                <dt>Delete Message</dt>
+                <dd>Completely replaces the message with <code>&lt;message deleted&gt;</code>.</dd>
+                
+                <dt>Strike through</dt>
+                <dd>Keeps the whole message displayed, but crossed out.</dd>
+                
+                <dt>Strike through, shorten</dt>
+                <dd>Crosses out the message but also shortens the message to the
+                    given number of characters, so long spam messages don't take
+                    up much space, but you can still kind of tell what they were
+                    about.</dd>
+                <dd>Shortened messages are indicated by the points at the end
+                    that are <em>not</em> crossed out:
+                    <code><span style="text-decoration: line-through">[12:30] Spammer: Deleted spam message Long copy pas</span>..</code></dd>
+            </dl>
+        </li>
+        <li>Ban duration/reason:
+            <dl class="dl-settings">
+                <dt>Show ban duration</dt>
+                <dd>Appends the length of timeouts in seconds (s) or minutes (m)
+                    and "banned" for bans to the most recent message of the
+                    banned user.</dd>
+                <dd><code><span style="text-decoration: line-through">[23:12] Spammer: spam message</span> (10m)</code></dd>
+                <dd><code><span style="text-decoration: line-through">[23:12] Spammer: spam message</span> (banned)</code> (permanent ban)</dd>
+                <dd>If more than one timeout is issued, the appended info will update
+                    with the length of the latest timeout, again always applied to the most recent
+                    message of that user.</dd>
+                <dd>Timeouts that happen more than a minute after the
+                    offending message was originally received will cause the
+                    appended info to include an asterisk at the end (*).</dd>
+                <dd><code><span style="text-decoration: line-through">[23:12] Spammer: spam message</span> (10m)*</code></dd>
+            
+                <dt>Show ban reason (mod only)</dt>
+                <dd>Show the reason for the timeout (if the mod has given one),
+                    appended and updated together with the duration.</dd>
+                <dd><code><span style="text-decoration: line-through">[23:12] Spammer: spam message</span> (banned) [rude tbh]</code></dd>
+                <dd><code><span style="text-decoration: line-through">[23:12] Spammer: spam message</span> (10m) [emote spam]</code></dd>
+                <dd>This is only available for mods of the channel as well as for
+                    the user that was banned/timed out.</dd>
+            </dl>
+        </li>
+        <li>In addition to handling the deleted message, Chatty can also show a
+            separate message with info about the ban:
+            <dl class="dl-settings">
+                <dt>Show separate ban messages</dt>
+                <dd>Enable separate ban/timeout info messages.</dd>
+                <dd><code>&lt;name&gt; has been timed out</code></dd>
+                <dd><code>&lt;name&gt; has been banned</code> (permanent ban)</dd>
+            
+                <dt>Combine ban messages</dt>
+                <dd>Chatty can combine ban messages, which means if several
+                    similiar bans/timeouts are issued for the same user within
+                    10 seconds, only one message is shown, with the number of
+                    included bans shown after the message, e.g.
+                    <code>&lt;name&gt; has been timed out (3)</code>.</dd>
+                <dd>Ban messages are not combined if a new message from the banned user was
+                    received in the meantime.</dd>
+                <dd>This is particularly useful when moderation bots want to
+                    more reliably remove a message and issue several identical
+                    timeouts a few seconds apart.</dd>
+                
+                <dt>Show ban duration</dt>
+                <dd>Appends the length of timeouts in seconds (s) or minutes (m)
+                    to the separate timeout info message.</dd>
+                <dd><code>&lt;name&gt; has been timed out (60s)</code></dd>
+            
+                <dt>Show ban reason (mod only)</dt>
+                <dd>Appends the reason for the timeout/ban (if the mod has given
+                    one) to the separate info message.</dd>
+                <dd><code>&lt;name&gt; has been banned [rude tbh]</code></dd>
+                <dd><code>&lt;name&gt; has been timed out (600s) [emote spam]</code>
+                <dd>This is only available for mods of the channel as well as for
+                    the user that was banned/timed out.</dd>
+            </dl>
+        </li>
+    </ul>
+    
+    
+    <h3>Other</h3>
+    <dl class="dl-settings">
+        <dt>Timestamp</dt>
+        <dd>Whether to show a timestamp in front of
+        chat messages and what format it should have. If you want a different
+        format from the ones provided here, you can use the command
+        <code>/set timestamp &lt;format&gt;</code>. The format can be anything
+        specified by the Java
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>
+        class.</dd>
+        
+        <dt>Show mod/unmod messages</dt>
+        <dd>Whether to show the MOD/UNMOD
+            messages as they come in from Twitch Chat. These messages are send
+            not only when someone was modded/unmodded but also when a mod joins
+            or leaves the chat. This is not very reliable, since Twitch Chat
+            sometimes sends a lot of MOD/UNMOD events, even if the mod never
+            left the channel. See the <a href="help.html#userlist">Userlist</a>
+            help on more about that.</dd>
+        
+        <dt>Show joins/parts</dt>
+        <dd>Show joins/parts, which
+        are always kind of delayed, so don't take them too seriously (only works
+        when <code>Advanced - Correct Userlist</code> is enabled). See the
+        <a href="help.html#userlist">Userlist</a> help on more about that.</dd>
+        
+        <dt>Show stream status in chat</dt>
+        <dd>Outputs the stream status (title and game) in the chat window on
+            join and when it changes (when the stream goes offline or online or
+            changes the title or game).</dd>
+        
+        <dt>/me messages colored</dt>
+        <dd>Show action messages in the color of the user like in webchat.</dd>
+        
+        <dt>Filter combining characters</dt>
+        <dd>Replaces certain ranges of
+        Unicode characters. Those characters are used in some
+        languages to combine characters, but can apparently cause errors in some
+        cases. The filter applies to the main chat window and the recent messages
+        in the User Info Dialog (but not e.g. the chatlog written to file).
+            <dl class="dl-settings dl-settings-sub">
+                <dt>Off</dt>
+                <dd>Do nothing</dd>
+                
+                <dt>Lenient</dt>
+                <dd>Replaces at least 3 characters in a row with stars (****), which preserves some legitimate use</dd>
+                
+                <dt>Strict</dt>
+                <dd>Replaces any number of characters in a row with stars (****), use this if you have performance
+                problems when someone posts these kind of characters</dd>
+            </dl>
+        
+        </dd>
+    </dl>
+    
+    
+    <h2>
+        <a name="Moderation">Moderation</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    
+    <h3>Moderator-only Information</h3>
+    <dl class="dl-settings">
+        <dt>Show Moderator Actions in chat</dt>
+        <dd>Show commands that moderators execute directly in chat. You can also
+            view the same messages under <code>Extra - Moderation Log</code>.
+            Only works if you are a moderator yourself.
+            <dl class="dl-settings dl-settings-sub">
+                <dt>Hide if associated action already visible in chat (e.g. ban)</dt>
+                <dd>Example: If a mod turns on Subscriber-Only mode, everyone
+                    will get an info message about it, which means (if enabled,
+                    for mods) @Mod will be appended to that info message. Due to
+                    this, no separate Mod Action message will be shown.</dd>
+                <dd>On the other hand, if a mod unbans someone, there is no
+                    associated message in chat, so (if enabled) a separate Mod
+                    Action message will always be shown.</dd>
+                <dd>In addition, if a mod bans someone, but no message of that
+                    user is currently visible in chat, then a separate Mod
+                    Action message might be shown.</dd>
+            </dl>
+        </dd>
+        
+        <dt>Append which @Mod caused an Action (e.g. ban)</dt>
+        <dd>Append the name of the moderator to actions in chat, for example
+            behind a deleted message or an info message such as
+            <code>[Info] This room is now in subscribers-only mode. (@tduva)</code>.</dd>
+        <dd>Note that the association of Mod Action and existing message in chat
+            may not always be perfect, especially if different mods perform the
+            same or similiar action at the same time.</dd>
+        
+        <dt>Show messages rejected by AutoMod</dt>
+        <dd>Show messages that have to be approved directly in chat. To approve
+            messages you have to open <code>Extra - AutoMod</code>, where you
+            can also view those messages even if this setting is disabled.</dd>
+    </dl>
+    
+    <h3>User Dialog</h3>
+    <dl class="dl-settings">
+        <dt>Clear message history of users inactive for</dt>
+        <dd>Remove the messages visible in the User Dialog for each user if a
+            new message hasn't been added for a while. This is mostly for saving
+            memory when Chatty is running continuously for a long time.</dd>
+    </dl>
+    
+    <h3><a name="RepeatMsg">Repeated Chat Message Detection</a></h3>
+    <p>This feature uses the user's message history (based on what is visible
+        in the User Dialog when clicking on a user) to determine if the user has
+        sent the same (or similar) message before. If a repeated message has
+        been detected (depending on the settings) the number of repeated
+        messages is added behind the message in chat, e.g. "(x4)".</p>
+    
+    <p>In addition, the <code>config:repeatedmsg</code> <a href="#Highlight_Meta_Matching">Matching prefix</a>
+        can be used in e.g. the Highlight list, Message Colors list or to restrict a Notification to trigger only on repeated messages.</p>
+    
+    <p>Restricting detection uses <a href="#Highlight">Highlight Matching</a>,
+        for example <code>!status:M</code> to exclude mods or <code>mystatus:M</code>
+        to restrict to channels you are a mod in or even matching on the message
+        text.</p>
+    
+    <p>Note that this feature may affect performance in very busy chats, since each
+        received message has to be compared against multiple messages (depending
+        on the user's available history and these settings).</p>
+
+    <h2>
+        <a name="Names">Names</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <h3>Names / Localized Names</h3>
+    
+    <p>Users can customize the capitalization of their name, or set a localized
+        name for some locales, like Japanese.</p>
+    
+    <p><strong>Chat</strong> messages and the <strong>Userlist</strong> can be
+        configured separately with the following options:</p>
+    
+    <dl class="dl-settings">
+        <dt>Username Only</dt>
+        <dd>Always show the non-capitalized username for all users.</dd>
+
+        <dt>Capitalized Only</dt>
+        <dd>Show the capitalized name, if available (but never localized names).</dd>
+
+        <dt>Localized Only</dt>
+        <dd>Show the localized name, if set by the user, or the capitalized name
+            otherwise.</dd>
+
+        <dt>Localized+Username</dt>
+        <dd>If the user has a localized name set, show both the localized
+            name and the original username in parentheses, or the capitalized
+            name otherwise.</dd>
+    </dl>
+    
+    <p>If you have a <a href="help.html#customNames">Custom Name</a> set for a
+        user, then only that Custom Name will be shown.</p>
+    
+    <p>Other related settings:</p>
+    <dl class="dl-settings">
+        <dt>Capitalize First Letter if no display name available</dt>
+        <dd>If there is no capitalized/localized name for a user available then
+            capitalize the first letter. This especially applies to names in the
+            userlist of people who haven't said anything in chat yet.</dd>
+    </dl>
+    
+    <h3>Custom Names</h3>
+    <div class="moreInfo">More information: <a href="help.html#customNames">Custom Names</a></div>
+    
+    
+    <h2>
+        <a name="Highlight">Highlight</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <h3>General settings</h3>
+    <ul>
+        <li><strong>Enable Highlight</strong>: Enable/disable Highlighting.</li>
+        <li><strong>Highlight own name</strong>: Makes messages that contain your
+        own name (case-insensitive) highlighted, even if you didn't add it to the list manually.</li>
+        <li><strong>Highlight follow-up</strong>: After a highlighted message,
+        also highlight the following messages of the same user for a certain time.</li>
+        <li><strong>Check own text for highlights</strong>: Highlights your own messages if
+        they match the criteria, which can be particularly useful to test whether your terms
+        are being matched correctly. This does not mean that all your own messages
+        are automatically highlighted, they still have to match one of the items
+        added to the list. To match all your own messages you can use the <code>user:</code>
+        prefix with your own name.</li>
+        <li><strong>Check ignored messages</strong>: Only checks ignored messages
+        for highlights if this is enabled.</li>
+    </ul>
+    <h3>Overview</h3>
+    <p>Add items to the list to make a message highlighted if any one of them
+        match the message. The <code>Users to never highlight</code> and
+        <code>Highlight Blacklist</code> settings can be used to prevent some of
+        those Highlights.</p>
+    
+    <p><em>Note:</em> Highlight-style matching can be used in various other
+        settings as well, although not all prefixes are always available.</p>
+    
+    <p>There is a <a href="https://www.youtube.com/watch?v=55n7ZWaaRIg">video tutorial</a>
+        that explains how this works.</p>
+    
+    <p>There are various prefixes that affect matching and Highlighting behaviour:</p>
+    <ul>
+        <li><a href="#Highlight_Matching">Text Matching Prefixes</a></li>
+        <li><a href="#Highlight_Meta_Matching">Meta Prefixes (Matching)</a> (e.g. matching by channel, user or message type)</li>
+        <li><a href="#Highlight_Meta_Behaviour">Meta Prefixes (Behaviour)</a> (e.g. changing resulting text color)</li>
+        <li><a href="#Matching_Presets">Presets</a></li>
+    </ul>
+    
+    <p>Also see:</p>
+    <ul>
+        <li><a href="#Highlight_Order">Order of Highlight Items</a></li>
+        <li><a href="#Highlight_Examples">Examples</a></li>
+    </ul>
+    
+    <p>By default only regular chat messages are matched, however with the
+        <code>config:info</code> prefix info messages (e.g. subs, chat status)
+        can be matched instead.</p>
+    
+    <h3><a name="Highlight_Matching">Text Matching Prefixes</a></h3>
+    <p>By default, matching is performed <em>case-insensitive</em> and <em>anywhere</em> in the
+        message. However, you can add one of the following prefixes in front of
+        the search text to modify the matching behaviour: <code>[text-prefix:]&lt;search&nbsp;text&gt;</code></p>
+    
+    <ul>
+        <li><code>text:</code> is the same as without a prefix, but can be useful
+            to make sure the text isn't interpreted as a prefix, for example
+            <code>text:start:Let's go</code> would match <code>start:Let's go</code>
+            anywhere in the message (case insensitive).</li>
+        <li><code>cs:</code> makes it case-sensitive, so <code>cs:test</code>
+            matches <code>test</code> but not <code>Test</code>.</li>
+        <li><code>w:</code> matches at word boundaries, e.g. <code>w:anna</code>
+            will match <code>anna</code> or <code>Anna:</code> but not
+            <code>Hannah</code> or <code>annah</code>.<br />
+            <em>Note:</em> This doesn't take Regex anymore, please use <code>regwi:</code> instead.</li>
+        <li><code>wcs:</code> is the same as <code>w:</code>, but case-sensitive.</li>
+        <li><code>start:</code> to match at the start, so <code>start:!bet</code> will
+            match messages starting with <code>!bet</code>.</li>
+        <li><code>startw:</code> is a combination of <code>start:</code> and <code>w:</code>.</li>
+        <li><code>reg:</code> (and variations) to use a
+            <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expression</a> (Regex), which are case-sensitive by default:
+            <ul>
+                <li><code>reg:</code> (alias <code>re*:</code>) will search anywhere in the message.<br />
+                    Example: <code>reg:(?i)\bGTA&nbsp;?[V5]\b</code> will match <code>GTA5</code>,
+                    <code>GTA 5</code>, <code>GTA V</code>, <code>gta5</code>..
+                    anywhere in the message, case-insensitive (<code>(?i)</code>), but only on word boundaries (<code>\b</code>).</li>
+                <li><code>regi:</code> matches case-insensitive (adds <code>(?iu)</code>),
+                    so the example would be: <code>regi:\bGTA&nbsp;?[V5]\b</code></li>
+                <li><code>regw:</code> matches on word boundaries (surrounds with <code>\b</code>),
+                    so the example would be: <code>regw:(?i)GTA&nbsp;?[V5]</code></li>
+                <li><code>regwi:</code> matches on word boundaries and case-insensitive,
+                    so the example would be: <code>regwi:GTA&nbsp;?[V5]</code></li>
+                <li><code>regm:</code> (alias <code>re:</code>) always tries to match the entire message (adds <code>^</code> and <code>$</code>),
+                    which means <code>regm:Test</code> will only match the message
+                    "<code>Test</code>", but not anything added to it, even just a space
+                    like "<code>Test </code>" (which <code>reg:Test</code> would
+                    match).</li>
+            </ul>
+            <em>Note:</em> There appears to be an error in the Java Regex implementation
+                which can cause some patterns to cause errors sometimes (possibly
+                related to backreferences, also see <a href="https://stackoverflow.com/q/16008974">this</a>).
+                When editing a Highlight/Ignore entry you will be warned when a
+                pattern could be problematic.
+        </li>
+        <li>You can prefix all of the above with "msg", such as <code>msgtext:</code>
+            in order to only match on user-generated messages. For regular chat
+            messages this makes no difference, however for Subscriptions,
+            Announcements, Point Redemptions or AutoMod messages it will only
+            match the attached message rather than the full info message. If
+            there is no attached message it will not match.<br />
+            Example: <code>config:any msgtext:bad word</code> will match all
+            messages (regular and info messages) that have an attached user
+            message containing "bad word".</li>
+    </ul>
+    
+    <p>All Text Matching Prefixes can be <strong>inverted</strong> (matches when it doesn't find
+        the search text) by prepending an exclamation mark, for example: <code>!start:!bet all</code>.
+        See the <a href="#Highlight_Prefix-blacklist"><code>blacklist:</code> Prefix description</a>
+        for further information on the differences between blacklisting and
+        negated matches.</p>
+    
+    <p>Additionally, <strong>several Text Matching Prefixes</strong> can be specified by prepending
+        a plus sign. In this case the value cannot contain spaces or must be
+        quoted. Example: <code>+!start:"!bet all" regi:Regular search text</code></p>
+    
+    <p>Only the main search text (no prefix or using any of the non-modified
+        Text Matching Prefixes) will mark Highlight matches in chat.</p>
+    
+    <h3><a name="Highlight_Meta_Matching">Meta Prefixes (Matching)</a></h3>
+    <p>The following prefixes don't match on the text itself, but define other
+        things that should or should not trigger a Highlight. You can place one
+        or several of these prefixes before the search text (separated by
+        spaces):
+        <code>[meta-prefix:value]&nbsp;[..]&nbsp;[text-prefix:]&lt;search&nbsp;text&gt;</code></p>
+    
+    <p>Notes:</p>
+    <ul>
+        <li>When specifying several prefixes, all of them have to match in order
+            for the Highlight to trigger.</li>
+        <li>The same prefix can appear several times with different values (e.g.
+            <code>cat:category1 cat:category2</code>).</li>
+        <li>Prefixes can normally not contain spaces (it wouldn't be clear
+            whether the space is part of the prefix value or a separator between
+            prefixes), however you can enclose the prefix value (or part of it)
+            in quotes. Two quotes can be used to add a literal quote. Example:
+            <code>replacement:"text&nbsp;with&nbsp;""space"""</code> (meaning
+            the value of <code>replacement:</code> is <code>text&nbsp;with&nbsp;"space"</code>)</li>
+        <li>When a prefix can have several values, they must be comma-separated
+            (without spaces). Example: <code>cat:category1,category2</code>.
+            Commas in list values can be quoted as well for them to be used
+            literally instead of as a separator.</li>
+    </ul>
+    
+    <p>Possible matching prefixes:</p>
+    <ul>
+        <li><code>user:</code> to specify one exact username (case-insensitive)
+            which should highlight only if this user send the message, doesn't
+            search in the message itself.</li>
+        <li><code>!user:</code> to specify one exact username (case-insensitive)
+            which the message must not be from.</li>
+        <li><code>reuser:</code> to specify a regex to match usernames against.
+            Behaves like the <code>regm:</code>/<code>re:</code> prefix, in that
+            it always tries to match the entire username. Example:
+            <code>reuser:(?i)a.*</code> would match all names starting with "a".</li>
+        <li><code>cat:</code> - One or several (comma separated) <a href="help-addressbook.html">Addressbook</a>
+            categories. The user who send the message must be in at least one of them.
+            Example: <code>cat:friends,family</code> (the user must be in "friends" or "family", or both)</li>
+        <li><code>!cat:</code> - One or several Addressbook categories.
+            The user who send the message must <em>not</em> be in at least one of them.</li>
+        <li><code>chan:</code> - One or several channels the message must
+            have been sent in. Example: <code>chan:joshimuz,tirean</code></li>
+        <li><code>!chan:</code> - One or several channels the message must
+            <em>not</em> have been sent in.</li>
+        <li><code>chanCat:</code> - One or several <a href="help-addressbook.html">Addressbook</a>
+            categories. The channel the message was send in must be in at least
+            one of those categories (added to the Addressbook with the name of
+            the channel, including leading #, e.g. <code>#esl_csgo</code>).</li>
+        <li><code>!chanCat:</code> - One or several Addressbook categories. The
+            channel the message was send in must <em>not</em> be in at least one
+            of them. Example: <code>!chanCat:modding,important</code> (if
+            channel has both, the match fails), <code>!chanCat:modding !chanCat:important</code>
+            (if channel has one or both, the match fails)</li>
+        <li><code>chanCat2:</code> / <code>!chanCat2:</code> - Same as <code>chanCat:</code> / <code>!chanCat:</code>,
+            except that it looks up the channel in the Addressbook both in the
+            channel and user format. Example: <code>chanCat2:abc</code> in the
+            channel #joshimuz will look for the <code>abc</code> category under
+            both <code>#joshimuz</code> and <code>joshimuz</code> as if they
+            were one.</li>
+        <li><code>status:</code> to specify that the user has to have one of the
+            given status codes (case-sensitive):
+            <ul>
+                <li><code>m</code> Moderator</li>
+                <li><code>s</code> Subscriber</li>
+                <li><code>a</code> Admin</li>
+                <li><code>f</code> Staff</li>
+                <li><code>b</code> Broadcaster</li>
+                <li><code>t</code> Turbo User</li>
+                <li><code>g</code> Global Moderator</li>
+                <li><code>r</code> Bot as in <em>R</em>obot (depending on what the FFZ/BTTV APIs provides (if
+                    enabled) and values in the <a href="help-setting_commands.html#bots">botNames</a> setting)</li>
+                <li><code>M</code> User with any kind of moderator/special powers
+                    (so Broadcaster/Moderator/Global Moderator/Admin/Staff combined)</li>
+                <li><code>v</code> VIP</li>
+            </ul>
+            For example: <code>status:sv</code> matches users that are either a
+            subscriber or a VIP (or both). <code>status:s&nbsp;status:v</code>
+            matches users that are <em>both</em> a subscriber and VIP at the
+            same time.</li>
+        <li><code>!status:</code> to specify that the user must NOT have any of
+            the given status codes (see <code>status:</code> for codes). For example:
+            <code>!status:stM</code> matches all 'normal' users that have no
+            badge by default (NOT a Subscriber, Turbo User or any kind of Moderator).</li>
+        <li><code>mystatus:</code> / <code>!mystatus</code> for the same as
+            <code>status:</code> / <code>!status:</code>, except for yourself.
+            Example: <code>mystatus:bm</code> to match only when you are the
+            broadcaster or a moderator. Note that your user status is only
+            updated on channel join and when sending a message, so e.g. if you
+            get modded while already in the channel it will not be recognized
+            until after you have sent a message.</li>
+        <li><code>config:</code> to specify on or more options (separated by comma, no spaces):
+            <ul>
+                <li><code>config:firstmsg</code> - Restrict matching to the
+                    first message of this user in this channel during the
+                    current session (first message in User Dialog).<br />
+                    The messages can be reset without restarting Chatty via the
+                    <a href="help-builtin_commands.html#commands-clearUserMessages"><code>/clearUserMessages</code></a>
+                    command, so that the prefix triggers again.<br />
+                    To match on the first message of this user in the channel
+                    overall, you can match on the message tags that Twitch
+                    sends: <code>config:t|first-msg=1</code> (as long as Twitch
+                    doesn't change it)</li>
+                <li><code>config:repeatedmsg</code> - Matches if a user repeats
+                    the same message (this requires the <a href="#RepeatMsg">Repetition Detection</a> in
+                    the Moderation settings to be enabled). Can optionally
+                    restrict how many repetitions are required for this to
+                    match, for example <code>config:repeatedmsg|4</code> requires
+                    4 repeated messages (can't be lower than the Repetition
+                    Detection setting).</li>
+                <li><code>config:info</code> - This item applies to info
+                    messages instead of regular user messages</li>
+                <li><code>config:any</code> - This item applies to both info
+                    messages and regular user messages</li>
+                <li><code>config:hl</code> - Restrict matching to user messages
+                    highlighted by using channel points</li>
+                <li><code>config:b|id/version</code> - Match a Twitch Badge
+                    (version optional, if several are specified in the same
+                    <code>config:</code> prefix, only one has to match).</li>
+                <li><code>config:t|key=value</code> or <code>config:t|key=reg:value</code> -
+                    Match a message tag (value optional, if several are
+                    specified in the same <code>config:</code> prefix, only one
+                    has to match), prefix value with <code>reg:</code> to use
+                    regex matching on the value.</li>
+                <li><code>config:url</code> - Message must contain a URL (same
+                    as what is made clickable), or <code>config:msgurl</code> to
+                    only match in a user message (see <a href="#Highlight_Matching">Text Matching Prefixes</a>
+                    for explanation).</li>
+                <li><code>config:live</code> or <code>config:live|title/game</code> -
+                    Stream must be live, title and game are interpreted as regex
+                    (like the <code>reg:</code> prefix) and match on the stream's
+                    title or game, use <code>!live</code> to negate match<br />
+                    Example: <code>config:live|/"Grand Theft Auto"</code> would match
+                    in any channel with a live stream where <code>Grand Theft Auto</code>
+                    occurs in the currently streamed game/category</li>
+                <li><code>config:!blacklist</code> - Ignore the overall
+                    blacklist for this entry. The <code>blacklist:</code> prefix
+                    still applies though.</li>
+                <li><code>config:!ignore</code> - Allows an ignored message to
+                    be highlighted and overrides the ignored status of the
+                    message, so it shows up as a regular highlighted message.
+                    In the Highlight settings you can also enable this for all
+                    Highlight items, without having to apply this prefix to each
+                    one.</li>
+                <li><code>config:s</code>, <code>config:!s</code> - Enable or
+                    disable Substitutes. You can turn it on for all items by
+                    default in the "Substitutes / Lookalikes" dialog in the
+                    Highlight settings (if no prefix is provided it will use the
+                    default setting).</li>
+                <li><code>config:restricted</code> - Match messages by
+                    restricted users shown only for moderators. Note that
+                    messages by monitored users can not be matched yet.</li>
+                <li><code>config:hypechat</code> - Match Hype Chat messages.</li>
+            </ul>
+        </li>
+        <li><a name="Highlight_Prefix-blacklist"><code>blacklist:</code></a> to specify one or more text patterns
+            (separated by comma) that will prevent the overall match if they
+            encompass the entire text match. Example: <code>blacklist:"!bet all" start:!bet</code>
+            will match all messages starting with <code>!bet</code> but will not
+            match <code>!bet all</code>. Can use any regular Text Matching Prefix.<br /><br />
+            This is of course similiar to using a negated text match, like
+            <code>+!text:"!bet all" start:!bet</code>, however the blacklist is
+            "passive", so while <code>+!text:"!bet all"</code> will match only
+            if <code>!bet all</code> is not present anywhere, <code>blacklist:"!bet all"</code>
+            (by itself) will <em>always</em> match because it is not actually
+            a requirement itself, it just modifies text matching requirements,
+            so technicially there is no requirement for a match.<br /><br />
+            Additionally, a negated match like <code>+!text:!cheesecake reg:^!\w+</code>
+            will prevent the match if <code>!cheesecake</code> appears anywhere
+            in the message, while <code>blacklist:!cheesecake reg:^!\w+</code>
+            will only prevent the match when it fully encompasses the regular
+            text match, so only when the message starts with <code>!cheesecake</code>.</li>
+        <li><a name="Highlight_Prefix-if"><code>if:</code></a> to specify
+            additional conditions that have an "or" relationship to eachother.
+            This is a comma-separated list (enclose spaces and commas in quotes
+            to ignore them) of Highlight items, whereas at least one has to
+            match. Use <code>!if:</code> to negate the result.
+            <br/><br />
+            Prefixes in an item always have an "and" relationship, so they all
+            have to match (<code>cat:abc user:a_name</code> requires the "abc"
+            Addressbook category <em>and</em> the "a_name" username), the <code>if:</code> allows for
+            some more flexibility (<code>if:"cat:abc","user:a_name"</code> requires
+            only one of them).
+            <br/><br />
+            Example: <code>config:any if:"config:info start:[AutoMod]"," " reg:complicated regex</code>
+            <ul>
+                <li><code>config:any</code> - Match any type of message,
+                    otherwise it would only match regular chat messages, as is
+                    the default</li>
+                <li>First <code>if:</code> entry: <code>"config:info start:[AutoMod]"</code> - Match info
+                    messages starting with "[AutoMod]" (note the quotes due to
+                    the spaces)</li>
+                <li>Second <code>if:</code> entry: <code>" "</code> - This one is a bit weird,
+                    it just specifies an empty item, which matches any regular
+                    chat message (could also have <code>reg:.*</code> or something).</li>
+                <li><code>reg:complicated regex</code> - The other stuff was
+                    just to narrow down which messages to match on, so now match
+                    the actual text.</li>
+            </ul></li>
+    </ul>
+    
+    <h3><a name="Highlight_Meta_Behaviour">Meta Prefixes (Behaviour)</a></h3>
+    <p>The following prefixes don't change what is highlighted, but rather
+        change what a Highlight does. You can place one or several of these
+        prefixes before the search text (separated by spaces):
+        <code>[meta-prefix:value]&nbsp;[..]&nbsp;[text-prefix:]&lt;search text&gt;</code></p>
+
+    <p>See <a href="#Highlight_Meta_Matching">Meta Prefixes (Matching)</a> notes for quoting special characters.</p>
+    
+    <ul>
+        <li><code>color:</code> to specify a color other than the default
+            Highlight color for displaying this Highlight (HTML Color Codes as
+            well as some Named Colors such as "blue").</li>
+        <li><code>bgcolor:</code> to specify a background color other than the
+            default Highlight background color for displaying this Highlight.</li>
+        <li><code>config:</code> to specify one or more options (separated
+            by comma, no spaces):
+            <ul>
+                <li><code>config:silent</code> - Disable sounds for this item</li>
+                <li><code>config:!notify</code> - Disable notifications for this item</li>
+                <li><code>config:!ignore</code> - Allows an ignored message to
+                    be highlighted and overrides the ignored status of the
+                    message, so it shows up as a regular highlighted message.
+                    In the Highlight settings you can also enable this for all
+                    Highlight items, without having to apply this prefix to each
+                    one.</li>
+                <li><code>config:hide</code> - Don't add the message to the
+                    Highlighted/Ignored Messages panel</li>
+                <li><code>config:!log</code> - Don't log the message to the
+                    separate highlighted/ignored log file (may still be logged
+                    to the channel log file)</li>
+            </ul>
+        </li>
+        <li><code>n:</code> to provide a note that is ignored for matching.
+            Example: In <code>n:"Explains this entry" config:info startw:!quote</code>
+            only <code>config:info startw:!quote</code> will have an effect
+            (see <a href="#Highlight_Meta_Matching">Meta Prefixes (Matching)</a>
+            on how quoting works).</li>
+    </ul>
+    
+    <p><em>Note:</em> If you're using the <code>color:</code> or <code>bgcolor:</code>
+        prefix to merely change the message color, but are not interested in
+        actually Highlighting it - which includes a Notification and adding the
+        message to the Highlighted Messages window - then consider using Custom
+        Message Colors instead.</p>
+    
+    <h3><a name="Matching_Presets">Presets</a></h3>
+    <p>There are different ways that allow you to build Highlight items (or
+        settings using the same format) from pre-defined parts or apply
+        functions instead of writing it all manually:</p>
+    
+    <ul>
+        <li>The <code>preset:</code> prefix inserts a "Presets" list entry at
+            it's position (good for often used meta prefixes).</li>
+        <li>The <code>cc:/cc2:</code> prefixes modify all of the text after it
+            by allowing Custom Command syntax to be used (which allows you to
+            include entries from the "Presets" list or use functions).</li>
+        <li>The <code>ccf:</code> prefix modifies all of the text after it by
+            applying a function from the "Presets" list to it.</li>
+    </ul>
+    
+    <p>The "Presets" list can be accessed through the Highlights settings page.
+        Presets can be used from any setting that uses the Highlights format,
+        even though in this help it only refers to the Highlights list.</p>
+    
+    <p>The <strong>"preset:" prefix</strong> inserts an entry from
+        the "Presets" list. It could for example contain an entry with the name "m" that contains some meta prefixes:</p>
+    <p class="codeblock-compact"><code>m&nbsp;chanChat:mod config:!notify</code> &nbsp;("Presets" list)</p>
+    
+    <p>This could then be inserted into a Highlight list entry like this:</p>
+    <p class="codeblock-compact"><code>preset:m reg:&lt;some regex&gt;</code></p>
+    
+    <p>Prior to further parsing this would be expanded to:</p>
+    <p class="codeblock-compact"><code>chanCat:mod config:!notify reg:&lt;some regex&gt;</code></p>
+    
+    <p>You can also add an optional parameter, for example <code>preset:m|",silent"</code>,
+        which will be appended directly to the end if the inserted text:
+        <code>chanCat:mod config:!notify,silent reg:&lt;some regex&gt;</code>.
+        If the name of the preset begins with an underscore the parameter
+        will instead be provided to the preset in the <code>$1-</code>
+        replacement.</p>
+            
+    <p>The <strong>"cc:" prefix</strong> (short for "Custom Command") causes all following text to be
+        interpreted in the <a href="help-custom_commands.html#replacements">Custom Command</a> syntax, which means:</p>
+    
+    <ul>
+        <li>You can use replacements such as <code>$(m)</code> or <code>$(_m,&lt;text&gt;)</code>, whereas "m" or "_m" are
+            entries on the "Presets" list. Presets beginning with <code>_</code>
+            can contain Custom Commands replacements like <code>$1-</code>, which
+            allows working with the given <code>&lt;text&gt;</code> (so they act like functions).</li>
+        <li>Special characters such as <code>$</code> and <code>\</code> have to
+            be escaped with a backslash (<code>\$</code> and <code>\\</code>)
+            when intended to be used literally.</li>
+        <li>Presets are applied when the Highlight item is compiled,
+            which usually happens when it was changed, but also sometimes
+            automatically. While some Custom Command functions such as <code>$datetime()</code>
+            may be available, it is inadvisable to use them
+            since it would cause inconsistent results.</li>
+    </ul>
+    
+    <p>For example there could be a preset with the name "_t", that replaces
+        spaces in all of the given text <code>$1-</code> with underscores:</p>
+    <p class="codeblock-compact"><code>_t $replace($1-, ,_)</code> &nbsp;("Presets" list)</p>
+    
+    <p>This could then be used in a Highlight item:</p>
+    <p class="codeblock-compact"><code>cc:reg:\\w $(_t,abc test)</code> &nbsp;(note the escaped <code>\</code> and the <code>abc test</code> parameter)</p>
+    
+    <p>Prior to further parsing this would be modified to (due to being handled
+        like a Custom Command):</p>
+    <p class="codeblock-compact"><code>reg:\w abc_test</code></p>
+    
+    <p>The <strong>"cc2:" prefix</strong> does the same, except that you
+        must also specify a custom escaping (and optionally a replacement) character.
+        For example the following sets <code>~</code> as escape character (instead of <code>\</code>)
+                    and <code>§</code> as replacement character (instead of <code>$</code>).
+                    Anything after <code>|</code> is then interpreted in Custom Command syntax as above:</p>
+    <p class="codeblock-compact"><code>cc2:~§|reg:\w §(_t,abc test)</code></p>
+    
+    <p>The result is the same as the <code>cc:</code> example, but the <code>\w</code>
+        does not need the additional <code>\</code> in front, since <code>\</code>
+        is not a special Custom Command character anymore.</p>
+    
+    <p>The <strong><a name="Matching_ccf">"ccf:" prefix</a></strong> (short for
+        "Custom Command Function") applies a "Presets" list entry (whose name
+        should begin with <code>_</code> to be able to use Custom Command
+        replacements) to the entire following text, as if you wrapped the entire
+        text in a replacement. Example:</p>
+    <p class="codeblock-compact"><code>ccf:_t|reg:\w abc test</code></p>
+    
+    <p>This is equivalent to:</p>
+    <p class="codeblock-compact"><code>cc:$(_t,reg:\\w abc test)</code></p>
+    
+    <p>Both of these would give the entire text to <code>_t</code> (which is <code>$replace($1-, ,_)</code> as seen above) and then use the return value, so it changes to:</p>
+    <p class="codeblock-compact"><code>reg:\w_abc_test</code></p>
+    
+    <p>Using <code>ccf:</code> has the advantage that you don't have to
+        worry about potentially having to escape special characters,
+        since simply everything after the <code>|</code> is provided to <code>_t</code>
+        as a parameter without being interpreted in any special way.</p>
+    
+    <p>You can <strong>chain several prefixes</strong>, for example:</p>
+    <p class="codeblock-compact"><code>ccf:_test|preset:m reg:&lt;some regex&gt;</code></p>
+    <p>This would first apply the <code>_test</code> function to everything after
+        it, then insert the <code>m</code> preset (assuming the <code>_test</code>
+        function did not change the <code>preset:m</code>), then continue parsing the
+        result as a Highlight item.</p>
+    
+    <h3><a name="Highlight_Order">Order of Highlight items</a></h3>
+    <p>When using prefixes that change the behaviour (like setting a color) the
+        order of Highlight items may be important, since the settings of the
+        first matching item (from the top of the list) will be used. Contrary to
+        that, if the choice is merely whether or not to highlight, then the
+        order matter less (it can still matter for which matches in the message
+        are emphasized).
+        
+    <p>Example: If you have one item <code>bgcolor:yellow&nbsp;user:joshimuz</code>
+        that makes all messages of "Joshimuz" have a yellow background and
+        another item <code>start:!bet</code> that highlights all messages
+        starting with "!bet", then messages from "Joshimuz" that also happen to
+        be starting with "!bet" will either have a yellow background or not,
+        depending on the order of the two items in the list, so which one comes
+        first.</p>
+    
+    <p><em>Note:</em> If you have the "Highlight own name" setting enabled, then
+        it creates a Highlight item containing your name that will always be
+        checked first. So if you want to e.g. change the color of messages
+        containing your name as well, then you should disable that option and
+        manually add an appropriate entry to the list (e.g.
+        <code>w:&lt;yourname&gt;</code>), so that you can control it's position
+        in the list in relation to other items yourself.</p>
+    
+    <h3><a name="Highlight_Examples">Examples</a></h3>
+    <dl>
+        <dt><code>word1 word2</code></dt>
+        <dd>Matches e.g. <code>word1 word2</code>, <code>Word1 word2</code> anywhere in the message</dd>
+        <dd>Does NOT match only <code>word1</code> or only <code>word2</code> anywhere in the message</dd>
+        <dd><em>(Each item represents one word or phrase to match as a whole)</em></dd>
+        
+        <dt><code>w:anna</code></dt>
+        <dd>Matches e.g. <code>Anna?</code>, <code>Anna :D</code>, <code> Anna,</code></dd>
+        <dd>Does NOT match <code>Wanna?</code>, <code>Hannah</code>, <code>annah</code></dd>
+        <dd><em>(Match on word boundaries to prevent undesired matches)</em></dd>
+        
+        <dt><code>user:joshimuz cs:Hello</code></dt>
+        <dd>Matches <code>Hello</code> anywhere in the message, if the message was sent
+        by the user named <code>joshimuz</code></dd>
+        <dd>Does NOT match <code>hello</code></dd>
+        <dd><em>(Combine a Meta Prefix (user-specific highlighting) and a Text Matching Prefix (case-sensitive))</em></dd>
+        
+        <dt><code>cs:Hello user:joshimuz</code></dt>
+        <dd>Matches <code>Hello user:joshimuz</code> anywhere in the message</dd>
+        <dd>Does NOT match <code>Hello</code>, does NOT matter who send the message</dd>
+        <dd><em>(Anything after a Text Matching Prefix is interpreted as text to match, Meta Prefixes must be placed
+                in front of the text)</em></dd>
+        
+        <dt><code>cs:abc re:\w+</code></dt>
+        <dd>Matches <code>abc re:\w+</code> anywhere in the message</dd>
+        <dd>Does NOT match <code>abc test</code>, but also NOT <code>Abc re:\w+</code></dd>
+        <dd><em>(Can't combine Text Matching Prefixes)</em></dd>
+        
+        <dt><code>re:abc \w+</code></dt>
+        <dd>Matches e.g. <code>abc test</code></dd>
+        <dd>Does NOT match <code>aabc test</code></dd>
+        <dd><em>(All Text Matching prefixes can also be replaced by regex)</em></dd>
+        
+        <dt><code>re:.*abc \w+.*</code></dt>
+        <dd>Matches e.g. <code>abc test</code> anywhere in the message</dd>
+        <dd><em>(Regex has to match the whole message, so you need to add wildcards to match anywhere in the message)</em></dd>
+        
+        <dt><code>color:yellow wcs:S</code></dt>
+        <dd>Matches e.g. <code>S:</code>, <code>Hello S!</code> and makes the message
+        display in yellow color</dd>
+        <dd>Does NOT match <code>s:</code>, <code>Hello s!</code>, <code>SSSS</code>, <code>ssss</code></dd>
+        <dd><em>(Define a custom color for this item and match case-sensitive on word boundaries)</em></dd>
+        
+        <dt><code>chan:lotsofs,joshimuz cs:Hello</code></dt>
+        <dd>Highlight messages that contain <code>Hello</code>, but only if in
+            the channel <code>#lotsofs</code> or <code>#joshimuz</code></dd>
+        <dd><em>(Restrict matching to one or more channels)</em></dd>
+        
+        <dt><code>status:s chanCat:vip start:!test</code></dt>
+        <dd>Match any message starting with <code>!test</code> send by
+            subscribers of the channel, but only if the channel is in the
+            Addressbook category <code>vip</code> (e.g.
+            <code>/ab add #joshimuz vip</code>, notice the leading <code>#</code>)</dd>
+        <dd><em>(Restrict matching by user status, channel category and start of message)</em></dd>
+    </dl>
+    <div class="moreInfo">More information: <a href="help.html#highlight">Highlight</a></div>
+    
+    
+    <h2>
+        <a name="Ignore">Ignore</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>Allows you to ignore chat messages that match the specified text or -
+        using prefixes - that match other properties like ignoring messages of a
+        specific user. Ignored messages get added to a special dialog that can
+        be opened via <code>View - Ignored</code>.
+    </p>
+    
+    <p>The matching of messages works the same as the <a href="#Highlight">Highlights</a>
+        system, please see that help for information on that. For quick
+        reference here just a few examples:
+    </p>
+    
+    <dl>
+        <dt><code>user:name</code></dt>
+        <dd>Ignores the user with the name <code>name</code> in all channels</dd>
+
+        <dt><code>user:name chan:tirean,gocnak</code></dt>
+        <dd>Ignores the user with the name <code>name</code> in channels <code>#tirean</code> and <code>#gocnak</code></dd>
+        
+        <dt><code>cat:ignore !chan:lotsofs,joshimuz</code></dt>
+        <dd>Ignores users in the addressbook category <code>ignore</code> in all channels,
+            except <code>#lotsofs</code> and <code>#joshimuz</code></dd>
+        
+        <dt><code>chan:joshimuz re:!bet.*</code></dt>
+        <dd>Ignores messages starting with <code>!bet</code>, but only in <code>#joshimuz</code></dd>
+        
+        <dt><code>!status:smb chanCat:subonly</code></dt>
+        <dd>Ignores any message send by users that are not a subscriber, moderator
+        or broadcaster of the channel, but only if the channel is in the Addressbook
+        category <code>subonly</code> (e.g. <code>/ab add #joshimuz subonly</code>,
+        notice the leading <code>#</code>)</dd>
+    </dl>
+    
+    <h3>General Options</h3>
+    <ul>
+        <li><strong>Enable Ignore</strong>: Enable/disable the Ignore System
+        altogether</li>
+        <li><strong>Ignore own messages</strong>: Also ignore own messages (if
+        they match), can be useful for testing</li>
+        <li>What should happen with ignored messages:
+            <ul>
+                <li><strong>Hide</strong>: Don't show ignored messages in chat
+                    at all (they still get added to the <code>Ignored</code> dialog)</li>
+                <li><strong>Show count</strong>: Shows the number of ignored messages
+                in chat every 30s (if there were any), so you know that messages
+                were ignored</li>
+                <li><strong>Show names</strong>: Shows the name of the sender of
+                any ignored messages, in a list similiar to MOD/UNMOD or JOIN/PART
+                messages</li>
+            </ul>
+        </li>
+        <li><strong>Only show if ignored messages dialog is not open</strong>:
+        Only show what is configured for "What should happen with ignored messages"
+        when the ignored messages dialog isn't currently open.</li>
+    </ul>
+    
+    <h3>Ignored Users</h3>
+    
+    <p>The <code>Ignored Users</code> list allows you to ignore
+        users in chat or prevent them from whispering you, which is possible via
+        the main ignore list as well, but was added as a separate function to be
+        more convenient. Aside from the settings, you can also ignore/unignore
+        users via the User Context Menu.</p>
+    
+    <p>Ignored users are independant of the main ignore list, so they also apply
+        if ignore is disabled.</p>
+    
+    <dl class="dl-settings">
+        <dt>Hide 'Ignored in chat' users from the userlist/joins/parts</dt>
+        <dd>If enabled, prevents users on the 'Ignored in chat' list from
+            showing up in the userlist and JOIN/PART/MOD/UNMOD events (which
+            aren't enabled by default to be shown anyway).</dd>
+        <dd>This only applies to the 'Ignored in chat' list, not to entries with
+            the <code>user:</code> prefix on the main Ignore list.</dd>
+        <dd>Users who are already on the userlist when you ignore them stay on
+            it until they leave, you rejoin the channel or restart Chatty.</dd>
+    </dl>
+    
+    <h2>
+        <a name="Filter">Filter</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>As opposed to the <a href="#Ignore">Ignore</a> list, which blocks entire
+        messages from being shown, the Filter only removes parts of a message.
+        For example if you add <code>regw:a\w*</code> to the list, it will
+        remove all words starting with <code>a</code> from messages in chat and
+        replace it with <code><u>..</u></code>, which can be hovered over to
+        show the original text.</p>
+    
+    <p>An example usage for this could be to shorten bot messages by removing
+        parts that are always the same.</p>
+    
+    <p>The text matching syntax is the same as for the <a href="#Highlight">Highlight</a> list,
+        although you have to remember that only the the parts of a message that
+        match the pattern are removed, so you may have to use it a bit
+        differently than for Highlighting and Ignoring.</p>
+    
+    <p>It currently only works for regular chat messages (no info messages). It
+        also only uses the matches from the first item in the list that matches
+        any part of the message. This may be changed in the future.</p>
+    
+    <h3>Customize replacement</h3>
+    <p>The <code>replacement:</code> prefix can be used to change the default
+        <code><u>..</u></code> the filtered text is replaced with to something
+        more meaningfull. For example if your entry is
+        <code>replacement:Wordwitha regw:a\w*</code> then the removed text gets
+        replaced with <code><u>Wordwitha</u></code>.</p>
+    
+    <p>You can use <code>replacement:none</code> to output no replacement at
+        all.</p>
+    
+    <h2>
+        <a name="Log_to_file">Log to file</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>If you enable logging, chat messages (and more if enabled) will be written
+    into a separate textfile for each channel.</p>
+    <h3>Channels</h3>
+    <p>You can specify which channels should be logged:</p>
+    <ul>
+        <li><strong>always</strong> - Log all channels without exception <em>(default)</em></li>
+        <li><strong>blacklist</strong> - Log all channels, except the ones on
+        the blacklist</li>
+        <li><strong>whitelist</strong> - Log no channels, except the ones on the
+        whitelist</li>
+        <li><strong>off</strong> - Log no channels whatsoever</li>
+    </ul>
+    
+    <p><em>Tip:</em> Add <code>$_whisper_</code> to the whitelist or blacklist
+        to affect all whispers that are output in the "One Window" tab or
+        "Per User" tabs.</p>
+    
+    <h3>Other Settings</h3>
+    <dl class="dl-settings">
+        <dt>Folder</dt>
+        <dd>Select where to save the log files.</dd>
+        
+        <dt>Split Logs</dt>
+        <dd>Start a new log file every Day, Week or Month.</dd>
+        
+        <dt>Channel Subdirectories</dt>
+        <dd>Create a subfolder for each channel.</dd>
+        
+        <dt>Lock files while writing</dt>
+        <dd>By default Chatty requests exclusive access while writing to the
+            file, so that no other program can interfere. This can however cause
+            issues if you try to open the log while in the channel, for example
+            if you want to look something up for moderation, so disabling this
+            setting can make sense. This means that you have to ensure yourself
+            that only one instance of Chatty and no other programs write to or
+            the lock the files.</dd>
+        
+        <dt>Timestamp</dt>
+        <dd>Select the timestamp to be used in the logs.</dd>
+    </dl>
+    
+    <h3>Messages Types</h3>
+    <p>Normal chat messages are always logged, however you can log additional
+    information:</p>
+    
+    <dl class="dl-settings">
+        <dt>Chat Messages</dt>
+        <dd>Logs regular chat messages (that haven't been ignored).</dd>
+        
+        <dt>Ignored Msg.</dt>
+        <dd>Logs messages that have been hidden by the Ignore list. You can
+            disable this if you don't want ignored messages to show up in the
+            chat log files.</dd>
+        
+        <dt>Chat Info</dt>
+        <dd>General chat releated info messages like connecting, disconnecting,
+            trying to timeout someone, stream title..</dd>
+        
+        <dt>Bans/Timeouts</dt>
+        <dd>Bans and Timeouts in chat. Timeout length and reason will be added
+            if available.</dd>
+        <dd><code>BAN: name1, name2 (30s) [reason], name3 (600s)</code></dd>
+        <dd>The reason is specified by the mod taking the action, so it may be
+            consist of any text.</dd>
+        
+        <dt>Deleted Messages</dt>
+        <dd>Single deleted messages, specifying the username and message text.</dd>
+        <dd><code>DELETED: name1 (msg1), name1 (msg2), name2 (msg3)</code></dd>
+        
+        <dt>Mod/Unmod</dt>
+        <dd>When someone in chat is modded or unmodded. Remember that this info
+            may be inaccurate, since mod/unmod events are not send immediately
+            by Twitch Chat.</dd>
+        <dd><code>MOD: name1, name2</code></dd>
+        <dd><code>UNMOD: name3, name4</code></dd>
+        
+        <dt>Joins/Parts</dt>
+        <dd>When someone enters/leaves the channel. Remember that this info may
+            be inaccurate, since joins/parts are not send immediately by Twitch
+            Chat (and sometimes not at all).</dd>
+        <dd><code>JOIN: name1, name2</code></dd>
+        <dd><code>PART: name3, name4</code></dd>
+        
+        <dt>System Info</dt>
+        <dd>Any info messages that are related more to Chatty itself than to
+            chat, like info about new versions, when you use setting commands..</dd>
+        
+        <dt>Viewerstats</dt>
+        <dd>Stats about the viewercount which are logged in a semi-regular
+            interval to give you an idea about the viewercount during that time.</dd>
+        <dd>Each Viewerstats line shows which interval it refers to, the
+            min/max/avg viewers, the number of values and the development:
+            First value/after offline is absolute, then +- relative change, _
+            means offline before/in between/after that value.</dd>
+        <dd><code>Viewerstats (21:03-21:06): avg:28.612 min:28.432 max:28.887 [3/28.519-87+455_]</code></dd>
+        <dd>In the example, the stats were recorded between 21:03 and 21:06 and
+            the Viewercount started out at 28.519, then went down (-87) and then
+            up (+455). After that the stream went offline (<code>_</code>).</dd>
+        
+        <dt>Viewercount</dt>
+        <dd>Directly logs the viewercount as it is received from Twitch, without
+            any processing, except being formatted depending on the current
+            locale.</dd>
+        <dd><code>VIEWERS: 12,521</code></dd>
+        
+        <dt>Mod Actions</dt>
+        <dd>Logs the commands performed by mods in your channel (Broadcaster/Mods only).</dd>
+        <dd><code>MOD_ACTION: tduva (host coollertmb)</code></dd>
+    </dl>
+    
+    
+    <h2>
+        <a name="Window">Window</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <h3>Dialogs Location/Size</h3>
+    <ul>
+        <li>Restore Dialogs
+            <ol>
+                <li><strong>Open dialogs in default location</strong>: Always
+                open dialogs in their default location (centered on the main
+                window) when you open them.</li>
+                <li><strong>Keep location during session</strong>: Puts dialogs
+                at the same position when you reopen them during the same
+                session (so they are put on the default location when you open
+                them the first time after starting Chatty).</li>
+                <li><strong>Keep location / size from last session</strong>:
+                Puts dialogs at the same position/size they were at when you
+                closed Chatty last session and also keeps the position during
+                the session.</li>
+                <li><strong>Reopen from last session</strong>: Reopens
+                any dialogs that were open when you closed Chatty last session
+                and also puts them at the same position they were before.</li>
+            </ol>
+        </li>
+        <li><strong>Restore position only if on screen</strong>: If enabled,
+            restores the position on start only if a large portion of the top of
+            the dialog/window is visible on screen. This is to prevent dialogs
+            from being lost off-screen by accident.</li>
+        <li><strong>Move dialogs when moving main window</strong>: If enabled,
+        moves the dialogs like Channel Info or Admin Dialog along with the
+        main window, so they always keep the same relative position. You can
+        still move the dialogs by themselves of course.</li>
+    </ul>
+    
+    <h3>Minimizing / Tray</h3>
+    <ul>
+        <li><strong>Minimize to tray</strong>: When minimizing the main Chatty
+        window, it will be minimized to tray.</li>
+        <li><strong>Close to tray</strong>: Closing the main Chatty window will
+        not actually exit the program, but instead minimize it to tray. You can
+        actually close the program via <code>Main - Exit</code> or the tray icon
+        context menu.</li>
+        <li><strong>Always show tray icon</strong>: Always show the tray icon,
+        even when not minimized to tray.</li>
+        <li><strong>Hide Live Streams window on minimize</strong>: When you
+        minimize the main window, automatically hide the Live Streams window.</li>
+    </ul>
+    
+    <h3>Other</h3>
+    <ul>
+        <li><strong>Open URL Prompt</strong>: Enable this to be asked
+            when opening a URL. Even if this is disabled, you may still asked on
+            some occasions, but not for URLs in chat.</li>
+        <li><strong>Always show chat scrollbar</strong>: Always show the vertical
+        scrollbar in the chat window (there should never be a horizontal one),
+        even if no scrolling is necessary. This can be useful for using window
+        capture for streaming, because you can always keep the same subregion.</li>
+        <li><strong>Enable userlist by default</strong>: Show the userlist by
+            default. When you disable this the userlist will be entirely hidden
+            from the start. You can always use a shortcut (<kbd>Shift+F10</kbd>
+            by default) to toggle the userlist per channel.</li>
+        <li><strong>Default Userlist Width</strong>: The default width of the
+            userlist in pixels.</li>
+        <li><strong>Min. Width</strong>: The minimum width of the userlist in
+            pixels.</li>
+        <li><strong>Enable input field by default</strong>: Show the chat input
+            field by default. You can also configure a hotkey in the Hotkey
+            settings to toggle the input field.</li>
+    </ul>
+    
+    <h3>Popout</h3>
+    <ul>
+        <li><strong>Restore location/size</strong>: When you close a popout
+        window then it's location/size is saved and used for the next popout
+        window that is opened. Each saved location/size is only used once, if
+        there is none left then the default attributes are used. This is also
+        saved between sessions (attributes of popouts that are open when you
+        close Chatty are saved as well).</li>
+        <li><strong>Close popout when only channel</strong>: When you have a
+        channel popout window open and close the last channel in the main window,
+        then the popout window will automatically be closed and the channel
+        moved to the main window. Disable this if the popout shouldn't be closed
+        automatically.</li>
+    </ul>
+    
+    <h2>
+        <a name="Tabs">Tabs</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <div class="moreInfo">See also: <a href="help.html#layouts">Layouts and Tabs</a></div>
+    
+    <dl class="dl-settings">
+        <dt>Tab Order</dt>
+        <dd>Whether to show tabs in the order they were opened or alphabetically.</dd>
+        
+        <dt>Tab Placement</dt>
+        <dd>Where to put the tabs bar.</dd>
+        
+        <dt>Tab Layout</dt>
+        <dd>If the amount of tabs doesn't fit, choose whether tabs should wrap
+            into multiple rows (or columns) or keep in one row, while having to
+            scroll through them.</dd>
+        
+        <dt>Scroll through tabs with mousewheel</dt>
+        <dd>Hover mouse over tabs and scroll to change tabs.
+            <dl class="dl-settings-sub">
+                <dt>Scroll through tabs anywhere</dt>
+                <dd>Don't restrict scrolling through tabs to the tab bar,
+                    although this mostly only applies to the inputbox. So you
+                    can hover your mouse over the inputbox and scroll to switch
+                    between tabs.</dd>
+            </dl>
+        </dd>
+    </dl>
+    
+    
+    <h2>
+        <a name="Notifications">Notifications</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>The <strong>Events</strong> table can contain several entries that
+        describe events and whether they should trigger a Desktop Notification
+        and/or Sound.</p>
+    
+    <p>The entries are checked from the top and only the first enabled
+        Notification and Sound of matching events are chosen, and then triggered
+        if the Cooldowns allow it (given that any are configured).</p>
+    
+    <p>Example: You could have two "Highlights" events, the first restricted to
+        a certain channel with a Notification/Sound and the second
+        non-restricted with just a Notification. This way only Highlights in
+        said channel would play a Sound (and maybe have different Notification
+        colors) and all others just show a Notification. Note that if you were
+        to switch those entries, then the channel-restricted one would never be
+        chosen, because the non-restricted one already catches everything. So as
+        a general rule, the more specific/restricted entries should always come
+        first.</p>
+    
+    <p><img src="Notifications_example.jpg" /></p>
+    
+    <p>Possible <strong>event types</strong> that can be selected for an entry:</p>
+    
+    <dl class="dl-settings">
+        <dt>Stream Status</dt>
+        <dd>A stream Chatty is watching (because you have it's chat open
+            or you follow it) went online/offline or changed title.</dd>
+
+        <dt>Highlights</dt>
+        <dd>Chat Messages that were highlighted.</dd>
+
+        <dt>Chat Message</dt>
+        <dd>Any Chat Message (including highlighted ones, in this case
+            the order of list entries can matter).</dd>
+        
+        <dt>Info Message</dt>
+        <dd>Most messages that are not regular Chat Messages, by default shown
+            in blue color (e.g. joining a channel, channel state change, command
+            responses, sub notifications, and more).</dd>
+        <dd>A few of these messages are output in all open channels at once
+            (e.g. "Disconnected" message), which would trigger a notification
+            for each channel.</dd>
+        <dd>This will trigger at the same time as some other event types, e.g.
+            Subscriber Notification, so make sure you're not using both of them
+            at the same time, or using text or channel matching to restrict it
+            accordingly.</dd>
+        
+        <dt>Whisper</dt>
+        <dd>Any Whisper message (including highlighted ones).</dd>
+
+        <dt>User Joined &amp; User Left</dt>
+        <dd>When a user is seen entering or leaving a chat. Note that
+            this is quite unreliable, see <a href="help.html#userlist">Userlist and JOIN/PART</a>.</dd>
+
+        <dt>New Followers</dt>
+        <dd>When a new follower is detected <em>(this only works if the
+                <a href="help.html#followers">Follower Dialog</a> is
+                currently open)</em>.</dd>
+                
+        <dt>Subscriber Notification</dt>
+        <dd>When a new Subscriber/Resub notification is received in chat.</dd>
+        
+        <dt>AutoMod Message</dt>
+        <dd>When a new chat message filtered by AutoMod is received.</dd>
+    </dl>
+    
+    <h3>Event settings (Notification/Sound)</h3>
+    <dl class="dl-settings">
+        <dt>Channels</dt>
+        <dd>Name of the channel or channels (comma-separated) this item should be
+            restricted to.</dd>
+        
+        <dt>Match</dt>
+        <dd>Match the given text or message, in the same format as for
+            <a href="#Highlight">Highlighting</a> (although some prefixes won't
+            work unless it's a chat message).</dd>
+        
+        <dt>Notification (Tab)</dt>
+        <dd>A Desktop Notification, with customizable colors.</dd>
+        
+        <dt>Sound (Tab)</dt>
+        <dd>Play the selected Sound.</dd>
+        <dd>Specify a <code>Cooldown</code> to prevent this sound from playing
+            too often.</dd>
+        <dd><code>Passive Cooldown</code> will only play the sound if enough
+            time has passed since this event was last matched. Or in other words
+            it will reset the Cooldown every time the sound <em>would</em> have
+            been played, even if it actually wasn't because another sound took
+            precedence or the regular <code>Cooldown</code> didn't allow it.</dd>
+        <dd>For example if your chat isn't very busy and you want to get
+            notified of new messages so you notice, then you could add an event
+            of type <code>Chat Message</code> with a <code>Passive Cooldown</code>
+            of <code>5m</code>, which means the sound only plays if someone
+            writes a message after the chat has been silent for at least 5 minutes.
+            If on the other hand you would set it as a regular <code>Cooldown</code>
+            it would play the sound after 5 minutes even if the chat has been
+            busy non-stop, at which point you probably wouldn't need to be alerted
+            since you're already paying attention to it.</dd>
+    </dl>
+    
+    <p>On both the <strong>Notification (Tab)</strong> and <strong>Sound (Tab)</strong>
+        you can enable/disable the according action by choosing one of the
+        following:</p>
+    
+    <ul>
+        <li><strong>Enabled</strong> - No requirements, always show it</li>
+        <li><strong>Off</strong> - Never show</li>
+        <li><strong>When channel/app not active</strong> - Only when the channel
+        isn't the currently selected tab AND when the program doesn't have focus</li>
+        <li><strong>When channel or app not active</strong> - Only when the channel
+        isn't the currently selected tab OR when the program doesn't have focus</li>
+        <li><strong>When app not active</strong> - Only when the program doesn't
+        have focus</li>
+        <li><strong>When channel not active</strong> - Only when the channel
+        isn't the currently selected tab</li>
+        <li><strong>When channel active</strong> - Only when the channel IS the
+        currently selected tab</li>
+    </ul>
+    
+    <h3>General Notification Settings</h3>
+    <p>There are different types of Notifications:</p>
+    <dl class="dl-settings">
+        <dt>Off</dt>
+        <dd>Don't show any notification</dd>
+        
+        <dt>Chatty Notifications</dt>
+        <dd>The default popup Notification created by Chatty, with additional
+            settings (see below).</dd>
+        
+        <dt>Tray Notifications (OS dependant)</dt>
+        <dd>Native Tray Notifications, which will act differently depending on
+            what OS you are on.</dd>
+        
+        <dt>Run OS Command</dt>
+        <dd>Execute a program on your system, for example to run native
+            notifications in Linux. <em>For advanced users only, read the help
+            in the "Edit system command" dialog.</em></dd>
+    </dl>
+    
+    <p>If you have selected <strong>Chatty Notifications</strong>:</p>
+    <dl class="dl-settings">
+        <dt>Position</dt>
+        <dd>The corner of the screen the notification is displayed.</dd>
+        
+        <dt>Screen</dt>
+        <dd>On which screen the notification appears (auto means it's on the
+            same screen as the Chatty window).</dd>
+        
+        <dt>Display Time</dt>
+        <dd>How long the notification will be displayed by default. This can
+            vary a bit depending on the situation.</dd>
+        
+        <dt>No User Activity</dt>
+        <dd>This is a tricky one. If you enable this, then the notification will
+            not be closed after the defined Display Time if no activity was
+            detected in the last few seconds. This can be useful to still see
+            notifications from a few minutes ago if you were away from the
+            computer. The time defines when the notification will be closed no
+            matter what, so older notifications won't stay there forever if you
+            are away from the computer for a bit longer.</dd>
+        <dd>Activity is tracked through two methods: The first method is
+            tracking the system-wide mouse movements, which is done through an
+            API that may not always return accurate information (e.g. if you are
+            in a game) and it only checks the position every few seconds (only
+            the last location is saved at any time for comparison). The second
+            method detects activity only inside of Chatty, by tracking button
+            presses and mouse actions (e.g. if you type a message, open a dialog
+            etc.).</dd>
+    </dl>
+    
+    <h3>General Sound Settings</h3>
+    <p>You can enable or disable all sounds here. Sounds are searched in the
+    displayed folder, which is the current working directory, although you can
+    also <code>Change</code> it to a folder of your choice. If you added or removed files,
+    you may have to use <code>Rescan folder</code> to make the files show up in
+    the list of sounds selectable in the event settings. You can <code>Open</code>
+    the folder in your standard file browser from here to add files to it more
+    quickly.</p>
+    
+    <p>The <strong>Output Device</strong> lets you choose the device on your
+        computer the sounds gets output to. This is kind of experimental and may
+        not work properly.</p>
+
+    <h3>Followed Streams</h3>
+    <p>Enable this to make Chatty get a list of your followed streams regulary
+    so it can display notifications if their status changes. This simpy allows
+    Chatty to know about your followed streams, so notifications aren't the only
+    advantage. It also allows it to record the viewer count and status history
+    of followed live streams as long as Chatty is running.</p>
+    
+    
+    <h2>
+        <a name="Sounds">Sounds</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>Sounds are now integrated into the <a href="#Notifications">Notifications</a>.</p>
+    
+    
+    <h2>
+        <a name="Other">Other</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <h3>Graphic Settings</h3>
+    <p>More information about <a href="help-troubleshooting.html#visual-glitches">Graphics Glitches</a>
+        and <a href="help-troubleshooting.html#scaling">UI Scaling</a>.</p>
+    
+    <h3>Updates</h3>
+    <dl class="dl-settings">
+        <dt>Automatically check for new version</dt>
+        <dd>Checks for new versions every few days and outputs a message about it.</dd>
+    </dl>
+    
+    <h3>Other</h3>
+    <dl class="dl-settings">        
+        <dt>Prepend to window title</dt>
+        <dd>Add some arbitrary text to the beginning of the window title. This
+            can be useful if you run several instances of Chatty (to be able to
+            tell them apart more easily).</dd>
+    </dl>
+    
+    <h3>Write Stream Status</h3>
+    <p>You can let Chatty write information (title, game, viewercount) of a
+        certain stream to a file. The file will be written to the subfolder <code>exported</code> of the settings directory
+    (enter <code>/dir</code> to find out where that is). Stream information is
+    only written if Chatty gets that data, so for it to work properly you need
+    to currently have the channel of that stream open in Chatty. (When you change
+    the setting, data will be requested once for testing, but you have to be in
+    the channel for it to be updated regulary.)</p>
+    
+    <p>To save stream information to a file, you have to define it in the
+    setting. Each line represents one stream/file and the content to write into
+    the file. The format for each line is:</p>
+    
+    <p style="padding-left:10px;"><code>&lt;streamname&gt; &lt;filename&gt; [online/offline] &lt;content&gt;</code></p>
+    
+    <p>The optional parameter <code>online/offline</code> defines whether to
+    write the given content to the file when the stream is online or offline. So
+    you could for example define one line for online, which writes the viewercount
+    and another for offline which writes "Offline" or maybe no content at all, which clears the file.
+    If you only define one for online, then
+    the file is not written if the stream is offline, so the previous info will
+    stay in there. If you ommit this parameter, then online is assumed.</p>
+    
+    <p>The following codes in the content will be replaced with the appropriate data:</p>
+    <ul>
+        <li><code>%title</code> - The title of the stream</li>
+        <li><code>%game</code> - The game of the stream</li>
+        <li><code>%viewers</code> - The current viewercount</li>
+        <li><code>%followers</code> - The current number of followers, only
+            updates correctly when the Followers Dialog for this channel is open
+            (Main Menu - Extra - Followers)</li>
+        <li><code>%subscribers</code> - The current number of subscribers, only
+            updates correctly when the Subscribers Dialog for this channel is
+            open (Main Menu - Extra - Subscribers)</li>
+        <li><code>%viewersf</code>, <code>%followersf</code>, <code>%subscribersf</code>
+            - The same as above, but formatted numbers (e.g. <code>1,532</code>)</li>
+    </ul>
+    <p>Example which will write two files (if joined to #joshimuz):</p>
+    <p style="padding-left:10px;">
+    <code>
+        joshimuz title.txt %title (%viewers Viewers)<br />
+        joshimuz title.txt offline Stream offline<br />
+        joshimuz game.txt %game<br />
+        joshimuz game.txt offline
+    </code>
+    </p>
+    <p>If the stream is online, it writes the title and viewercount to <code>title.txt</code>
+        and the game to <code>game.txt</code>.
+    If the stream is offline it writes "Stream offline" to <code>title.txt</code> and empties
+    <code>game.txt</code>.</p>
+    
+    
+    <h2>
+        <a name="Commands">Commands</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>This settings page allows you to do the following, which is explained in
+        more detail on another page:</p>
+    
+    <ul>
+        <li><a href="help-custom_commands.html#custom-commands">Add Custom Commands</a>, which
+            are basicially aliases for anything you could also enter directly
+            into the inputbox.</li>
+        <li><a href="help-custom_commands.html#menus">Customize the User Dialog and various Context Menus</a>
+            using Custom Commands and similiar syntax.</li>
+    </ul>
+    
+    
+    <h2>
+        <a name="Advanced">Advanced</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>These settings should only be changed if you know what you're doing. You
+    can however reset any setting to the default by either deleting the settings
+    file or using <a href="help-setting_commands.html#server">setting commands</a>.</p>
+    
+    <h3>Connection</h3>
+    <ul>
+        <li><strong>Server</strong>: The default server to connect to</li>
+        <li><strong>Port</strong>: The default port(s) to connect to (can be
+            a list of ports, e.g. <code>6667,443</code>)</li>
+        <li><a name="Advanced-Userlist"><strong>Correct Userlist</strong></a>:
+        If this setting is enabled, the IRCv3 capability that enables joins/parts is send
+        on connect. This doesn't mean you have to <em>show</em> joins/parts in
+        chat, it just means joins/parts are received in the background to maintain the userlist.</li>
+    </ul>
+    <p>The server/port values are used when connecting, unless the commandline
+        parameters <code>-server</code> and/or <code>-port</code> are used,
+    then the value that is given there is used instead (without it being shown
+    here). You should know if you set a server or port with a commandline
+    parameter, but you can also check that by using <code>/get server</code>
+    and <code>/get port</code>.</p>
+    
+    <h3>Login Settings</h3>
+    <p>Manage the actual login data under <code>Main Menu - Account</code>.</p>
+    
+    <dl class="dl-settings">
+        <dt>Allow <code>-token</code> parameter to override existing token</dt>
+        <dd>When specifying <a href="help.html#launch">launch options</a> you
+            the <code>-token</code> parameter sets the login token used in
+            Chatty. If a token is already saved in Chatty, then the <code>-token</code>
+            parameter will have no effect, unless this setting is enabled.</dd>
+        <dd>Overriding the token can be an issue if external programs like the
+            Livestreamer GUI provide a token that has less access than the one
+            already saved in Chatty (e.g. doesn't allow you to change your
+            stream title).</dd>
+        <dd>If the saved token is already marked as a token set through the
+            <code>-token</code> parameter, then it will be overriden anyway.</dd>
+        <dd>If a token set through the <code>-token</code> parameter is in use,
+            it will be shown as such in the <code>Main Menu - Account</code>
+            dialog.</dd>
+    </dl>
+    
+    <h3>Whisper Feature</h3>
+    <div class="moreInfo">Help: <a href="help-whisper.html">Whisper Feature</a></div>
+    
+    <h3><a name="Advanced-TC">Twitch Client Version</a></h3>
+    <p>The Twitch Client Version setting has been removed since Twitch Chat was
+    switched over to IRCv3 tags and commands (receiving of joins/parts is now
+    controlled by the <a href="#Advanced-Userlist">Correct Userlist</a> setting).</p>
+    
+    
+    <h2>
+        <a name="TAB_Completion">TAB Completion</a><a name="Completion"></a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>TAB Completion allows you to write the beginning characters
+        of a nickname in chat and then press TAB to complete it. To learn how to
+        use TAB Completion <a href="help.html#nickCompletion">check out the general help</a>.</p>
+                
+    <h3>TAB Completion</h3>
+    <p>Either <strong>TAB</strong> or <strong>Shift-TAB</strong> can be pressed
+        after some text to initiate Completion, and here you can change what
+        type of Completion each should do:</p>
+    
+    <ul>
+        <li>Names: Complete usernames in the current chat</li>
+        <li>Emotes: Complete emotes you have access to</li>
+        <li>Names, then Emotes: Both usernames and emotes appear in the result,
+            but sorted so that usernames are listed first</li>
+        <li>Emotes, then Names: Same as previous, but emotes are listed first</li>
+        <li>Custom Completion: Complete the keys specified for Custom Completion
+            (without having to use a <code>.</code> prefix)</li>
+    </ul>
+    
+    <p>In addition to this there are special cases where a certain type of
+        Completion is chosen independant of these settings:</p>
+    
+    <ul>
+        <li>Prefixing <code>@</code> always completes usernames</li>
+        <li>Prefixing <code>/</code> always completes command names</li>
+        <li>Prefixing <code>:</code> always completes Emoji codes, and by default also Twitch Emotes</li>
+        <li>Prefixing <code>.</code> always performs Custom Completion</li>
+        <li>Certain commands such as <code>/ban</code> always complete usernames</li>
+    </ul>
+        
+    <h3>Apperance / Behaviour</h3>
+    <dl class="dl-settings">
+        <dt>Show popup</dt>
+        <dd>Shows a small window with information about the current completion
+            if there is more than one matching result. It shows your position in
+            the results when cycling through them (and how many there are in
+            total) as well as a limited list of results.</dd>
+        
+        <dt>Max Items Shown</dt>
+        <dd>How many items (results) are shown in the popup at once.</dd>
+        <dd>You can set this to 0 to not show any items (and thus only your
+            position in the results when cycling through and how many results
+            there are in total).</dd>
+        
+        <dt>Complete to common prefix</dt>
+        <dd>Pressing <kbd>TAB</kbd> only completes up to the common prefix for
+            all found matches, giving you the opportunity to refine your search
+            by adding more characters and then pressing <kbd>TAB</kbd> again, or
+            just press TAB again to start cycling through the results.</dd>
+        <dd>With this setting disabled, it immediately completes to the first
+            found result, allowing you to directly cycle through by pressing
+            <kbd>TAB</kbd> repeatedly.</dd>
+        
+        <dt>Sorting</dt>
+        <dd>Changes how the matching usernames are sorted for completion (only
+            applies to usernames, not to other stuff like emotes or setting
+            names, which are always alphabetical).</dd>
+        <dd>
+            <dl class="dl-settings-sub">
+                <dt>Predictive</dt>
+                <dd>Gives users that were recently active in chat a higher
+                    priority, and users with highlighted messages the highest.
+                    This way people you currently talk to (or that mentioned
+                    you) probably appear under the first few results.</dd>
+                
+                <dt>Alphabetical</dt>
+                <dd>Sorts names alphabetical.</dd>
+                
+                <dt>Userlist</dt>
+                <dd>Sorts names the same as in the userlist.</dd>
+            </dl>
+        </dd>
+        
+        
+    </dl>
+    
+    <h3>Localized Names</h3>
+    <dl class="dl-settings">
+        <dt>Prefer Regular name for username-based commmands</dt>
+        <dd>If you complete a username after a command like <code>/ban</code>
+            which needs a regular username as parameter, then always prefer the
+            regular name.</dd>
+        
+        <dt>Include all name types in result</dt>
+        <dd>If a user has a Localized name, or you have a
+            <a href="help.html#customNames">Custom name</a> set, then not only
+            the name that matched, but also the other types of names are added
+            to the result.</dd>
+        <dd><em>Example:</em> If a user is called <code>test</code> and has the
+            Localized Name <code>名前</code>, then entering
+            <code>tes</code> and <kbd>TAB</kbd> will show in the results both
+            <code>test (名前)</code> and
+            <code>名前 (test)</code>, so you can select either name by cycling
+            through the results via <kbd>TAB</kbd> as usual.</dd>
+        <dd>
+            <dl class="dl-settings-sub">
+                <dt>Only when no more than two matches</dt>
+                <dd>Only include all name types when no more than two names
+                    match, so that you don't have to cycle through all the
+                    different name types when you have a larger list.</dd>
+                <dd><em>Tip:</em> Once you found the right name, you can move the cursor
+                    to leave completion, and then press <kbd>TAB</kbd> again to
+                    complete the name again to get the other name types again.</dd>
+            </dl>
+        </dd>
+    </dl>
+
+    <h3><a name="TAB_Completion-custom">Custom Completion Items</a><a name="Completion-custom"></a></h3>
+    
+    <p>Custom Completion allows you to add your own keyword/value pairs for
+        completion. Custom Completion can always be performed by prepending the
+        keyword with a dot (<code>.</code>) and then pressing <kbd>TAB</kbd>
+        or <kbd>Shift-TAB</kbd>, or by selecting Custom Completion for the
+        <strong>TAB</strong> or <strong>Shift-TAB</strong> setting, in which
+        case no prefix is required.</p>
+
+    <p><em>Example:</em> Add <code>chatty</code> as <em>Key</em> and
+        <code>https://chatty.github.io</code> as <em>Value</em> and then in the
+        inputbox type <code>.chatty</code> (notice the dot in front) and press
+        <kbd>TAB</kbd> to complete it to the URL.</p>
+                
+    <p>Custom Completion items can only have one completion, so you can't have
+        <code>.chatty</code> complete to several different values.</p>
+                
+    <p>Besides the Settings Dialog, you can also use the <code>/customCompletion</code>
+        command to modify custom completion items:</p>
+                
+    <ul>
+        <li><code>/customCompletion add &lt;item&gt; &lt;value&gt;</code> - Add an item</li>
+        <li><code>/customCompletion set &lt;item&gt; &lt;value&gt;</code> - Change an item if it already exists (or otherwise add it)</li>
+        <li><code>/customCompletion remove &lt;item&gt;</code> - Remove an item</li>
+    </ul>
+    
+    <p>Remember that you can also use TAB Completion for command names. Kappab</p>
+    
+    
+    <h2>
+        <a name="History">History</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>Controls the behaviour of two different types of automatically stored
+        history:</p>
+    <ul>
+        <li>The Channel History adds channel that you join to a list</li>
+        <li>The Status Presets adds title/game/tags that you set through
+            the Admin Dialog to a list</li>
+    </ul>
+    
+    <p>Both of these lists also allow you to manually add favorites, in addition
+        to the automatic history.</p>
+    
+    <h2>
+        <a name="Stream">Stream Highlights</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>Allows your mods to trigger <a href="help.html#streamhighlights">Stream Highlights</a>,
+        which writes the current uptime/optional note to a textfile.</p>
+    
+    <dl class="dl-settings">
+        <dt>Command Channel</dt>
+        <dd>Allows users in the given channel to run the command.</dd>
+        <dd>For example if your channel/stream is called <code>zoton2</code> you
+            would enter <code>zoton2</code>.</dd>
+        
+        <dt>Command Name</dt>
+        <dd>The command used to add a Stream Highlight.</dd>
+        <dd>With the default <code>!highlight</code> mods would enter
+            <code>!highlight [optional message]</code>.</dd>
+        
+        <dt>Command Access</dt>
+        <dd>Which users have access to the command. It is highly recommended to
+            restrict this to trusted users only, such as Moderators.</dd>
+        <dd>There are a few presets available which should fit most needs (they
+            all include the broadcaster as well). This setting is using the
+            <a href="#Highlight_Meta_Matching">Highlighting</a> <code>status:</code>
+            prefix to match only on some types of users. The preset names/values
+            are:
+            <ul>
+                <li>Moderators: <code>status:bm</code></li>
+                <li>Moderators/VIPs: <code>status:bmv</code></li>
+                <li>Moderators/VIPs/Subscribers: <code>status:bmvs</code></li>
+            </ul>
+        </dd>
+        <dd>If you want to set a custom value, you can use the command
+            <code>/set streamHighlightMatch &lt;value&gt;</code>. You can use
+            anything the <a href="#Highlight_Meta_Matching">Highlighting</a>
+            syntax provides (for example Addressbook categories), not just the
+            <code>status:</code> prefix.</dd>
+    </dl>
+    
+    <h2>
+        <a name="Hotkeys">Hotkeys</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+                
+    <p>You can add hotkeys for certain actions. In general, there
+        are the following types of hotkeys:</p>
+    <ul>
+        <li><strong>Regular hotkeys</strong>, which will only trigger if the main Chatty
+            window has focus (or a popout window).</li>
+        <li><strong>Application-wide hotkeys</strong>, which will trigger anywhere in
+            Chatty.</li>
+        <li><strong>Global hotkeys</strong>, which are supposed to trigger everywhere
+            on your computer (Windows only, Hotkey version required). However some hotkeys may
+            not work, so just try it out.</li>
+    </ul>
+
+    <p>With the <strong>Enable global hotkeys</strong> setting you
+        can enable/disable the currently defined global hotkeys if your
+        Chatty version supports global hotkeys. It does <em>not</em> do
+        anything on it's own, it just toggles global hotkeys you defined
+        on and off, in case you only need them sometimes and they
+        interfer with other programs you use. You can also toggle that
+        setting in the main menu under <code>Extra - Options</code> or
+        use setting commands to change the <code>globalHotkeysEnabled</code>
+        setting directly.</p>
+
+    <h3>Adding/Editing hotkeys</h3>
+    <p>When adding or changing a hotkey you have the following options:</p>
+    <ul>
+        <li><strong>Action:</strong> The action to perform when the
+            hotkey is pressed. If you select <code>Custom Command</code>,
+            you have to enter the command to perform in the field below
+            (just the name of the command, see <a href="#Commands">Commands</a>).</li>
+        <li><strong>Hotkey:</strong> The key or key combination that
+            has to be pressed to perform the action, click into the field
+            and press the key or key combination you want to use.
+            <ul>
+                <li>If the hotkey shows as being already used you may
+                    still add it, but having more than one action defined
+                    for the same hotkey will not trigger all the actions
+                    when the hotkey is pressed, but a random one,
+                    so it doesn't really make a lot of sense.
+                    Adding it anyway can be sensible if you're currently
+                    changing several hotkeys and will change the other
+                    hotkey afterwards, so each key combination is only used
+                    once.</li>
+            </ul>
+        </li>
+        <li>Type:<ul><li><strong>Regular:</strong> Regular hotkey, which will only
+                    trigger if the main window or a popout is focused.</li>
+                <li><strong>Application:</strong> Application-wide hotkey,
+                    which will trigger if any Chatty component is focused.</li>
+                <li><strong>Global:</strong> Global hotkey, which will
+                    trigger anywhere on your computer (only works with the hotkey
+                    version of Chatty and if it loaded properly, Windows only).</li></ul></li>
+
+        <li><strong>Delay:</strong> The delay between performed actions,
+            in 1/10th of a second,
+            if this is 0 then there will be no delay required, otherwise
+            specifying a delay of e.g. <code>50</code> will execute the
+            action only once per 5 seconds, even if you keep the hotkey
+            pressed. This can be useful for actions you normally would
+            only want to execute once (e.g. running a commercial,
+            sending a message to chat) and
+            that you don't want to spam by accident.</li>
+    </ul>
+</body>
+</html>
+

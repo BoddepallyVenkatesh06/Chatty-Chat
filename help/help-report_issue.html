@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<title>Chatty Help - Report Issue</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+<body>
+    <div id="backlink"><a href="help.html">Back to main help page</a></div>
+    <h1><a name="top">Report Issue</a></h1>
+    <p>First of all make sure that you're running the latest version
+        (<code>Help - Check for update</code> or
+        <a href="https://github.com/chatty/chatty/releases">GitHub Releases</a>).
+        Updating (including to a beta, if available) may already fix your issue.
+        If not, then include as much information as possible in your report,
+        such as:</p>
+    
+    <ul>
+        <li>Chatty version, Java version, OS (can be found in the output of the
+            command <code>/appinfo</code>)</li>
+        <li>What is the issue? Describe is thoroughly, include screenshots if
+            possible.</li>
+        <li>When did the issue first occur, has it occured more than once?</li>
+        <li>Can you reproduce the issue, and if so how exactly? Be as clear as
+            possible. Reproducing an issue is often elemental in fixing it.</li>
+        <li>The complete error message (if an error message was shown).</li>
+        <li>If possible, include the <a href="#log">Debug Log</a> of when the
+            issue occured.</li>
+    </ul>
+    
+    <p>If you don't include this information, it will be harder to help you.</p>
+    
+    <p>The best way to report an issue is usually in <a href="https://discord.gg/WTuqGeJ">the Chatty Discord</a>,
+        because you're not as limited in message length as on Twitter, there are
+        other people there that may be able to help and you can easily upload
+        screenshots or short videos. But if you prefer,
+        <a href="https://twitter.com/chattyclient">Twitter</a> and
+        <a href="mailto:chattyclient@gmail.com">E-Mail</a> are also available.</p>
+    
+    <p>You can also open a <a href="https://github.com/chatty/chatty/issues">GitHub Issue</a>,
+        which contains a template for reporting an issue which you should follow.</p>
+    
+    <p>Please only contact me via one of the mentioned ways at a time. Reporting
+        the same issue in several different places is just confusing and will
+        probably hinder the solving of your issue.</p>
+    
+    <h2><a name="log">Debug Log</a></h2>
+    <p>Chatty is writing a debug log, which you can view in two ways:</p>
+    
+    <ul>
+        <li>While Chatty is running via <code>Extra - Debug Window</code>:
+            <ul>
+                <li>Log - The main Debug Log (this is usually what you want)</li>
+                <li>Irc log - Raw communication with Twitch Chat (has to be enabled)</li>
+                <li>FFZ-WS - Raw communication with FFZ Websocket server</li>
+                <li>PubSub - Raw communication with Twitch PubSub</li>
+                <li>Other - More specialized debug messages, most of which have to be enabled first</li>
+            </ul>
+        </li>
+        <li>In the Debug files, located in the settings directory</li>
+    </ul>
+    
+    <h3>Debug log files</h3>
+    <p>The debug log files are located in the settings directory, in the
+        subdirectory <code>debuglogs</code>. While Chatty is running you can use
+        the command <code>/openDebugDir</code> to open it directly (or
+        <code>/showDebugDir</code> to output it's path).</p>
+
+    <p>The directory contains several rotating files (<code>debug0.log, debug1.log, ..</code>),
+            that are not overwritten when Chatty is restarted. Normally
+            <code>debug0.log</code> is a good place to start when looking for
+            recent information.</p>
+</body>
+</html>
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,225 @@
+body {
+    max-width: 700px;
+    font-size: 1em;
+    color: black;
+    background-color: #FDFDFD;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin: 0;
+}
+/**
+The link color with some LaF might be wrong, so set it explicitly. However just
+a:link and similar doesn't seem to work in Java, but targeting a changes the
+color of all a tags, including <a name=""></a>, in normal browsers. So first set
+everything with a "name" attribute to black for normal browsers (which would set
+*all* of them to black in Java if it came second) and then set them to blue for
+Java.
+*/
+a[name] {
+    color: black;
+}
+a {
+    color: blue;
+}
+h1 {
+    margin: 4px 0 5px 0;
+    font-size: 1.2em;
+    background-color: #EEEEEE;
+    padding: 3px;
+    border-bottom: 1px solid #AAAAAA;
+}
+h2 {
+    margin: 18px 0 0 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid #AAAAAA;
+    padding-bottom: 2px;
+}
+h3 {
+    font-size: 1em;
+    margin: 14px 0 0 0;
+    padding: 0;
+}
+li ul {
+    margin-top:1px;
+    margin-bottom:3px;
+}
+li {
+    font-size: 1em;
+    margin-top: 2px;
+}
+.sub {
+    list-style-type: none;
+    margin-top: 0;
+}
+.top {
+    font-size: 0.75em;
+}
+code {
+    background-color: #EEEEEE;
+    font-size: 1em;
+}
+
+.codeblock {
+    margin-left: 22px;
+    margin-top:10px;
+    background-color: #EEEEEE;
+    font-family: monospace;
+    padding: 6px;
+}
+.codeblock pre {
+    margin: 0;
+    padding: 0;
+}
+
+.codeblock-compact {
+    display: block;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: -4px;
+    padding: 2px;
+}
+
+cite {
+    background-color: #EEEEEE;
+}
+#backlink {
+    margin: 0 0 10px 0;
+}
+
+td {
+    padding: 10px;
+}
+
+table.settings {
+    margin-top: 10px;
+    background-color: #BBBBBB;
+}
+table.settings td {
+    padding: 4px;
+    margin: 0;
+    border: 0;
+    background-color: #FDFDFD;
+}
+table.settings th {
+    padding: 4px;
+    margin: 0;
+    background-color: #EDEDED;
+}
+.setting {
+    font-family: monospace;
+}
+table.settings tr.settingExclusive td {
+    
+}
+.settingNoCommandEdit {
+    color: #999999;
+}
+table.versionCompareTable {
+    border-collapse: collapse;
+}
+.versionCompareTable td {
+    padding: 2px;
+    margin: 0;
+}
+table.loginlinks {
+    border-collapse: collapse;
+}
+.loginlinks td {
+    padding: 2px;
+    border: 1px solid #DDDDDD;
+    text-align: center;
+}
+.loginlinks th {
+    padding: 2px;
+}
+
+table.files {
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.files td {
+    padding: 2px;
+    border: none;
+    text-align: left;
+    vertical-align: top;
+}
+
+.moreInfo {
+    padding: 7px;
+    font-style: italic;
+}
+.moreInfo a {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.note {
+    padding-left: 10px;
+}
+
+.paragraphs dd {
+    padding-bottom: 4px;
+/*    padding: 0 0 0 16px;
+    background-image: url(go-next.png);
+    background-repeat: no-repeat;*/
+}
+
+.defList {
+    margin-left: 20px;
+}
+.defList dt {
+    margin-top: 5px;
+}
+.defList dd {
+    margin-top: 3px;
+}
+
+.dl-settings {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.dl-settings dt {
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.dl-settings dd {
+    margin-bottom: 3px;
+    margin-top: 2px;
+    margin-left: 20px;
+}
+
+.dl-settings-sub {
+    margin-top: 4px;
+}
+
+.del {
+    text-decoration: line-through;
+}
+
+.example-list li {
+    margin-top: 4px;
+}
+
+table.compact {
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+table.compact td {
+    padding: 3px;
+    margin: 0;
+    border: 0;
+}
+
+td.symbol {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.m {
+    font-family: monospace;
+}

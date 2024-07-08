@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chatty - Twitch Chat Client</title>
+<link rel="icon" href="icons2.ico" type="image/x-icon" />
+<style type="text/css">
+	body {
+		font-size: 1em;
+		font-family: Arial, sans-serif;
+		
+		background-color: #EEE;
+	}
+	#content {
+		margin: auto;
+		width: 1000px;
+		background-color: #FFF;
+		padding: 30px;
+		border: 1px solid #DDD;
+		clear:both;
+	}
+	li {
+		margin: 5px;
+		
+	}
+	h1 {
+		display: inline;
+	}
+	h2 {
+		font-size: 1.1em;
+	}
+	h3 {
+		font-size: 0.9em;
+	}
+
+	#menu {
+		display: inline;
+	}
+	#menu li {
+		display: inline;
+	}
+	#ago {
+		display: inline;
+		font-weight: bold;
+		color: Firebrick;
+		border: 0px solid #333;
+		float: right;
+		
+	}
+	#top {
+		width: 1000px;
+		margin: auto;
+		text-align: right;
+		margin-top: 10px;
+	}
+	#bottom {
+		width: 1000px;
+		margin: auto;
+		text-align: center;
+		margin-top: 10px;
+	}
+	#project {
+		float: right;
+		padding-bottom: 10px;
+	}
+	#twitter {
+		float:right;
+		padding-right: 25px;
+		}
+	#youtube {
+		float:right;
+		padding-right: 25px;
+	}
+	#flattr {
+		float:left;
+	}
+
+	dt {
+		margin-top: 8px;
+		margin-bottom: 2px;
+	}
+	.new {
+		font-size: 0.75em;
+		font-style: italic;
+		background-color: #FFFF77;
+	}
+
+</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */</script>
+</head>
+</head>
+<body onload="loaded()">
+	<div id="top">
+		<div id="flattr"><a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://chatty.github.io"></a></div>
+		<div id="project"><a href="https://github.com/chatty/chatty">GitHub</a></div>
+		<div id="youtube"><a href="https://youtube.com/chattyclient">YouTube Channel</a></div>
+		<div id="twitter"><a href="https://twitter.com/ChattyClient"><img src="twitter.png" /></a></div>
+	</div>
+	<div id="content">
+		<h1><img src="icons2.png" style="margin-bottom: -5px;padding-right: 7px;" />Chatty Beta <span style="font-size:0.7em"><a href="index.html">to main page</a></span></h1>
+	
+		<p>Chatty Beta versions represent the cutting edge of development and allow you to use new features much earlier than waiting for a regular release, with the following caveats:</p>
+		<ul>
+			<li>Some features may not be as polished</li>
+			<li>The help won't be fully updated for new features</li>
+			<li>New beta versions (e.g. <code>b4 -&gt; b5</code>) are not announced in program, so check the <a href="https://github.com/chatty/chatty/releases">releases page</a> for updates (following on <a href="https://twitter.com/ChattyClient">Twitter</a> also works well)</li>
+		</ul>
+		<p>What this is for:</p>
+		<ul>
+			<li>You can use new features right now if you are ok with the downsides in the list above</li>
+			<li>You can help test Chatty</li>
+		</ul>
+		<h2>How to use</h2>
+		<p><a href="https://github.com/chatty/chatty/releases">Download the latest beta version</a> and use it the same as your regular Chatty. Beta versions always contain the letter <code>b</code> in the version number. If the latest version is not a beta, then there currently is no newer version than the regular release.</p>
+		
+		<p>As with every new version, if you have invested a lot of time into adjusting settings (like maybe added 50 different usericons), you may want to make a manual backup of the settings (enter <code>/dir</code> in Chatty to display the folder where they are saved, <a href="help/help-guide_folders.html">more information</a> on the files Chatty uses). This shouldn't be necessary, but it's always prudent to know where your settings are saved and to keep a backup.</p>
+		<p>If you decide to use the old regular version again, be aware that any changes to settings that were introduced with the beta version will be lost.</p>
+</div>
+<div id="bottom">
+	If you like Chatty and would like to support me:<br /><a href="http://flattr.com/thing/4399636/Chatty" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+</div>
+</body>
+</html>
+
